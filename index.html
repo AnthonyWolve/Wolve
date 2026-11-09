@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anthony Wolve Eigbe</title>
+<meta name="description" content="Anthony Wolve Eigbe. Creative Director. The first Creative Director in Nigeria and West Africa to win a Cannes Lion.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: a black gallery on a 12 column grid. One giant name behind one man, then every piece of work in the same frame: picture first, caption under it. */
+:root{
+  --bg:#0A0A0A;
+  --panel:#151515;
+  --line:#2A2A2A;
+  --text:#EDE9E1;
+  --mute:#9E998F;
+  --accent:#E04A2F;
+  --display:'Archivo','Arial Narrow',sans-serif;
+  --body:'Archivo','Helvetica Neue',Arial,sans-serif;
+  --gut:clamp(20px,3.4vw,48px);
+  --max:1480px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text)}
+body{font-family:var(--body);font-stretch:100%;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video,iframe{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{text-wrap:balance}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--gut);padding-right:var(--gut)}
+.label{font-size:12px;line-height:1.4;letter-spacing:.16em;text-transform:uppercase;font-weight:500;color:var(--mute)}
+.disp{font-family:var(--display);font-stretch:62%;font-weight:800;text-transform:uppercase;line-height:.88;letter-spacing:-.005em}
+.semi{font-family:var(--display);font-stretch:75%;font-weight:700;line-height:1.02;letter-spacing:-.005em}
+.num{font-family:var(--display);font-stretch:62%;font-weight:800;line-height:.9;font-variant-numeric:tabular-nums}
+
+.grain{position:fixed;inset:-50%;pointer-events:none;z-index:90;opacity:.05;background-size:220px 220px;animation:grain 1s steps(4) infinite}
+@keyframes grain{0%{transform:translate(0,0)}25%{transform:translate(-3%,2%)}50%{transform:translate(2%,-3%)}75%{transform:translate(-2%,-1%)}100%{transform:translate(0,0)}}
+
+/* preloader */
+#pre{position:fixed;inset:0;z-index:100;background:var(--bg);display:flex;flex-direction:column;justify-content:space-between;padding:var(--gut);transition:transform .9s cubic-bezier(.77,0,.18,1)}
+#pre.out{transform:translateY(-100%)}
+#pre .count{font-size:clamp(120px,22vw,340px);align-self:flex-end}
+#pre .words{display:flex;gap:20px;flex-wrap:wrap}
+#pre .words span{opacity:.3;transition:opacity .3s}
+#pre .words span.on{opacity:1;color:var(--text)}
+
+/* header */
+header.top{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+header.top.solid{background:rgba(10,10,10,.92);border-color:var(--line);backdrop-filter:blur(8px)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;height:68px}
+header.top .mark{font-weight:700;font-stretch:125%;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+header.top nav{display:flex;gap:clamp(16px,2.6vw,36px)}
+header.top nav a{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;color:var(--mute);transition:color .2s}
+header.top nav a:hover,header.top nav a.cur{color:var(--text)}
+
+.view{display:none}
+.view.on{display:block;animation:viewin .6s cubic-bezier(.2,.7,.2,1)}
+@keyframes viewin{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+/* HOME */
+.hero{position:relative;overflow:hidden;padding-top:92px}
+.hero-top{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;position:relative;z-index:4}
+.hero-top .who{grid-column:1/4}
+.hero-top .claim{grid-column:10/13;text-align:right}
+.hero-top b{display:block;font-weight:600;font-size:16px;margin-bottom:6px}
+.hero-top p{font-size:14px;line-height:1.5;color:var(--mute)}
+.hero-top .claim i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:2px}
+.stage{position:relative;height:clamp(380px,60svh,660px);margin-top:8px}
+.giant{position:absolute;left:0;right:0;bottom:0;text-align:center;font-size:min(29vw,82svh);line-height:.74;white-space:nowrap;color:var(--text);will-change:transform;user-select:none}
+.giant span{display:inline-block;transform:translateY(110%);transition:transform 1.1s cubic-bezier(.2,.8,.15,1)}
+.ready .giant span{transform:none}
+.giant span:nth-child(2){transition-delay:.06s}.giant span:nth-child(3){transition-delay:.12s}.giant span:nth-child(4){transition-delay:.18s}.giant span:nth-child(5){transition-delay:.24s}
+.giant-mask{position:absolute;inset:0;overflow:hidden}
+.figure{position:absolute;bottom:0;left:50%;height:118%;transform:translate(-50%,5%);opacity:0;transition:opacity 1.1s ease .45s,transform 1.3s cubic-bezier(.2,.8,.15,1) .35s;z-index:2}
+.figure img{height:100%;width:auto;max-width:none;filter:drop-shadow(0 30px 50px rgba(0,0,0,.55));will-change:transform}
+.ready .figure{opacity:1;transform:translate(-50%,0)}
+
+.dock{position:relative;z-index:3;background:var(--bg);border-top:1px solid var(--line);padding-top:22px;padding-bottom:40px}
+.dock-head{display:flex;justify-content:space-between;gap:16px;margin-bottom:20px}
+.dock-head .a,.dock-head .b{transition:opacity .5s}
+.dock-head .b{position:absolute;opacity:0}
+.show-paths .dock-head .a{opacity:0}
+.show-paths .dock-head .b{position:static;opacity:1}
+.show-paths .dock-head .a{position:absolute}
+.dock-body{display:grid}
+.dock-body > *{grid-area:1/1;transition:opacity .7s ease,transform .9s cubic-bezier(.2,.8,.15,1)}
+.facts{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px;align-content:center}
+.facts .num{font-size:clamp(52px,5.4vw,92px)}
+.facts .num.r{color:var(--accent)}
+.facts p{margin-top:10px;font-size:14px;color:var(--mute);max-width:22ch}
+.paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;opacity:0;transform:translateY(40px);pointer-events:none}
+.show-paths .facts{opacity:0;transform:translateY(-20px);pointer-events:none}
+.show-paths .paths{opacity:1;transform:none;pointer-events:auto}
+.paths .path:nth-child(2){transition-delay:.08s}.paths .path:nth-child(3){transition-delay:.16s}
+
+/* shared card */
+.frame{position:relative;overflow:hidden;background:var(--panel);aspect-ratio:16/10}
+.frame > img,.frame > video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.8,.15,1),opacity .4s}
+.frame .yt{position:absolute;top:50%;left:50%;width:177.78%;height:177.78%;min-width:100%;min-height:100%;transform:translate(-50%,-50%) scale(.5625);border:0;pointer-events:none;opacity:0;transition:opacity .6s}
+.frame .yt.on{opacity:1}
+.frame video.prev{opacity:0}
+a:hover .frame > img{transform:scale(1.04)}
+a:hover .frame video.prev{opacity:1}
+.panel{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(18px,2vw,28px)}
+.panel .num{font-size:clamp(64px,7vw,128px)}
+.panel p{font-size:14px;color:var(--mute);margin-top:8px}
+.panel.red{background:var(--accent);color:#0A0A0A}
+.panel.red .label,.panel.red p{color:rgba(10,10,10,.75)}
+.panel.bone{background:var(--text);color:#0A0A0A}
+.panel.bone .label,.panel.bone p{color:rgba(10,10,10,.7)}
+.panel ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.panel ul li{font-family:var(--display);font-stretch:75%;font-weight:700;font-size:clamp(20px,1.9vw,30px);line-height:1.1}
+
+.path .cap{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding-top:16px;border-top:1px solid var(--line);margin-top:16px}
+.path .cap .disp{font-size:clamp(36px,3.6vw,60px)}
+.path .cap .label{margin-bottom:8px;display:block}
+.arrow{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border:1px solid var(--line);border-radius:50%;flex:0 0 auto;transition:background .3s,border-color .3s,color .3s}
+a:hover .arrow{background:var(--accent);border-color:var(--accent);color:#0A0A0A}
+.arrow svg{width:18px;height:18px}
+
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:16px 0;font-weight:600;font-stretch:125%;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.ticker div{display:inline-block;animation:tick 50s linear infinite}
+.ticker span{margin:0 26px}
+.ticker i{font-style:normal;color:var(--accent)}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+.brief{padding-top:clamp(90px,10vw,150px);padding-bottom:clamp(90px,10vw,150px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
+.brief h2{grid-column:1/11;font-size:clamp(44px,5.6vw,96px);margin-bottom:clamp(48px,6vw,80px)}
+.brief h2 span{color:var(--mute)}
+.brief .col{grid-column:span 4;border-top:1px solid var(--line);padding-top:18px}
+.brief .col .label{display:block;margin-bottom:12px}
+.brief .col p{color:#CFCAC0;max-width:36ch}
+
+/* PATH */
+.phead{padding-top:clamp(130px,14vw,180px);padding-bottom:clamp(40px,5vw,64px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:end;border-bottom:1px solid var(--line)}
+.phead .t{grid-column:1/-1}
+.phead .t .label{display:block;margin-bottom:18px}
+.phead h1{font-size:clamp(64px,9.5vw,170px)}
+.phead .side{grid-column:7/13;padding-top:8px}
+.phead .side p{font-size:clamp(19px,1.6vw,23px);line-height:1.4;max-width:28ch}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(40px,4vw,64px) 24px;padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(80px,9vw,140px)}
+.card.feat{grid-column:1/-1}
+.card.feat .frame{aspect-ratio:21/9}
+.card .meta{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:start;padding-top:18px}
+.card .idx{font-size:12px;letter-spacing:.16em;color:var(--mute);padding-top:6px;min-width:28px}
+.card h2{font-size:clamp(28px,2.6vw,42px);margin:6px 0 10px}
+.card.feat h2{font-size:clamp(34px,3.4vw,56px)}
+.card .line{color:var(--mute);max-width:52ch;font-size:16px}
+.card .stats{display:flex;gap:28px;margin-top:16px}
+.card .stats b{display:block;font-size:30px}
+.card .stats span{font-size:13px;color:var(--mute)}
+.pnext{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;padding-top:40px;padding-bottom:40px;border-top:1px solid var(--line)}
+.pnext a{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding:24px 0}
+.pnext .disp{font-size:clamp(44px,5vw,84px);margin-top:8px}
+
+/* WORK */
+.whead{padding-top:clamp(120px,13vw,170px);padding-bottom:clamp(32px,4vw,48px)}
+.back{display:inline-flex;align-items:center;gap:10px;margin-bottom:clamp(28px,4vw,48px)}
+.back svg{width:16px;height:16px;transform:rotate(180deg)}
+.whead h1{font-size:clamp(60px,9vw,160px);margin-top:16px;max-width:14ch}
+.wmeta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-top:20px;padding-bottom:20px}
+.wmeta span{display:block;margin-top:6px;font-size:15px}
+.wmedia{padding-top:clamp(28px,3vw,40px)}
+.wmedia .frame{aspect-ratio:16/9}
+.play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:14px;background:rgba(0,0,0,.25);transition:background .3s;width:100%}
+.play:hover{background:rgba(0,0,0,.45)}
+.play .pbtn{width:84px;height:84px;border-radius:50%;background:var(--accent);color:#0A0A0A;display:flex;align-items:center;justify-content:center}
+.play .pbtn svg{width:26px;height:26px;margin-left:4px}
+.play .label{color:var(--text)}
+.frame iframe.full{position:absolute;inset:0;width:100%;height:100%;border:0}
+.tiks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.tiks .tk{aspect-ratio:9/16;background:var(--panel);overflow:hidden;position:relative}
+.tiks iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.tiks figcaption{margin-top:10px;font-size:13px;color:var(--mute)}
+.tiks figure{margin:0}
+.wbody{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;padding-top:clamp(64px,7vw,110px);padding-bottom:clamp(64px,7vw,110px)}
+.story{grid-column:1/8}
+.story p{max-width:60ch;font-size:clamp(17px,1.3vw,19px);color:#D6D1C7;margin-bottom:20px}
+.story p.lead{font-family:var(--display);font-stretch:75%;font-weight:700;font-size:clamp(28px,2.8vw,44px);line-height:1.08;color:var(--text);max-width:22ch;margin-bottom:28px}
+.story ol{margin:4px 0 24px;padding:0;list-style:none;counter-reset:s;max-width:60ch}
+.story ol li{counter-increment:s;display:grid;grid-template-columns:48px 1fr;padding:16px 0;border-top:1px solid var(--line);color:#D6D1C7}
+.story ol li::before{content:counter(s,decimal-leading-zero);font-size:12px;letter-spacing:.14em;color:var(--mute);padding-top:4px}
+.story ol li b{color:var(--text);font-weight:600}
+.note{border:1px dashed #555;padding:14px 16px;font-size:14px!important;color:var(--mute)!important}
+.nums{grid-column:9/13;display:flex;flex-direction:column}
+.nums div{border-top:1px solid var(--line);padding:18px 0 22px}
+.nums .num{font-size:clamp(56px,5.4vw,92px)}
+.nums span{display:block;margin-top:8px;font-size:14px;color:var(--mute)}
+.block{padding-bottom:clamp(64px,7vw,110px)}
+.block > .label{display:block;padding-top:18px;border-top:1px solid var(--line);margin-bottom:24px}
+.gv{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.gv figure{margin:0}
+.gv video{width:100%;aspect-ratio:4/5;object-fit:cover;background:var(--panel)}
+.gv figcaption{margin-top:10px;font-size:13px;color:var(--mute)}
+.strip{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:14px;scrollbar-width:thin}
+.strip figure{margin:0;flex:0 0 min(78vw,820px);scroll-snap-align:start}
+.strip img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.strip figcaption{margin-top:12px;font-size:20px}
+.photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.photos img,.photos video{width:100%;aspect-ratio:3/2;object-fit:cover;background:var(--panel)}
+.photos .full{grid-column:1/-1;aspect-ratio:16/9}
+.films{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 16px}
+.films button{text-align:left;display:block;width:100%}
+.films .frame{aspect-ratio:16/9}
+.films .frame .pbtn{width:54px;height:54px}
+.films .frame .pbtn svg{width:18px;height:18px}
+.films .play{opacity:0}
+.films button:hover .play,.films button:focus-visible .play{opacity:1}
+.films h3{font-size:18px;font-weight:600;margin-top:12px}
+.films p{font-size:14px;color:var(--mute);margin-top:2px}
+.links{border-top:1px solid var(--line)}
+.links a{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;border-bottom:1px solid var(--line);font-size:18px;transition:color .2s}
+.links a:hover{color:var(--accent)}
+.links small{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.quote{border-top:1px solid var(--line);padding-top:clamp(70px,9vw,140px);padding-bottom:clamp(70px,9vw,140px)}
+.quote p{font-family:var(--display);font-stretch:75%;font-weight:700;font-size:clamp(38px,5.4vw,92px);line-height:1.02;max-width:18ch}
+.quote p em{font-weight:300}
+.quote p span{color:var(--accent)}
+.quote .label{margin-top:28px;display:block}
+.wnext{display:block;border-top:1px solid var(--line)}
+.wnext .wrap{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding-top:clamp(50px,6vw,90px);padding-bottom:clamp(50px,6vw,90px)}
+.wnext .disp{font-size:clamp(48px,7vw,120px);margin-top:12px;transition:color .3s}
+.wnext:hover .disp{color:var(--accent)}
+
+/* modal player */
+dialog{padding:0;border:0;background:#000;width:min(1200px,94vw);aspect-ratio:16/9;max-height:90vh}
+dialog::backdrop{background:rgba(0,0,0,.86)}
+dialog iframe{width:100%;height:100%;border:0}
+dialog .x{position:absolute;top:-48px;right:0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;padding:10px 0}
+
+/* FOOT */
+footer.end{border-top:1px solid var(--line)}
+footer.end .wrap{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;padding-top:clamp(80px,10vw,150px);padding-bottom:36px}
+footer.end h2{grid-column:1/9;font-size:clamp(56px,7.6vw,130px)}
+footer.end .c{grid-column:9/13;align-self:end;display:flex;flex-direction:column;gap:12px;font-size:17px}
+footer.end .c a:hover{color:var(--accent)}
+footer.end .base{grid-column:1/-1;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:64px;padding-top:22px;border-top:1px solid var(--line)}
+
+.cursor{position:fixed;z-index:80;left:0;top:0;width:68px;height:68px;margin:-34px 0 0 -34px;border-radius:50%;background:var(--accent);color:#0A0A0A;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;pointer-events:none;transform:scale(0);transition:transform .25s ease}
+.cursor.on{transform:scale(1)}
+
+@media (max-width:960px){
+  .facts{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .facts > div:nth-child(n+4){display:none}
+  .paths{grid-template-columns:1fr}
+  .tiks{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .gv{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .films{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:720px){
+  .hero-top .who,.hero-top .claim{grid-column:1/-1;text-align:left}
+  .stage{height:clamp(360px,62svh,520px)}
+  .facts{grid-template-columns:1fr 1fr}
+  .facts > div:nth-child(3){display:none}
+  .brief h2,.brief .col{grid-column:1/-1}
+  .phead .t,.phead .side{grid-column:1/-1}
+  .cards{grid-template-columns:1fr}
+  .card.feat .frame{aspect-ratio:16/10}
+  .wmeta{grid-template-columns:1fr 1fr}
+  .story,.nums{grid-column:1/-1}
+  .films,.photos{grid-template-columns:1fr}
+  .pnext{grid-template-columns:1fr}
+  footer.end h2,footer.end .c{grid-column:1/-1}
+  header.top nav a[href="#contact"]{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .giant span{transform:none}
+  .figure{opacity:1;transform:translate(-50%,0)}
+}
+</style>
+</head>
+<body>
+<div class="grain" id="grain" aria-hidden="true"></div>
+<div id="pre" aria-hidden="true">
+  <div class="words label"><span>Seen</span><span>Experienced</span><span>Remembered</span></div>
+  <div class="count num" id="count">000</div>
+</div>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="mark" href="#home">Anthony Wolve Eigbe</a>
+    <nav aria-label="Main">
+      <a href="#seen" data-nav="seen">Seen</a>
+      <a href="#experienced" data-nav="experienced">Experienced</a>
+      <a href="#remembered" data-nav="remembered">Remembered</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="view" id="v-home">
+  <div class="hero">
+    <div class="wrap hero-top">
+      <div class="who"><b>Anthony Eigbe</b><p>Chief Creative Officer<br>TECNO Mobile West Africa</p></div>
+      <div class="claim"><p><i></i>The first Creative Director in Nigeria and West Africa to win a Cannes Lion</p></div>
+    </div>
+    <div class="stage">
+      <div class="giant-mask"><h1 class="giant disp" id="giant" aria-label="Wolve"><span>W</span><span>O</span><span>L</span><span>V</span><span>E</span></h1></div>
+      <div class="figure" id="figure"><img src="assets/portrait-cutout.webp" alt="Anthony Wolve Eigbe in a navy suit" width="859" height="1288"></div>
+    </div>
+    <div class="dock">
+      <div class="wrap">
+        <div class="dock-head"><span class="label a">In brief</span><span class="label b">Choose your path</span><span class="label">Lagos, Nigeria</span></div>
+        <div class="dock-body">
+          <div class="facts">
+            <div><div class="num">15+</div><p>years building African brands</p></div>
+            <div><div class="num">80+</div><p>brands, local and global</p></div>
+            <div><div class="num r">1st</div><p>Cannes Lion for a West African Creative Director</p></div>
+            <div><div class="num">96M</div><p>impressions for DStv AFCON Banter</p></div>
+            <div><div class="num">30M+</div><p>views for TECNO Spark 50 Pro</p></div>
+          </div>
+          <div class="paths" id="paths"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ticker" aria-hidden="true"><div id="tick"></div></div>
+  <section class="wrap brief">
+    <h2 class="semi">The strategy of a brand leader. <span>The eye of a creative director.</span> The instincts of a business executive.</h2>
+    <div class="col"><span class="label">Now</span><p>Chief Creative Officer, TECNO Mobile West Africa. Leading a global parent brand to local love across the region.</p></div>
+    <div class="col"><span class="label">Before</span><p>VP Creative and Communications at UACN, one creative engine for nine brands from Dulux to Debonairs. Creative Director at X3M Ideas, home of Nigeria's first Cannes Lion in 70 years.</p></div>
+    <div class="col"><span class="label">Beyond</span><p>TEDxEnugu speaker. Cannes Lions 2026 shortlist jury. Teaching the next generation of creatives to close to 30K followers.</p></div>
+  </section>
+</section>
+<section class="view" id="v-path"></section>
+<section class="view" id="v-work"></section>
+</main>
+
+<footer class="end" id="contact">
+  <div class="wrap">
+    <h2 class="disp">Let's build what people remember.</h2>
+    <div class="c">
+      <span class="label">Contact</span>
+      <a href="mailto:anthonywolve@gmail.com">anthonywolve@gmail.com</a>
+      <a href="https://www.instagram.com/anthonywolve/" target="_blank" rel="noopener">Instagram @anthonywolve</a>
+      <a href="https://www.tiktok.com/@anthonywolve" target="_blank" rel="noopener">TikTok @anthonywolve</a>
+      <a href="https://www.linkedin.com/in/anthony-eigbe-72030a33" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#cig" style="margin-top:10px;color:var(--accent)">A note for CIG Motors</a>
+    </div>
+    <div class="base label"><span>Seen. Experienced. Remembered.</span><span>Lagos, Nigeria</span></div>
+  </div>
+</footer>
+
+<dialog id="player" aria-label="Film player"><button class="x" id="px">Close</button><div id="pbody" style="width:100%;height:100%"></div></dialog>
+<div class="cursor" id="cur" aria-hidden="true">View</div>
+
+<script>
+(function(){
+var A='assets/';
+var ARROW='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+var PLAY='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>';
+function ytImg(id){return 'https://i.ytimg.com/vi/'+id+'/maxresdefault.jpg'}
+function ytEmbed(id,bg){return 'https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1&playsinline=1'+(bg?'&mute=1&controls=0&loop=1&playlist='+id:'')}
+
+var WORKS={
+ 'camon-50':{path:'seen',client:'TECNO',title:'Zoom In. Level Up.',sub:'Camon 50 launch',year:'2026',role:'Chief Creative Officer',market:'Nigeria',
+  card:{yt:'MpLT0Zwru7g',hoverYt:true},media:{yt:'MpLT0Zwru7g',label:'Watch the launch film'},
+  line:'Not an ad. A system, from product to pop culture.',stats:[['800','phones a day, week one'],['30,000','sold in 90 days']],
+  story:'<p class="lead">Not an ad. A system, from product to pop culture.</p><ol><li><span><b>Blackout Protocol.</b> Nigeria’s first branded social show. Six episodes of action thriller, built to drive pre-orders.</span></li><li><span><b>Launch.</b> Four short films that turned the specs into a spectacle.</span></li><li><span><b>Beyond the Specs.</b> A two minute Nollywood short. Story first, specs second.</span></li><li><span><b>Culture Co-Signs.</b> Creators telling it their way.</span></li><li><span><b>AI meets In-House.</b> AI made content to test new formats, read and answered in real time by the in-house team.</span></li></ol><p>Every sales target hit.</p>',
+  nums:[['800','phones a day from week one'],['30,000','sold in 90 days'],['6','episodes of Nigeria’s first branded social show']],
+  blocks:function(){var c=['Workflow','Blackout Protocol','Launch','Beyond the Specs','Culture Co-Signs','AI meets In-House','Credits'];return blk('Behind the campaign','<div class="gv">'+c.map(function(t,i){return '<figure><video src="'+A+'camon-'+(i+1)+'.mp4" poster="'+A+'camon-'+(i+1)+'.jpg" muted loop playsinline autoplay preload="metadata"></video><figcaption>'+pad(i+1)+'  '+t+'</figcaption></figure>'}).join('')+'</div>')},
+  links:[['The full carousel on Instagram','https://www.instagram.com/p/DXOhsvtjLu8/','Instagram']]},
+ 'spark-50-pro':{path:'seen',client:'TECNO',title:'Power for Days.',sub:'Spark 50 Pro launch',year:'2026',role:'Chief Creative Officer',market:'Nigeria',
+  card:{panel:'red',big:'30M+',cap:'views, on a mid range budget'},media:{tiks:[['7678298314147728662','The unsolicited one. Posted by @1xrantguy, not by us'],['7686088980344950034','Chief Power Ambassador'],['7686469712254995730','Chief Power Ambassador'],['7685422338329808136','Chief Power Ambassador']]},
+  line:'Who should sell a phone that lasts for days? The people who live without power.',stats:[['500+','applicants in 4 days'],['30M+','views']],
+  story:'<p class="lead">Who should sell a phone that lasts for days? The people who live without power.</p><p>A mid range phone with a social first budget. We didn’t guess the hero feature. We asked. Research across three states put battery first by a mile: two days on one charge.</p><p>So we hired them. Launch idea: <b>Chief Power Ambassadors.</b> A real nationwide job vacancy, run with HR, open to anyone getting under six hours of power a day. Five ambassadors got the phone two weeks before launch to test our claim.</p><p>One posted his journey unprompted. Not paid. Not briefed. Nearly 300K organic views in two days.</p>',
+  nums:[['500+','applications in 4 days'],['~300K','organic views in 2 days on one unsolicited post'],['30M+','views across every platform']],
+  blocks:function(){return ''},
+  links:[['Winners announced','https://www.tiktok.com/@tecnomobileng/photo/7677626447103577351','TikTok'],['Chief Power Ambassador 04','https://www.tiktok.com/@tecnomobileng/video/7685759079029017863','TikTok']]},
+ 'dulux-spruce':{path:'seen',client:'Dulux Spruce',title:'Show Your True Colours.',sub:'Brand launch',year:'2026',role:'VP Creative and Communications, UACN',market:'Nigeria',
+  card:{img:A+'dulux-sarki-brown.jpg'},media:{img:A+'dulux-sarki-brown.jpg'},
+  line:'For the first time in 95 years, Dulux colour names were made in Lagos.',stats:[['10','colours named in Lagos'],['1st','time in 95 years']],
+  story:'<p class="lead">For the first time in the brand’s 95 year history, colour naming left global headquarters and came home.</p><p>A new Dulux brand, built for young Nigerians at a price within reach. But the colour names came from somewhere else. Neptune Seas. Wholemeal Honey. Lovely words. Hollow ones.</p><p>So colour psychologists, consultants, Gen Z voices and pop culture minds met in one room in Lagos. Ten colours. Ten names Nigeria already speaks. Each one cast as a character and shot by one of the country’s foremost fashion photographers.</p><p>Built in house at UACN. Digital, outdoor and film.</p>',
+  nums:[['10','colours, named in Lagos'],['1st','time in 95 years the names left HQ']],
+  blocks:function(){var n=[['ajebo-yellow','Àjẹbọ Yellow'],['baddie-pink','Baddie Pink'],['idan-black','Ìdán Black'],['ijgb-orange','IJGB Orange'],['odogwu-red','Odogwu Red'],['old-money-green','Old Money Green'],['sarki-brown','Sarki Brown'],['shakara-purple','Shakara Purple'],['soft-life-blue','Soft Life Blue'],['steeze-white','Steeze White']];return blk('Ten colours. Scroll sideways','<div class="strip">'+n.map(function(x){return '<figure><img loading="lazy" src="'+A+'dulux-'+x[0]+'.jpg" alt="Dulux Spruce poster, '+x[1]+'"><figcaption class="semi">'+x[1]+'</figcaption></figure>'}).join('')+'</div>')},
+  links:[['The case on Ads of the World','https://www.adsoftheworld.com/campaigns/show-your-true-colours-4a844af1-b475-4b77-803c-14612e36944a','Ads of the World']]},
+ 'soot':{path:'seen',client:'The Extra Step Initiative',title:'Soot Life Expectancy.',sub:'Social cause campaign',year:'2023',role:'Creative Director, X3M Ideas',market:'Nigeria',
+  card:{yt:'YRfXQYFTWLc'},media:{yt:'YRfXQYFTWLc',label:'Watch the case film'},
+  line:'Nigeria’s first Cannes Lion in 70 years.',stats:[['Cannes','Lion'],['3','Grand Prix']],
+  story:'<p class="lead">Nigeria’s first Cannes Lion in 70 years. The first campaign from West Africa to win one.</p><p class="note">[One or two lines on the idea, in your words.]</p><p>Two Grand Prix at the Pitcher Awards. A Grand Prix at the Luum Awards.</p>',
+  nums:[['Cannes','Lions winner, 2023'],['2','Grand Prix, Pitcher Awards'],['1','Grand Prix, Luum Awards']],blocks:function(){return ''},links:[]},
+ 'earlier':{path:'seen',client:'Selected films',title:'Earlier Chapters.',sub:'2011 to 2024',year:'2011 to 2024',role:'Copywriter to Creative Director',market:'Nigeria and 22 African markets',
+  card:{yt:'VSkAIOJSVws'},media:null,
+  line:'Pay TV, telecoms, drinks and tech. Nine films from before TECNO.',stats:[['22','countries, one launch'],['80+','brands']],
+  story:'<p class="lead">The work that built the eye.</p><p>From lead writer on Intel West Africa to Creative Director at X3M Ideas. Pay TV, telecoms, soft drinks and water. A launch across 22 countries and campaigns that went viral with no media budget.</p>',
+  nums:[['22','countries for Big Brother Titans'],['80+','brands across a career']],
+  blocks:function(){var f=[['VSkAIOJSVws','DStv','Big Brother Titans: The Giants Are Coming'],['1o7phALkIJ0','Showmax','No One Tells a Story Like We Do'],['oM8NiTiW7iA','Pepsi','Naija All The Way'],['Elfe3NoNppk','Glo','One Language'],['MEhlfaFC8RQ','Glo','Teacher'],['skHApabsrbI','Glo','To Dance With Love'],['336PrfKdBxY','Glo','Biker'],['cEkqxABjOYw','H2oh!','Water Is Gonna Be Jealous'],['K_f0aGKYud8','Nirvana Water','Lyrics of Innocence']];
+   return blk('The films','<div class="films">'+f.map(function(x){return '<button data-yt="'+x[0]+'"><div class="frame">'+ytImgTag(x[0])+'<span class="play"><span class="pbtn">'+PLAY+'</span></span></div><h3>'+x[2]+'</h3><p>'+x[1]+'</p></button>'}).join('')+'</div>')},links:[]},
+ 'power-your-moment':{path:'experienced',client:'TECNO × AFCON',title:'Power Your Moment.',sub:'Pan African sponsorship',year:'AFCON',role:'Chief Creative Officer',market:'Pan Africa, led in Nigeria',
+  card:{panel:'dark',big:'AFCON',cap:'TV, stadiums, a gala and rebuilt pitches'},media:null,
+  line:'Co-built the continental idea with TECNO’s global team. Led it home in Nigeria.',stats:[['3','pitches rebuilt in Nigeria']],
+  story:'<p class="lead">Africa’s biggest football moment. One of its biggest sponsors.</p><p>Co-built the continental idea with TECNO’s global team, then led it home in Nigeria. On TV across Africa. Stadiums branded. A gala. Creators flown in from across the continent. Local pitches rebuilt in Nigeria and beyond.</p><p class="note">TVC link and stadium, gala and pitch photos to come.</p>',
+  nums:[['3','mini stadiums commissioned in Nigeria']],blocks:function(){return ''},links:[]},
+ 'coke-island':{path:'experienced',client:'Coca-Cola',title:'Coke Island.',sub:'Taste the Feeling, Nigeria launch',year:'2016',role:'Concept team, EXP Momentum',market:'Lagos',
+  card:{panel:'bone',big:'1',cap:'floating island on the Lagos lagoon'},media:null,
+  line:'A global launch needed a Lagos moment. So we built an island.',stats:[['1','island'],['2','artists live']],
+  story:'<p class="lead">A global launch needed a Lagos moment. So we built an island.</p><p>Coke Island. A floating party on the Lagos lagoon for the Nigerian launch of Taste the Feeling. 2Baba and Yemi Alade debuted their cover of the anthem live.</p><p class="label" style="color:var(--mute)">Part of the EXP Momentum team that conceived it.</p>',
+  nums:[['1','island, built for one night'],['2','artists debuting the anthem']],blocks:function(){return ''},links:[]},
+ 'heineken-lfdw':{path:'experienced',client:'Heineken',title:'Live Your Music.',sub:'Lagos Fashion and Design Week',year:'2016',role:'Concept team, EXP Momentum',market:'Lagos',
+  card:{panel:'dark',big:'T-Pain',cap:'flown in to close fashion week'},media:null,
+  line:'T-Pain flown in to close Lagos Fashion and Design Week. The crowd picked every song.',stats:[['4','days of fashion week']],
+  story:'<p class="lead">T-Pain flown in to close Lagos Fashion and Design Week.</p><p>Heineken’s global wristband vote brought to life in Lagos. The crowd lit red or green to pick every song that played.</p><p class="label" style="color:var(--mute)">Part of the EXP Momentum team that conceived it.</p>',
+  nums:[['1','international headliner'],['4','days, one closing night']],blocks:function(){return ''},links:[]},
+ 'star-mega-jamz':{path:'experienced',client:'Nigerian Breweries',title:'Star Mega Jamz.',sub:'Star Trek national tour',year:'2015 to 2017',role:'Concept team, EXP Momentum',market:'10 Nigerian cities',
+  card:{panel:'dark',big:'10',cap:'cities, one moving stage'},media:null,
+  line:'Ten cities. One stage that kept moving.',stats:[['10','cities']],
+  story:'<p class="lead">Ten cities. One stage that kept moving.</p><p>Star Trek and Star Mega Jamz for Nigerian Breweries. A national music tour, built city by city.</p><p class="label" style="color:var(--mute)">Part of the EXP Momentum team that conceived it.</p>',
+  nums:[['10','cities on the tour']],blocks:function(){return ''},links:[]},
+ 'afcon-banter':{path:'remembered',client:'DStv × AFCON',title:'AFCON Banter.',sub:'Always on social',year:'2024',role:'Creative Director, X3M Ideas',market:'Nigeria, Ghana, South Africa',
+  card:{yt:'ji0zwCqNh9U'},media:{yt:'ji0zwCqNh9U',label:'Watch the case film'},
+  line:'Rights landed one day before kickoff. So we skipped the commentary and went for the banter.',stats:[['96M','impressions'],['9M','organic views']],
+  story:'<p class="lead">Rights landed one day before kickoff. So we skipped the commentary and went for the banter.</p><p>Every AFCON team is an animal. Super Eagles. Indomitable Lions. Elephants. So the tournament became an animal kingdom, one meme at a time, with generative AI posters in the mix.</p><p>Then came the final. Eagles against Elephants. We dropped <em>Elephant in the Eagle’s Shadow.</em></p>',
+  nums:[['96M','impressions'],['9M','organic views'],['₦0','paid behind them']],blocks:function(){return ''},
+  links:[['The case on Ads of the World','https://www.adsoftheworld.com/campaigns/afcon-banter','Ads of the World']]},
+ 'tedx':{path:'remembered',client:'TEDxEnugu',title:'AI Has No Accent.',sub:'Transcend: Beyond Borders',year:'October 2026',role:'Speaker',market:'Enugu',
+  card:{img:A+'tedx-bw1.jpg',vid:A+'tedx-loop.mp4'},media:{vid:A+'tedx-loop.mp4',img:A+'tedx-loop.jpg'},
+  line:'How Africa can adapt to AI without losing itself. 1,500 in the room.',stats:[['1,500','in the room']],
+  story:'<p class="lead">How Africa can adapt to AI without losing itself.</p><p>The most attended TEDx in West Africa. Anambra State Governor Charles Soludo in the audience. On the bill with Prof. Pat Utomi, Uzoamaka Powers and Fred Nnadike.</p><p>Also on stage in 2026: Cannes Lions, as a shortlist juror.</p>',
+  nums:[['1,500','in the room']],quote:true,
+  blocks:function(){return blk('From the day','<div class="photos"><img loading="lazy" src="'+A+'tedx-crowd.jpg" alt="The full TEDxEnugu auditorium" class="full"><img loading="lazy" src="'+A+'tedx-bw1.jpg" alt="On stage at TEDxEnugu"><img loading="lazy" src="'+A+'tedx-bw2.jpg" alt="Speaking in front of the TEDxEnugu sign"><img loading="lazy" src="'+A+'tedx-colour.jpg" alt="On the red stage"><img loading="lazy" src="'+A+'tedx-walk.jpg" alt="Walking the stage"></div>')},links:[]},
+ 'culture':{path:'remembered',client:'Wolve',title:'For the Next Ones.',sub:'Teaching in public',year:'Ongoing',role:'Teacher, producer, artist',market:'Online',
+  card:{panel:'bone',big:'~30K',cap:'followers learning the craft'},media:null,
+  line:'Marketing, advertising and creativity, taught in public.',stats:[['~30K','followers']],
+  story:'<p class="lead">Marketing, advertising and creativity, taught in public.</p><p>Close to 30K follow along, and some of it has gone viral. Co-producer of <em>Soot City</em>, a documentary. One album, <em>The Xperiment</em>, as part of a group.</p>',
+  nums:[['~30K','followers across platforms']],blocks:function(){return ''},
+  links:[['Instagram @anthonywolve','https://www.instagram.com/anthonywolve/','Instagram'],['TikTok @anthonywolve','https://www.tiktok.com/@anthonywolve','TikTok'],['LinkedIn','https://www.linkedin.com/in/anthony-eigbe-72030a33','LinkedIn']]}
+};
+var PATHS={
+ seen:{n:'01',w:'Seen',line:'Work that stops the scroll and moves the product.',items:['camon-50','spark-50-pro','dulux-spruce','soot','earlier'],cover:{img:A+'dulux-sarki-brown.jpg',vid:A+'camon-3.mp4'}},
+ experienced:{n:'02',w:'Experienced',line:'Brands people can stand inside.',items:['power-your-moment','coke-island','heineken-lfdw','star-mega-jamz'],cover:{list:['AFCON','Coke Island','Lagos Fashion Week','Star Mega Jamz']}},
+ remembered:{n:'03',w:'Remembered',line:'Work that outlives the media plan.',items:['afcon-banter','tedx','culture'],cover:{img:A+'tedx-bw2.jpg',vid:A+'tedx-loop.mp4'}}
+};
+var ORDER=['seen','experienced','remembered'];
+function pad(n){return String(n).padStart(2,'0')}
+function words(n){return ['','One','Two','Three','Four','Five','Six'][n]}
+function blk(label,html){return '<section class="wrap block"><span class="label">'+label+'</span>'+html+'</section>'}
+function ytImgTag(id){return '<img loading="lazy" src="'+ytImg(id)+'" alt="" onerror="this.onerror=null;this.src=\'https://i.ytimg.com/vi/'+id+'/hqdefault.jpg\'">'}
+function frame(c,client){
+  if(c.panel){return '<div class="frame"><div class="panel '+(c.panel==='red'?'red':c.panel==='bone'?'bone':'')+'"><span class="label">'+client+'</span><div><div class="num">'+c.big+'</div><p>'+c.cap+'</p></div></div></div>'}
+  if(c.list){return '<div class="frame"><div class="panel"><span class="label">Four works</span><ul>'+c.list.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div></div>'}
+  var s='<div class="frame"'+(c.hoverYt?' data-hyt="'+c.yt+'"':'')+'>';
+  if(c.yt) s+=ytImgTag(c.yt); else if(c.img) s+='<img loading="lazy" src="'+c.img+'" alt="">';
+  if(c.vid) s+='<video class="prev" src="'+c.vid+'" muted loop playsinline preload="none" aria-hidden="true"></video>';
+  return s+'</div>';
+}
+function renderPaths(){
+  document.getElementById('paths').innerHTML=ORDER.map(function(id){var p=PATHS[id];
+    return '<a class="path" href="#'+id+'" data-hov>'+frame(p.cover,'')+'<div class="cap"><div><span class="label">'+p.n+' · '+words(p.items.length)+' works</span><span class="disp">'+p.w+'.</span></div><span class="arrow">'+ARROW+'</span></div></a>'}).join('');
+}
+function renderPath(id){
+  var p=PATHS[id];
+  var cards=p.items.map(function(k,j){var w=WORKS[k];
+    return '<a class="card'+(j===0?' feat':'')+'" href="#'+k+'" data-hov>'+frame(w.card,w.client)+'<div class="meta"><span class="idx">'+pad(j+1)+'</span><div><span class="label">'+w.client+' · '+w.sub+'</span><h2 class="semi">'+w.title+'</h2><p class="line">'+w.line+'</p></div><span class="arrow">'+ARROW+'</span></div></a>'}).join('');
+  var nx=ORDER.filter(function(x){return x!==id});
+  document.getElementById('v-path').innerHTML='<div class="wrap phead"><div class="t"><span class="label">Path '+p.n+' of 03 · '+words(p.items.length)+' works</span><h1 class="disp">'+p.w+'.</h1></div><div class="side"><p>'+p.line+'</p></div></div><div class="wrap cards">'+cards+'</div><div class="wrap pnext">'+nx.map(function(x){return '<a href="#'+x+'"><div><span class="label">Another path</span><div class="disp">'+PATHS[x].w+'.</div></div><span class="arrow">'+ARROW+'</span></a>'}).join('')+'</div>';
+}
+function mediaBlock(w){
+  var m=w.media; if(!m) return '';
+  if(m.yt) return '<div class="wrap wmedia"><div class="frame" id="wf">'+ytImgTag(m.yt)+'<button class="play" data-inline="'+m.yt+'"><span class="pbtn">'+PLAY+'</span><span class="label">'+m.label+'</span></button></div></div>';
+  if(m.tiks) return '<div class="wrap wmedia"><div class="tiks">'+m.tiks.map(function(t){return '<figure><div class="tk"><iframe src="https://www.tiktok.com/player/v1/'+t[0]+'?description=0&music_info=0&rel=0" title="TikTok video" allow="fullscreen" loading="lazy"></iframe></div><figcaption>'+t[1]+'</figcaption></figure>'}).join('')+'</div></div>';
+  if(m.vid) return '<div class="wrap wmedia"><div class="frame"><video src="'+m.vid+'" poster="'+(m.img||'')+'" muted loop playsinline autoplay></video></div></div>';
+  if(m.img) return '<div class="wrap wmedia"><div class="frame"><img src="'+m.img+'" alt=""></div></div>';
+  return '';
+}
+function renderWork(k){
+  var w=WORKS[k],p=PATHS[w.path],list=p.items,i=list.indexOf(k),n=WORKS[list[(i+1)%list.length]];
+  var nums=w.nums.length?'<div class="nums">'+w.nums.map(function(x){return '<div><div class="num">'+x[0]+'</div><span>'+x[1]+'</span></div>'}).join('')+'</div>':'';
+  var links=w.links.length?blk('Links','<div class="links">'+w.links.map(function(l){return '<a href="'+l[1]+'" target="_blank" rel="noopener"><span>'+l[0]+'</span><small>'+l[2]+' ↗</small></a>'}).join('')+'</div>'):'';
+  var quote=w.quote?'<section class="wrap quote"><p><em>AI is the memory of the world,</em> <span>but it is not thinking about us.</span></p><span class="label">Anthony Wolve Eigbe · TEDxEnugu 2026</span></section>':'';
+  document.getElementById('v-work').innerHTML='<div class="wrap whead"><a class="back label" href="#'+w.path+'">'+ARROW+'Back to '+p.w+'</a><span class="label" style="display:block">'+w.client+' · '+w.sub+'</span><h1 class="disp">'+w.title+'</h1></div><div class="wrap"><div class="wmeta"><div><span class="label">Client</span><span>'+w.client+'</span></div><div><span class="label">Role</span><span>'+w.role+'</span></div><div><span class="label">When</span><span>'+w.year+'</span></div><div><span class="label">Where</span><span>'+w.market+'</span></div></div></div>'+mediaBlock(w)+'<div class="wrap wbody"><div class="story">'+w.story+'</div>'+nums+'</div>'+quote+w.blocks()+links+'<a class="wnext" href="#'+list[(i+1)%list.length]+'"><div class="wrap"><div><span class="label">Next in '+p.w+'</span><div class="disp">'+n.title+'</div></div><span class="arrow">'+ARROW+'</span></div></a>';
+}
+function renderCig(){
+  document.getElementById('v-work').innerHTML='<div class="wrap whead"><span class="label" style="display:block">A point of view, not a pitch</span><h1 class="disp">A note for CIG.</h1></div><div class="wrap wbody" style="padding-top:0"><div class="story"><p class="lead">Written from the outside, ready to be sharpened on the inside.</p><ol><li><span><b>Days 1 to 30. Listen.</b> Walk every touchpoint: showrooms, dealers, social, aftersales, Ghana. Meet the agencies. Read the data. Ride with the people who buy.</span></li><li><span><b>Days 31 to 60. Give every brand a role.</b> One house, distinct voices. GAC for aspiration. Wuling for smart city mobility within reach. JMC as the engine of Nigerian business.</span></li><li><span><b>Days 61 to 100. Build the engine.</b> One creative standard, from a single post to a national TVC. An in-house studio with the right agency partners. AI in the workflow, people in charge. One hero campaign. One Ghana playbook.</span></li></ol></div></div><section class="wrap quote"><p>Price moves cars this month. <span>Brand moves them every month.</span></p></section>';
+}
+
+var views={home:document.getElementById('v-home'),path:document.getElementById('v-path'),work:document.getElementById('v-work')};
+function show(v){Object.keys(views).forEach(function(k){views[k].classList.toggle('on',k===v)})}
+function route(){
+  var h=(location.hash||'#home').slice(1);
+  document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('cur',a.dataset.nav===h||(WORKS[h]&&WORKS[h].path===a.dataset.nav))});
+  if(h==='contact'){if(!views.home.classList.contains('on')&&!views.path.classList.contains('on')&&!views.work.classList.contains('on'))show('home');document.getElementById('contact').scrollIntoView();return}
+  if(PATHS[h]){renderPath(h);show('path')}else if(WORKS[h]){renderWork(h);show('work')}else if(h==='cig'){renderCig();show('work')}else{show('home')}
+  window.scrollTo(0,0);bind();autoplay();
+}
+function autoplay(){document.querySelectorAll('video[autoplay]').forEach(function(v){v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){})})}
+var cur=document.getElementById('cur'),fine=matchMedia('(pointer:fine)').matches;
+function bind(){
+  document.querySelectorAll('[data-hov]').forEach(function(el){
+    if(el._b)return;el._b=1;
+    var v=el.querySelector('video.prev'),f=el.querySelector('[data-hyt]'),tm;
+    el.addEventListener('mouseenter',function(){if(fine)cur.classList.add('on');
+      if(v){v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){})}
+      if(f&&fine){tm=setTimeout(function(){if(f.querySelector('iframe'))return;var i=document.createElement('iframe');i.className='yt';i.allow='autoplay; encrypted-media';i.title='Launch film preview';i.src=ytEmbed(f.dataset.hyt,true);i.onload=function(){setTimeout(function(){i.classList.add('on')},400)};f.appendChild(i)},250)}});
+    el.addEventListener('mouseleave',function(){cur.classList.remove('on');clearTimeout(tm);if(v)v.pause();if(f){var i=f.querySelector('iframe');if(i)i.remove()}});
+  });
+  document.querySelectorAll('[data-inline]').forEach(function(b){if(b._b)return;b._b=1;b.addEventListener('click',function(){var fr=b.parentNode;fr.innerHTML='<iframe class="full" src="'+ytEmbed(b.dataset.inline,false)+'" title="Film" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>'})});
+  document.querySelectorAll('[data-yt]').forEach(function(b){if(b._b)return;b._b=1;b.addEventListener('click',function(){document.getElementById('pbody').innerHTML='<iframe src="'+ytEmbed(b.dataset.yt,false)+'" title="Film" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>';var d=document.getElementById('player');if(d.showModal)d.showModal()})});
+}
+var dlg=document.getElementById('player');
+function closeP(){document.getElementById('pbody').innerHTML='';if(dlg.open)dlg.close()}
+document.getElementById('px').addEventListener('click',closeP);
+dlg.addEventListener('click',function(e){if(e.target===dlg)closeP()});
+dlg.addEventListener('close',function(){document.getElementById('pbody').innerHTML=''});
+
+var hdr=document.getElementById('top');
+addEventListener('scroll',function(){hdr.classList.toggle('solid',scrollY>40)},{passive:true});
+if(fine){addEventListener('mousemove',function(e){cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';
+  if(views.home.classList.contains('on')){var x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;
+    document.getElementById('giant').style.transform='translate('+(x*-24)+'px,'+(y*-8)+'px)';
+    document.querySelector('#figure img').style.transform='translate('+(x*12)+'px,'+(y*5)+'px)';}
+})}
+
+var t=['First Cannes Lion for a West African Creative Director','TEDxEnugu 2026','Cannes Lions 2026 jury','Pitcher Awards Agency of the Year','Luum Independent Agency of the Year','80+ brands','22 African markets','15+ years'];
+var tt=t.map(function(x){return '<span>'+x+'</span><i>/</i>'}).join('');document.getElementById('tick').innerHTML=tt+tt;
+try{var c=document.createElement('canvas');c.width=c.height=220;var g=c.getContext('2d'),d=g.createImageData(220,220);for(var i=0;i<d.data.length;i+=4){var r=Math.random()*255;d.data[i]=d.data[i+1]=d.data[i+2]=r;d.data[i+3]=255}g.putImageData(d,0,0);document.getElementById('grain').style.backgroundImage='url('+c.toDataURL()+')'}catch(e){}
+
+renderPaths();
+var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches,pre=document.getElementById('pre'),cnt=document.getElementById('count'),ws=pre.querySelectorAll('.words span');
+function reveal(){pre.classList.add('out');document.body.classList.add('ready');setTimeout(function(){document.body.classList.add('show-paths')},reduce?0:3800)}
+route();addEventListener('hashchange',route);
+if(reduce||location.hash&&location.hash!=='#home'){pre.style.display='none';reveal()}else{
+  var n=0,iv=setInterval(function(){n+=Math.ceil(Math.random()*9);if(n>=100){n=100;clearInterval(iv);setTimeout(reveal,250)}cnt.textContent=String(n).padStart(3,'0');ws.forEach(function(s,i){s.classList.toggle('on',n>i*33)})},45);
+}
+})();
+</script>
+</body>
+</html>
