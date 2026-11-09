@@ -482,8 +482,16 @@ function renderCig(){
 
 var views={home:document.getElementById('v-home'),path:document.getElementById('v-path'),work:document.getElementById('v-work')};
 function show(v){Object.keys(views).forEach(function(k){views[k].classList.toggle('on',k===v)})}
+function stopAll(){
+  closeP();
+  ['v-path','v-work'].forEach(function(id){document.getElementById(id).innerHTML=''});
+  document.querySelectorAll('#v-home video').forEach(function(v){v.pause()});
+  document.querySelectorAll('#v-home iframe').forEach(function(f){f.remove()});
+  cur.classList.remove('on');
+}
 function route(){
   var h=(location.hash||'#home').slice(1);
+  if(h!=='contact')stopAll();
   document.querySelectorAll('[data-nav]').forEach(function(a){a.classList.toggle('cur',a.dataset.nav===h||(WORKS[h]&&WORKS[h].path===a.dataset.nav))});
   if(h==='contact'){if(!views.home.classList.contains('on')&&!views.path.classList.contains('on')&&!views.work.classList.contains('on'))show('home');document.getElementById('contact').scrollIntoView();return}
   if(PATHS[h]){renderPath(h);show('path')}else if(WORKS[h]){renderWork(h);show('work')}else if(h==='cig'){renderCig();show('work')}else{show('home')}
