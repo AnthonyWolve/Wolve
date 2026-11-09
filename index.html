@@ -48,6 +48,15 @@ h1,h2,h3{text-wrap:balance}
 #pre .words{display:flex;gap:20px;flex-wrap:wrap}
 #pre .words span{opacity:.3;transition:opacity .3s}
 #pre .words span.on{opacity:1;color:var(--text)}
+#pre .for{display:none}
+.pers #pre .words{display:none}
+.pers #pre .for{display:block}
+#pre .for .semi{font-size:clamp(40px,6vw,96px);margin-top:14px}
+#pre .for p{margin-top:14px;color:var(--mute)}
+.forcig{border-top:1px solid var(--line);padding-top:18px}
+.forcig p{font-family:var(--display);font-stretch:75%;font-weight:700;font-size:clamp(26px,2.6vw,40px);line-height:1.1;max-width:30ch;margin-top:12px}
+.cigonly{display:none}
+.pers .cigonly{display:inline}
 
 /* header */
 header.top{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
@@ -279,6 +288,7 @@ footer.end .base{grid-column:1/-1;display:flex;justify-content:space-between;fle
 <div class="grain" id="grain" aria-hidden="true"></div>
 <div id="pre" aria-hidden="true">
   <div class="words label"><span>Seen</span><span>Experienced</span><span>Remembered</span></div>
+  <div class="for"><span class="label">Prepared for</span><div class="semi" id="forName">CIG Motors.</div><p id="forDate">Thursday, 12 November</p></div>
   <div class="count num" id="count">000</div>
 </div>
 
@@ -307,7 +317,7 @@ footer.end .base{grid-column:1/-1;display:flex;justify-content:space-between;fle
     </div>
     <div class="dock">
       <div class="wrap">
-        <div class="dock-head"><span class="label a">In brief</span><span class="label b">Choose your path</span><span class="label">Lagos, Nigeria</span></div>
+        <div class="dock-head"><span class="label a">In brief</span><span class="label b" id="chooseL">Choose your path</span><span class="label">Lagos, Nigeria</span></div>
         <div class="dock-body">
           <div class="facts">
             <div><div class="num">15+</div><p>years building African brands</p></div>
@@ -335,14 +345,14 @@ footer.end .base{grid-column:1/-1;display:flex;justify-content:space-between;fle
 
 <footer class="end" id="contact">
   <div class="wrap">
-    <h2 class="disp">Let's build what people remember.</h2>
+    <h2 class="disp" id="footH">Let's build what people remember.</h2>
     <div class="c">
       <span class="label">Contact</span>
       <a href="mailto:anthonywolve@gmail.com">anthonywolve@gmail.com</a>
       <a href="https://www.instagram.com/anthonywolve/" target="_blank" rel="noopener">Instagram @anthonywolve</a>
       <a href="https://www.tiktok.com/@anthonywolve" target="_blank" rel="noopener">TikTok @anthonywolve</a>
       <a href="https://www.linkedin.com/in/anthony-eigbe-72030a33" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="#cig" style="margin-top:10px;color:var(--accent)">A note for CIG Motors</a>
+      <a href="#cig" class="cigonly" style="margin-top:10px;color:var(--accent)">Read my first 100 days at CIG</a>
     </div>
     <div class="base label"><span>Seen. Experienced. Remembered.</span><span>Lagos, Nigeria</span></div>
   </div>
@@ -373,6 +383,7 @@ var WORKS={
   story:'<p class="lead">Who should sell a phone that lasts for days? The people who live without power.</p><p>A mid range phone with a social first budget. We didn’t guess the hero feature. We asked. Research across three states put battery first by a mile: two days on one charge.</p><p>So we hired them. Launch idea: <b>Chief Power Ambassadors.</b> A real nationwide job vacancy, run with HR, open to anyone getting under six hours of power a day. Five ambassadors got the phone two weeks before launch to test our claim.</p><p>One posted his journey unprompted. Not paid. Not briefed. Nearly 300K organic views in two days.</p>',
   nums:[['500+','applications in 4 days'],['~300K','organic views in 2 days on one unsolicited post'],['30M+','views across every platform']],
   blocks:function(){return ''},
+  forCig:'A mid range product, a modest budget, a national result. Not every brand gets a flagship budget.',
   links:[['Winners announced','https://www.tiktok.com/@tecnomobileng/photo/7677626447103577351','TikTok'],['Chief Power Ambassador 04','https://www.tiktok.com/@tecnomobileng/video/7685759079029017863','TikTok']]},
  'dulux-spruce':{path:'seen',client:'Dulux Spruce',title:'Show Your True Colours.',sub:'Brand launch',year:'2026',role:'VP Creative and Communications, UACN',market:'Nigeria',
   card:{img:A+'dulux-sarki-brown.jpg'},media:{img:A+'dulux-sarki-brown.jpg'},
@@ -380,6 +391,7 @@ var WORKS={
   story:'<p class="lead">For the first time in the brand’s 95 year history, colour naming left global headquarters and came home.</p><p>A new Dulux brand, built for young Nigerians at a price within reach. But the colour names came from somewhere else. Neptune Seas. Wholemeal Honey. Lovely words. Hollow ones.</p><p>So colour psychologists, consultants, Gen Z voices and pop culture minds met in one room in Lagos. Ten colours. Ten names Nigeria already speaks. Each one cast as a character and shot by one of the country’s foremost fashion photographers.</p><p>Built in house at UACN. Digital, outdoor and film.</p>',
   nums:[['10','colours, named in Lagos'],['1st','time in 95 years the names left HQ']],
   blocks:function(){var n=[['ajebo-yellow','Àjẹbọ Yellow'],['baddie-pink','Baddie Pink'],['idan-black','Ìdán Black'],['ijgb-orange','IJGB Orange'],['odogwu-red','Odogwu Red'],['old-money-green','Old Money Green'],['sarki-brown','Sarki Brown'],['shakara-purple','Shakara Purple'],['soft-life-blue','Soft Life Blue'],['steeze-white','Steeze White']];return blk('Ten colours. Scroll sideways','<div class="strip">'+n.map(function(x){return '<figure><img loading="lazy" src="'+A+'dulux-'+x[0]+'.jpg" alt="Dulux Spruce poster, '+x[1]+'"><figcaption class="semi">'+x[1]+'</figcaption></figure>'}).join('')+'</div>')},
+  forCig:'A global brand, made to speak Lagos. The same task GAC and Wuling face here.',
   links:[['The case on Ads of the World','https://www.adsoftheworld.com/campaigns/show-your-true-colours-4a844af1-b475-4b77-803c-14612e36944a','Ads of the World']]},
  'soot':{path:'seen',client:'The Extra Step Initiative',title:'Soot Life Expectancy.',sub:'Social cause campaign',year:'2023',role:'Creative Director, X3M Ideas',market:'Nigeria',
   card:{yt:'YRfXQYFTWLc'},media:{yt:'YRfXQYFTWLc',label:'Watch the case film'},
@@ -397,7 +409,8 @@ var WORKS={
   card:{panel:'dark',big:'AFCON',cap:'TV, stadiums, a gala and rebuilt pitches'},media:null,
   line:'Co-built the continental idea with TECNO’s global team. Led it home in Nigeria.',stats:[['3','pitches rebuilt in Nigeria']],
   story:'<p class="lead">Africa’s biggest football moment. One of its biggest sponsors.</p><p>Co-built the continental idea with TECNO’s global team, then led it home in Nigeria. On TV across Africa. Stadiums branded. A gala. Creators flown in from across the continent. Local pitches rebuilt in Nigeria and beyond.</p><p class="note">TVC link and stadium, gala and pitch photos to come.</p>',
-  nums:[['3','mini stadiums commissioned in Nigeria']],blocks:function(){return ''},links:[]},
+  nums:[['3','mini stadiums commissioned in Nigeria']],blocks:function(){return ''},links:[],
+  forCig:'A global sponsorship, led home in Nigeria. The same playbook can travel to Ghana.'},
  'coke-island':{path:'experienced',client:'Coca-Cola',title:'Coke Island.',sub:'Taste the Feeling, Nigeria launch',year:'2016',role:'Concept team, EXP Momentum',market:'Lagos',
   card:{panel:'bone',big:'1',cap:'floating island on the Lagos lagoon'},media:null,
   line:'A global launch needed a Lagos moment. So we built an island.',stats:[['1','island'],['2','artists live']],
@@ -474,11 +487,12 @@ function renderWork(k){
   var nums=w.nums.length?'<div class="nums">'+w.nums.map(function(x){return '<div><div class="num">'+x[0]+'</div><span>'+x[1]+'</span></div>'}).join('')+'</div>':'';
   var links=w.links.length?blk('Links','<div class="links">'+w.links.map(function(l){return '<a href="'+l[1]+'" target="_blank" rel="noopener"><span>'+l[0]+'</span><small>'+l[2]+' ↗</small></a>'}).join('')+'</div>'):'';
   var quote=w.quote?'<section class="wrap quote"><p><em>AI is the memory of the world,</em> <span>but it is not thinking about us.</span></p><span class="label">Anthony Wolve Eigbe · TEDxEnugu 2026</span></section>':'';
-  document.getElementById('v-work').innerHTML='<div class="wrap whead"><a class="back label" href="#'+w.path+'">'+ARROW+'Back to '+p.w+'</a><span class="label" style="display:block">'+w.client+' · '+w.sub+'</span><h1 class="disp">'+w.title+'</h1></div><div class="wrap"><div class="wmeta"><div><span class="label">Client</span><span>'+w.client+'</span></div><div><span class="label">Role</span><span>'+w.role+'</span></div><div><span class="label">When</span><span>'+w.year+'</span></div><div><span class="label">Where</span><span>'+w.market+'</span></div></div></div>'+mediaBlock(w)+'<div class="wrap wbody"><div class="story">'+w.story+'</div>'+nums+'</div>'+quote+w.blocks()+links+'<a class="wnext" href="#'+list[(i+1)%list.length]+'"><div class="wrap"><div><span class="label">Next in '+p.w+'</span><div class="disp">'+n.title+'</div></div><span class="arrow">'+ARROW+'</span></div></a>';
+  document.getElementById('v-work').innerHTML='<div class="wrap whead"><a class="back label" href="#'+w.path+'">'+ARROW+'Back to '+p.w+'</a><span class="label" style="display:block">'+w.client+' · '+w.sub+'</span><h1 class="disp">'+w.title+'</h1></div><div class="wrap"><div class="wmeta"><div><span class="label">Client</span><span>'+w.client+'</span></div><div><span class="label">Role</span><span>'+w.role+'</span></div><div><span class="label">When</span><span>'+w.year+'</span></div><div><span class="label">Where</span><span>'+w.market+'</span></div></div></div>'+mediaBlock(w)+'<div class="wrap wbody"><div class="story">'+w.story+'</div>'+nums+'</div>'+(P&&w.forCig?'<section class="wrap block"><div class="forcig"><span class="label" style="color:var(--accent)">For '+P.short+'</span><p>'+w.forCig+'</p></div></section>':'')+quote+w.blocks()+links+'<a class="wnext" href="#'+list[(i+1)%list.length]+'"><div class="wrap"><div><span class="label">Next in '+p.w+'</span><div class="disp">'+n.title+'</div></div><span class="arrow">'+ARROW+'</span></div></a>';
 }
 function renderCig(){
-  document.getElementById('v-work').innerHTML='<div class="wrap whead"><span class="label" style="display:block">A point of view, not a pitch</span><h1 class="disp">A note for CIG.</h1></div><div class="wrap wbody" style="padding-top:0"><div class="story"><p class="lead">Written from the outside, ready to be sharpened on the inside.</p><ol><li><span><b>Days 1 to 30. Listen.</b> Walk every touchpoint: showrooms, dealers, social, aftersales, Ghana. Meet the agencies. Read the data. Ride with the people who buy.</span></li><li><span><b>Days 31 to 60. Give every brand a role.</b> One house, distinct voices. GAC for aspiration. Wuling for smart city mobility within reach. JMC as the engine of Nigerian business.</span></li><li><span><b>Days 61 to 100. Build the engine.</b> One creative standard, from a single post to a national TVC. An in-house studio with the right agency partners. AI in the workflow, people in charge. One hero campaign. One Ghana playbook.</span></li></ol></div></div><section class="wrap quote"><p>Price moves cars this month. <span>Brand moves them every month.</span></p></section>';
+  document.getElementById('v-work').innerHTML='<div class="wrap whead"><span class="label" style="display:block">A point of view, not a promise</span><h1 class="disp">My first 100 days at CIG.</h1></div><div class="wrap wbody" style="padding-top:0"><div class="story"><p class="lead">Written from the outside. The real plan starts with what I find on the inside.</p><ol><li><span><b>Days 1 to 30. Learn.</b> Review the work so far, brand by brand and campaign by campaign. Meet every member of the team one to one and understand their strengths, gaps and ambitions. Sit with sales, dealers and the agencies. Listen before changing anything.</span></li><li><span><b>Days 31 to 60. Align.</b> Share what I found with leadership. Agree together what each brand should stand for and what success looks like. Set one creative standard and a simple way of approving work. Start closing the most urgent skills gaps.</span></li><li><span><b>Days 61 to 100. Deliver.</b> Put the first pieces of work through the new standard. Measure them against the goals we agreed. Report back honestly on what is working and what is not.</span></li></ol></div></div><section class="wrap quote"><p>Listen first. Align next. <span>Then build work worth remembering.</span></p></section>';
 }
+
 
 var views={home:document.getElementById('v-home'),path:document.getElementById('v-path'),work:document.getElementById('v-work')};
 function show(v){Object.keys(views).forEach(function(k){views[k].classList.toggle('on',k===v)})}
@@ -529,12 +543,15 @@ var t=['First Cannes Lion for a West African Creative Director','TEDxEnugu 2026'
 var tt=t.map(function(x){return '<span>'+x+'</span><i>/</i>'}).join('');document.getElementById('tick').innerHTML=tt+tt;
 try{var c=document.createElement('canvas');c.width=c.height=220;var g=c.getContext('2d'),d=g.createImageData(220,220);for(var i=0;i<d.data.length;i+=4){var r=Math.random()*255;d.data[i]=d.data[i+1]=d.data[i+2]=r;d.data[i+3]=255}g.putImageData(d,0,0);document.getElementById('grain').style.backgroundImage='url('+c.toDataURL()+')'}catch(e){}
 
+var PERS={cig:{name:'CIG Motors',short:'CIG',date:'Thursday, 12 November'}};
+var P=null;try{P=PERS[new URLSearchParams(location.search).get('for')]||null}catch(e){}
+if(P){document.body.classList.add('pers');document.getElementById('forName').textContent=P.name+'.';document.getElementById('forDate').textContent=P.date;document.getElementById('chooseL').textContent=P.name+', choose your path';document.getElementById('footH').textContent='Let\u2019s make '+P.short+' unforgettable.';document.title='Anthony Wolve Eigbe, for '+P.name}
 renderPaths();
 var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches,pre=document.getElementById('pre'),cnt=document.getElementById('count'),ws=pre.querySelectorAll('.words span');
 function reveal(){pre.classList.add('out');document.body.classList.add('ready');setTimeout(function(){document.body.classList.add('show-paths')},reduce?0:3800)}
 route();addEventListener('hashchange',route);
 if(reduce||location.hash&&location.hash!=='#home'){pre.style.display='none';reveal()}else{
-  var n=0,iv=setInterval(function(){n+=Math.ceil(Math.random()*9);if(n>=100){n=100;clearInterval(iv);setTimeout(reveal,250)}cnt.textContent=String(n).padStart(3,'0');ws.forEach(function(s,i){s.classList.toggle('on',n>i*33)})},45);
+  var n=0,iv=setInterval(function(){n+=Math.ceil(Math.random()*9);if(n>=100){n=100;clearInterval(iv);setTimeout(reveal,250)}cnt.textContent=String(n).padStart(3,'0');ws.forEach(function(s,i){s.classList.toggle('on',n>i*33)})},P?60:45);
 }
 })();
 </script>
