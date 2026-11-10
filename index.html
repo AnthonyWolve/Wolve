@@ -406,10 +406,10 @@ var WORKS={
   blocks:function(){var f=[['VSkAIOJSVws','DStv','Big Brother Titans: The Giants Are Coming'],['1o7phALkIJ0','Showmax','No One Tells a Story Like We Do'],['oM8NiTiW7iA','Pepsi','Naija All The Way'],['Elfe3NoNppk','Glo','One Language'],['MEhlfaFC8RQ','Glo','Teacher'],['skHApabsrbI','Glo','To Dance With Love'],['336PrfKdBxY','Glo','Biker'],['cEkqxABjOYw','H2oh!','Water Is Gonna Be Jealous'],['K_f0aGKYud8','Nirvana Water','Lyrics of Innocence']];
    return blk('The films','<div class="films">'+f.map(function(x){return '<button data-yt="'+x[0]+'"><div class="frame">'+ytImgTag(x[0])+'<span class="play"><span class="pbtn">'+PLAY+'</span></span></div><h3>'+x[2]+'</h3><p>'+x[1]+'</p></button>'}).join('')+'</div>')},links:[]},
  'power-your-moment':{path:'experienced',client:'TECNO × AFCON',title:'Power Your Moment.',sub:'Pan African sponsorship',year:'AFCON',role:'Chief Creative Officer',market:'Pan Africa, led in Nigeria',
-  card:{panel:'dark',big:'AFCON',cap:'TV, stadiums, a gala and rebuilt pitches'},media:null,
+  card:{yt:'CIgo0ahGfkg',hoverYt:true},media:{yt:'CIgo0ahGfkg',label:'Watch the continental film, featuring Joeboy'},
   line:'Co-built the continental idea with TECNO’s global team. Led it home in Nigeria.',stats:[['3','pitches rebuilt in Nigeria']],
-  story:'<p class="lead">Africa’s biggest football moment. One of its biggest sponsors.</p><p>Co-built the continental idea with TECNO’s global team, then led it home in Nigeria. On TV across Africa. Stadiums branded. A gala. Creators flown in from across the continent. Local pitches rebuilt in Nigeria and beyond.</p><p class="note">TVC link and stadium, gala and pitch photos to come.</p>',
-  nums:[['3','mini stadiums commissioned in Nigeria']],blocks:function(){return ''},links:[],
+  story:'<p class="lead">Africa’s biggest football moment. One of its biggest sponsors.</p><p>Co-built the continental idea with TECNO’s global team, then led it home in Nigeria. On TV across Africa. Stadiums branded. A gala. Creators flown in from across the continent. Local pitches rebuilt in Nigeria and beyond.</p><p class="label" style="color:var(--mute)">The film is the continental campaign. The ground work in Nigeria was led by Wolve.</p><p class="note">Stadium, gala and pitch photos to come.</p>',
+  nums:[['3','mini stadiums commissioned in Nigeria']],blocks:function(){return ''},links:[['The continental film on YouTube','https://www.youtube.com/watch?v=CIgo0ahGfkg','YouTube']],
   forCig:'A global sponsorship, led home in Nigeria. The same playbook can travel to Ghana.'},
  'coke-island':{path:'experienced',client:'Coca-Cola',title:'Coke Island.',sub:'Taste the Feeling, Nigeria launch',year:'2016',role:'Concept team, EXP Momentum',market:'Lagos',
   card:{panel:'bone',big:'1',cap:'floating island on the Lagos lagoon'},media:null,
@@ -519,7 +519,7 @@ function bind(){
     var v=el.querySelector('video.prev'),f=el.querySelector('[data-hyt]'),tm;
     el.addEventListener('mouseenter',function(){if(fine)cur.classList.add('on');
       if(v){v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){})}
-      if(f&&fine){tm=setTimeout(function(){if(f.querySelector('iframe'))return;var i=document.createElement('iframe');i.className='yt';i.allow='autoplay; encrypted-media';i.title='Launch film preview';i.src=ytEmbed(f.dataset.hyt,true);i.onload=function(){setTimeout(function(){i.classList.add('on')},400)};f.appendChild(i)},250)}});
+      if(f&&fine){tm=setTimeout(function(){if(f.querySelector('iframe'))return;var i=document.createElement('iframe');i.className='yt';i.allow='autoplay; encrypted-media';i.title='Film preview';i.src=ytEmbed(f.dataset.hyt,true);i.onload=function(){setTimeout(function(){i.classList.add('on')},400)};f.appendChild(i)},250)}});
     el.addEventListener('mouseleave',function(){cur.classList.remove('on');clearTimeout(tm);if(v)v.pause();if(f){var i=f.querySelector('iframe');if(i)i.remove()}});
   });
   document.querySelectorAll('[data-inline]').forEach(function(b){if(b._b)return;b._b=1;b.addEventListener('click',function(){var fr=b.parentNode;fr.innerHTML='<iframe class="full" src="'+ytEmbed(b.dataset.inline,false)+'" title="Film" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>'})});
