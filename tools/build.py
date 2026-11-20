@@ -137,11 +137,11 @@ CASES = [
   nums=[],
   links=[('The film on YouTube', 'https://www.youtube.com/watch?v=cEkqxABjOYw', 'YouTube')]),
 
- dict(slug='voices-in-my-air', kind='campaign', client='Love, Peace and Mental Health Foundation', product='Mental health awareness', title='Voices In My Air.',
+ dict(slug='voices-in-my-air', kind='campaign', client='Love, Peace and Mental Health Foundation', product='Radio campaign', title='Voices In My Air.',
   year='2023', role='Creative Director, X3M Ideas', market='Nigeria',
-  line='An audio led experience on mental health.',
+  line='A radio campaign on mental health.',
   cover=('img', 'AOTW:4asmo1cu45evifff640ocsd06vmp', None), hero=('vid', 'voices-in-my-air', 'https://video.adsoftheworld.com/97sqj33d5g48ha1zica5vsuzn9g3.mp4', 'AOTW:4asmo1cu45evifff640ocsd06vmp'),
-  story=[('The work', '<p class="big">Audio, digital and experiential, for the Love, Peace and Mental Health Foundation.</p>')],
+  story=[('The work', '<p class="big">A radio campaign for the Love, Peace and Mental Health Foundation.</p>')],
   nums=[],
   links=[('The case on Ads of the World', 'https://www.adsoftheworld.com/campaigns/voices-in-my-air-fd58de94-dc9e-4dab-8477-8ed117e640c8', 'Ads of the World')]),
 
@@ -193,14 +193,25 @@ CASES = [
          ('Role', '<p class="note">Part of the EXP Momentum team that conceived it.</p>')],
   nums=[('10', 'cities on the tour')]),
 
+ dict(slug='door-openers', kind='bside', client='Original skit', product='Viral parody', title='Door Openers.',
+  year='2021', role='Co-creator', market='Nigeria',
+  line='A governor’s aide had a door opener. So did his door opener. We made it a challenge.',
+  cover=('img', 'assets/bsides/door-openers.jpg', None), hero=('yt', 'T1L3s939q44', 'Watch the skit'),
+  story=[('The spark', '<p>A video of Governor El-Rufai’s convoy went round Nigerian social media. One aide opened a car door for another aide, who then opened the door for the governor. Doors, opened for the people who open doors.</p>'),
+         ('The idea', '<p class="big">So we opened doors for the door openers.</p><p>A parody of the chain, conceived with a colleague. It went viral instantly.</p>'),
+         ('What happened', '<p>The top blogs reposted it. Within days it became the #OpenDoorChallenge, recreated by influencers and celebrities including Bovi, and picked up by news outlets like SaharaReporters.</p>')],
+  nums=[],
+  gallery=('local', ['assets/bsides/door-openers-reposts-1.jpg', 'assets/bsides/door-openers-reposts-2.jpg', 'assets/bsides/door-openers-reposts-3.jpg', 'assets/bsides/door-openers-reposts-4.jpg', 'assets/bsides/door-openers-reposts-5.jpg', 'assets/bsides/door-openers-reposts-6.jpg'], 'The internet joined in'),
+  links=[('The original post on Instagram', 'https://www.instagram.com/p/CPVsuQHgU12/', 'Instagram'), ('The video that started it', 'https://twitter.com/ikhide/status/1397493628386349059', 'X')]),
+
  dict(slug='the-xperiment', kind='bside', client='X3M Collective', product='All staff album', title='The Xperiment.',
   year='2023', role='One of the artists', market='Nigeria',
   line='An ad agency made an album. Eight tracks. One staff directory.',
-  cover=('type', 'The Xperiment', 'Eight tracks, made by the staff of a creative agency', 'ink'), hero=None,
+  cover=('img', 'assets/bsides/the-xperiment-tile.jpg', None), hero=('img', 'assets/bsides/the-xperiment-cover.jpg', 'The Xperiment album cover'),
   story=[('The idea', '<p class="big">X3M Ideas turned ten. So the team made an album.</p><p>The first body of work in Nigeria made only by the employees of a creative agency. Produced by Steve Babaeko, written and performed by the people who usually write the ads.</p>'),
          ('The record', '<p>Eight tracks of Afro-fusion, about 24 minutes, from head bopping bangers to laid back mid tempo songs. Videos were shot for Tanana, Soco, Cypher, Flex and Broken No More. Released on 27 January 2023.</p>')],
   nums=[('8', 'tracks'), ('1st', 'all staff album by a Nigerian creative agency')],
-  links=[('X3M Ideas sets record with all staff album', 'https://guardian.ng/saturday-magazine/youth-magazine/x3m-ideas-sets-record-with-all-staff-album-the-xperiment/', 'The Guardian'), ('Inside the listening party', 'https://www.thisdaylive.com/2023/04/02/x3m-ideas-exhibits-unusual-talents-at-the-xperiment-listening-party/', 'ThisDay')]),
+  links=[('Listen to the album', 'https://mad.ffm.to/the_xperiment_album', 'All platforms'), ('X3M Ideas sets record with all staff album', 'https://guardian.ng/saturday-magazine/youth-magazine/x3m-ideas-sets-record-with-all-staff-album-the-xperiment/', 'The Guardian'), ('Inside the listening party', 'https://www.thisdaylive.com/2023/04/02/x3m-ideas-exhibits-unusual-talents-at-the-xperiment-listening-party/', 'ThisDay')]),
 
  dict(slug='for-the-next-ones', kind='bside', client='Wolve', product='Teaching in public', title='For the Next Ones.',
   year='Ongoing', role='Creator', market='Online',
@@ -214,7 +225,7 @@ BY = {c['slug']: c for c in CASES}
 CAMPAIGNS = ['soot-life-expectancy', 'dulux-spruce', 'escape-2020', 'camon-50', 'lyrics-of-innocence', 'spark-50-pro', 'burning-billboard',
              'pepsi-naija-all-the-way', 'one-language', 'h2oh-water-is-gonna-be-jealous', 'voices-in-my-air', 'big-brother-titans', 'biggieverse', 'afcon-banter']
 EXPERIENCES = ['power-your-moment', 'coke-island', 'heineken-lfdw', 'star-mega-jamz']
-BSIDES = ['the-xperiment', 'for-the-next-ones']
+BSIDES = ['door-openers', 'the-xperiment', 'for-the-next-ones']
 CASES = [BY[k] for k in CAMPAIGNS + EXPERIENCES + BSIDES]
 
 # hero reel on the home page
