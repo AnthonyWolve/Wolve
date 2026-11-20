@@ -30,7 +30,7 @@ CASES = [
  dict(slug='escape-2020', kind='campaign', client='X3M Ideas', product='Christmas board game', title='Escape 2020.',
   year='2020', role='Deputy Creative Director, X3M Ideas', market='Nigeria',
   line='Everyone wanted out of 2020. So we made it a game.',
-  cover=('img', 'AOTW:9pkfnqz9kxhdgaqjrbv1tgwf2wca', None), hero=('vid', 'escape-2020', 'https://video.adsoftheworld.com/px54picnpg67npxmjp15p5ekgmoc', 'AOTW:h1mc91fhx0curuftorp4tpw9mbz6'),
+  cover=('img', 'AOTW:twi13gxrcfotlsas8o0v4apvoxt4', None), hero=('vid', 'escape-2020', 'https://video.adsoftheworld.com/px54picnpg67npxmjp15p5ekgmoc', 'AOTW:h1mc91fhx0curuftorp4tpw9mbz6'),
   story=[('The brief', '<p>Christmas 2020. COVID restrictions tightened and families were told to stay home for the holidays. Nigerians agreed on one thing: they could not wait to see the back of the year.</p>'),
          ('The idea', '<p class="big">Instead of Christmas cards, a board game.</p><p>Escape 2020 squeezed the year into 365 blocks, one for every day. Lockdowns, looting, #EndSARS, the Beirut blast, wildfires. Every big moment of the year, local and global, waiting to be dodged with a roll of the dice.</p><p>Sent to clients and friends of the agency. Now everyone could escape 2020, at least in their heads.</p>')],
   nums=[('365', 'blocks, one for every day of the year')],
