@@ -192,12 +192,30 @@ CASES = [
   story=[('The idea', '<p class="big">Ten cities. One stage that kept moving.</p><p>Star Trek and Star Mega Jamz for Nigerian Breweries. A national music tour, built city by city.</p>'),
          ('Role', '<p class="note">Part of the EXP Momentum team that conceived it.</p>')],
   nums=[('10', 'cities on the tour')]),
+
+ dict(slug='the-xperiment', kind='bside', client='X3M Collective', product='All staff album', title='The Xperiment.',
+  year='2023', role='One of the artists', market='Nigeria',
+  line='An ad agency made an album. Eight tracks. One staff directory.',
+  cover=('type', 'The Xperiment', 'Eight tracks, made by the staff of a creative agency', 'ink'), hero=None,
+  story=[('The idea', '<p class="big">X3M Ideas turned ten. So the team made an album.</p><p>The first body of work in Nigeria made only by the employees of a creative agency. Produced by Steve Babaeko, written and performed by the people who usually write the ads.</p>'),
+         ('The record', '<p>Eight tracks of Afro-fusion, about 24 minutes, from head bopping bangers to laid back mid tempo songs. Videos were shot for Tanana, Soco, Cypher, Flex and Broken No More. Released on 27 January 2023.</p>')],
+  nums=[('8', 'tracks'), ('1st', 'all staff album by a Nigerian creative agency')],
+  links=[('X3M Ideas sets record with all staff album', 'https://guardian.ng/saturday-magazine/youth-magazine/x3m-ideas-sets-record-with-all-staff-album-the-xperiment/', 'The Guardian'), ('Inside the listening party', 'https://www.thisdaylive.com/2023/04/02/x3m-ideas-exhibits-unusual-talents-at-the-xperiment-listening-party/', 'ThisDay')]),
+
+ dict(slug='for-the-next-ones', kind='bside', client='Wolve', product='Teaching in public', title='For the Next Ones.',
+  year='Ongoing', role='Creator', market='Online',
+  line='Marketing, advertising and creativity, taught in public.',
+  cover=('type', '~30K', 'followers learning the craft', 'cobalt'), hero=None,
+  story=[('The work', '<p class="big">Marketing, advertising and creativity, taught in public.</p><p>Short lessons on craft, insight and creative leadership, for the next generation of creatives. Close to 30K follow along, and some of it has gone viral.</p>')],
+  nums=[('~30K', 'followers across platforms')],
+  links=[('Instagram @anthonywolve', 'https://www.instagram.com/anthonywolve/', 'Instagram'), ('TikTok @anthonywolve', 'https://www.tiktok.com/@anthonywolve', 'TikTok'), ('LinkedIn', 'https://www.linkedin.com/in/anthony-eigbe-72030a33', 'LinkedIn')])
 ]
 BY = {c['slug']: c for c in CASES}
 CAMPAIGNS = ['soot-life-expectancy', 'dulux-spruce', 'escape-2020', 'camon-50', 'lyrics-of-innocence', 'spark-50-pro', 'burning-billboard',
              'pepsi-naija-all-the-way', 'one-language', 'h2oh-water-is-gonna-be-jealous', 'voices-in-my-air', 'big-brother-titans', 'biggieverse', 'afcon-banter']
 EXPERIENCES = ['power-your-moment', 'coke-island', 'heineken-lfdw', 'star-mega-jamz']
-CASES = [BY[k] for k in CAMPAIGNS + EXPERIENCES]
+BSIDES = ['the-xperiment', 'for-the-next-ones']
+CASES = [BY[k] for k in CAMPAIGNS + EXPERIENCES + BSIDES]
 
 # hero reel on the home page
 REEL = [('story', 'assets/portrait.jpg', None, '50% 16%'),
@@ -326,7 +344,7 @@ def visuals(srcs, title, R):
         for k, (x, f) in enumerate(zip(srcs, full))) + '</div>'
 
 def segnav(R, cur):
-    tabs = [('work/', 'Campaigns', len(CAMPAIGNS)), ('work/experiences/', 'Experiences', len(EXPERIENCES)), ('work/key-visuals/', 'Key visuals', len(PRINT))]
+    tabs = [('work/', 'Campaigns', len(CAMPAIGNS)), ('work/experiences/', 'Experiences', len(EXPERIENCES)), ('work/key-visuals/', 'Key visuals', len(PRINT)), ('work/b-sides/', 'B-Sides', len(BSIDES))]
     return '<nav class="segs" aria-label="Work sections">' + ''.join(f'<a href="{R}{h}"{" aria-current=page" if h == cur else ""}>{t}<sup>{n}</sup></a>' for h, t, n in tabs) + '</nav>'
 
 
@@ -435,6 +453,15 @@ def work_index():
 <section class="wrap band" style="padding-top:0"><div class="tiles">{rows}</div></section>
 '''
     page('work/experiences/', 'Experiences. Wolve', 'Experiences and events by Anthony Wolve Eigbe.', body, 'work/')
+    rows = ''.join(row(BY[k], R) for k in BSIDES)
+    body = f'''
+<section class="wrap phead">
+  <h1>Work</h1>
+  <p>The other side of the record. Music, comedy and teaching, made off the clock.</p>
+  {segnav(R, 'work/b-sides/')}
+</section>
+<section class="wrap band" style="padding-top:0"><div class="tiles">{rows}</div></section>'''
+    page('work/b-sides/', 'B-Sides. Wolve', 'Personal projects by Anthony Wolve Eigbe: music, comedy and teaching.', body, 'work/')
 
 def case(c, i):
     R = '../../'
@@ -470,11 +497,11 @@ def case(c, i):
     links = ''
     if c.get('links'):
         links = '<section class="wrap blk"><h2>See more</h2><div class="links">' + ''.join(f'<a href="{u}" target="_blank" rel="noopener"><span>{t}</span><small>{s} ↗</small></a>' for t, u, s in c['links']) + '</div></section>'
-    seg = CAMPAIGNS if c['kind'] == 'campaign' else EXPERIENCES
+    seg = {'campaign': CAMPAIGNS, 'experience': EXPERIENCES, 'bside': BSIDES}[c['kind']]
     n = BY[seg[(seg.index(c['slug']) + 1) % len(seg)]]
     body = f'''
 <section class="wrap chead">
-  <a class="crumb" href="{R}work/{'' if c['kind'] == 'campaign' else 'experiences/'}">{'Campaigns' if c['kind'] == 'campaign' else 'Experiences'}</a>
+  <a class="crumb" href="{R}work/{ {'campaign': '', 'experience': 'experiences/', 'bside': 'b-sides/'}[c['kind']] }">{ {'campaign': 'Campaigns', 'experience': 'Experiences', 'bside': 'B-Sides'}[c['kind']] }</a>
   <span class="client">{c["client"]}. {c["product"]}</span>
   <h1>{c["title"]}</h1>
   <p class="line">{c["line"]}</p>
