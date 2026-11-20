@@ -5,8 +5,6 @@ AOTW = 'https://www.adsoftheworld.com/campaigns/'
 IMG = 'https://image.adsoftheworld.com/'
 
 PRINT = [
- ('soot-city', 'The Soot City Life Expectancy', 'The Extra Step Initiative', '2023', ['yxqir26oqjerez963qobyt8hrjab@1555x2200', '4zcau4eoybak7mx3p1a1ojink19v@1555x2200', 'gxu3eet8t2wndkn1yqvzjmzp6ach@1555x2200', '563wi2fer5ni8ef3wirwwdab4994@1555x2200', 'ghd55jyuejoo464875e02pyc7x9g@1555x2200']),
- ('show-your-true-colours-4a844af1-b475-4b77-803c-14612e36944a', 'Show Your True Colours', 'Dulux Spruce', '2026', ['local:dulux-odogwu-red.jpg@1440x810', 'local:dulux-ajebo-yellow.jpg@1440x810', 'local:dulux-baddie-pink.jpg@1600x900', 'local:dulux-idan-black.jpg@1440x810', 'local:dulux-ijgb-orange.jpg@1440x810', 'local:dulux-old-money-green.jpg@1440x810', 'local:dulux-sarki-brown.jpg@1440x810', 'local:dulux-shakara-purple.jpg@1600x900', 'local:dulux-soft-life-blue.jpg@1440x810', 'local:dulux-steeze-white.jpg@1440x810']),
  ('thirst-for-freedom', 'Thirst for Freedom', 'Bold', '2022', ['1s4bh8kmwhm9131oku2xx07hsbgt@1556x2200', 'h20xtil35646usno7upiv18o93bl@1556x2200', '6e2fslc7cnh0usz76xle1sn59z8l@1556x2200', 'gy2p3ho5b9ldwviswvm2xha6fujs@1556x2200']),
  ('bias-reaction', 'Bias Reaction', 'Bold', '2022', ['m9kt6dy7fiujsuy7e5n65ehla9vl@1555x2200', '2hfh4hdicxo3o44j92pjwegsdzrp@1555x2200', 'wsp8be76gk04jmtc5zz01qjjq5n7@1555x2200', '10mu7z9azs8gyihio0kleh5humlc@1555x2200']),
  ('luxury-foods', 'Luxury Foods', 'Homemade by Edenlife', '2024', ['q2t4fcu0fcaczqsygikc1txuzksf', 's1wdkhaz9uy2uht4xrcg1lsau3zg', 'bon61rnulo95oyahei63q7dlkuvd']),
@@ -40,6 +38,5 @@ PRINT = [
  ('get-relief', 'Get Relief', 'Algafen', '2021', ['vuard0vj92cm0e88mpfjgq9ksr2b', 'vs4zyfjsyutyw2hzef2nc8xjqx32', 'jpayxiuxcvhtcdrzvaxxosjdtj6o']),
  ('fast-relief', 'Fast Relief', 'Algafen', '2021', ['xucgpabawtlkl416i1wggghqx51u', 'mlal8bakufkvqjapqje7rgx5e12p', 'c0egi82n8vtgceb819qstm2ht9zs']),
  ('body-and-mind', 'Body and Mind', 'Mentally Aware Nigeria Initiative', '2021', ['ow21qqvbewn23w3ugc58u8af88p4', 'wiauw8kogra5ac3r0yklcmq7e1bz', 'nr6ewbrkm7j7pr4nx2vqixm1snrq']),
- ('escape-2020', 'Escape 2020', 'X3M Ideas', '2020', ['9pkfnqz9kxhdgaqjrbv1tgwf2wca', 'vnapxt4wzvncz6n9e39dsnlau0la', '1ly13r7y7td29z7l1f8xmi00i414', '46vrxdpqcqcbehw29nyqbjsg54dz', 'twi13gxrcfotlsas8o0v4apvoxt4']),
  ('warrior-waterloo', 'Warrior Waterloo', 'Mentally Aware Nigeria Initiative', '2020', ['mn1lfclwj25yu0kez5106lkl9q3c', 'a9d4uc0rxfdxaj4fqwf2k3n76utl', '4rdvgz654i9i7r70n5mck8o38940']),
 ]

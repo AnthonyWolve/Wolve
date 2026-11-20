@@ -23,6 +23,7 @@ CASES = [
   cover=('img', yt('YRfXQYFTWLc'), yt('YRfXQYFTWLc', 'hqdefault')), hero=('yt', 'YRfXQYFTWLc', 'Watch the case film'),
   story=[('The idea', '<p class="big">We recreated Nigeria’s life expectancy around the soot problem.</p>'),
          ('What happened', '<p>Nigeria’s first Cannes Lion in 70 years, and the first for a Creative Director from West Africa. Grand Prix at the Pitcher Awards and the Luum Awards. A Silver at the Loeries. A shortlist at D&amp;AD.</p><p>The story continued as <em>Soot City</em>, a documentary Wolve co-produced.</p>')],
+  gallery=('aotw', ['yxqir26oqjerez963qobyt8hrjab', '4zcau4eoybak7mx3p1a1ojink19v', 'gxu3eet8t2wndkn1yqvzjmzp6ach', '563wi2fer5ni8ef3wirwwdab4994', 'ghd55jyuejoo464875e02pyc7x9g'], 'Key visuals'),
   nums=[('Cannes', 'Bronze Lion, 2023'), ('3', 'Grand Prix, Pitcher and Luum Awards'), ('Silver', 'Loeries, 2023'), ('D&amp;AD', 'Shortlist, 2023')],
   links=[('The case film on YouTube', 'https://www.youtube.com/watch?v=YRfXQYFTWLc', 'YouTube'), ('D&amp;AD Awards archive', 'https://dandad.org/awards/professional/2023/236680/the-soot-life-expectancy', 'D&amp;AD'), ('Loeries 2023 winners', 'https://www.bizcommunity.com/Article/196/614/242580.html', 'Bizcommunity')]),
 
@@ -33,7 +34,7 @@ CASES = [
   story=[('The brief', '<p>Christmas 2020. COVID restrictions tightened and families were told to stay home for the holidays. Nigerians agreed on one thing: they could not wait to see the back of the year.</p>'),
          ('The idea', '<p class="big">Instead of Christmas cards, a board game.</p><p>Escape 2020 squeezed the year into 365 blocks, one for every day. Lockdowns, looting, #EndSARS, the Beirut blast, wildfires. Every big moment of the year, local and global, waiting to be dodged with a roll of the dice.</p><p>Sent to clients and friends of the agency. Now everyone could escape 2020, at least in their heads.</p>')],
   nums=[('365', 'blocks, one for every day of the year')],
-  gallery=('aotw', ['9pkfnqz9kxhdgaqjrbv1tgwf2wca', 'vnapxt4wzvncz6n9e39dsnlau0la', '1ly13r7y7td29z7l1f8xmi00i414', '46vrxdpqcqcbehw29nyqbjsg54dz', 'twi13gxrcfotlsas8o0v4apvoxt4'], 'The game'),
+  gallery=('aotw', ['9pkfnqz9kxhdgaqjrbv1tgwf2wca', 'vnapxt4wzvncz6n9e39dsnlau0la', '1ly13r7y7td29z7l1f8xmi00i414', '46vrxdpqcqcbehw29nyqbjsg54dz', 'twi13gxrcfotlsas8o0v4apvoxt4'], 'Key visuals'),
   links=[('The case on Ads of the World', 'https://www.adsoftheworld.com/campaigns/escape-2020', 'Ads of the World')]),
 
  dict(slug='camon-50', kind='campaign', client='TECNO', product='Camon 50 launch', title='Zoom In. Level Up.',
@@ -87,7 +88,7 @@ CASES = [
          ('The idea', '<p class="big">For the first time in the brand’s 95 year history, colour naming left global headquarters and came home.</p><p>Colour psychologists, consultants, Gen Z voices and pop culture minds met in one room in Lagos. Ten colours. Ten names Nigeria already speaks. Each one cast as a character and shot by one of the country’s foremost fashion photographers.</p>'),
          ('The build', '<p>Made in house at UACN. Digital, outdoor and film.</p>')],
   nums=[('10', 'colours, named in Lagos'), ('1st', 'time in 95 years the names left HQ')],
-  gallery=('wide', [('ajebo-yellow', 'Àjẹbọ Yellow'), ('baddie-pink', 'Baddie Pink'), ('idan-black', 'Ìdán Black'), ('ijgb-orange', 'IJGB Orange'), ('odogwu-red', 'Odogwu Red'), ('old-money-green', 'Old Money Green'), ('sarki-brown', 'Sarki Brown'), ('shakara-purple', 'Shakara Purple'), ('soft-life-blue', 'Soft Life Blue'), ('steeze-white', 'Steeze White')], 'Ten colours. Scroll sideways.'),
+  gallery=('wide', [('ajebo-yellow', 'Àjẹbọ Yellow'), ('baddie-pink', 'Baddie Pink'), ('idan-black', 'Ìdán Black'), ('ijgb-orange', 'IJGB Orange'), ('odogwu-red', 'Odogwu Red'), ('old-money-green', 'Old Money Green'), ('sarki-brown', 'Sarki Brown'), ('shakara-purple', 'Shakara Purple'), ('soft-life-blue', 'Soft Life Blue'), ('steeze-white', 'Steeze White')], 'Key visuals. Ten colours, ten names'),
   links=[('The case on Ads of the World', 'https://www.adsoftheworld.com/campaigns/show-your-true-colours-4a844af1-b475-4b77-803c-14612e36944a', 'Ads of the World')]),
 
  dict(slug='afcon-banter', kind='campaign', client='DStv × AFCON', product='Always on social', title='AFCON Banter.',
@@ -108,6 +109,7 @@ CASES = [
          ('The insight', '<p class="big">The future belongs to the young. Smoking cuts it short.</p><p>Today’s kids are tomorrow’s CEOs, founders and doctors. Start smoking early and the ambition burns with the cigarette.</p>'),
          ('The idea', '<p>We took it to the format Nigeria loves most. A 26 episode Nollywood telenovela about the dangers of smoking, backed by TV, outdoor and social.</p><p>And Nigeria’s first burning billboard. Children’s dreams, literally going up in smoke. Fire ran through every execution, so nobody could scroll or drive past.</p>')],
   nums=[('26', 'episode Nollywood telenovela'), ('1st', 'burning billboard in Nigeria')],
+  gallery=('aotw', ['fekjgy45a0zt955wt6dusdbb08hq'], 'Key visual'),
   links=[('The case on Ads of the World', 'https://www.adsoftheworld.com/campaigns/don-t-burn-their-future', 'Ads of the World')]),
 
  dict(slug='pepsi-naija-all-the-way', kind='campaign', client='Pepsi', product='World Cup campaign', title='Naija All the Way.',
@@ -232,7 +234,7 @@ def img(src, R, alt='', fb=None, lazy=True, cls=''):
 
 def cover(c, R, lazy=True):
     k = c['cover']
-    if k[0] == 'img': return img(k[1], R, '', k[2], lazy)
+    if k[0] == 'img': return img(k[1], R, c['title'], k[2], lazy)
     return f'<div class="cover {k[3]}"><b>{k[1]}</b><span>{k[2]}</span></div>'
 
 def page(path, title, desc, body, current='', reel=False, R=None):
@@ -252,11 +254,11 @@ def page(path, title, desc, body, current='', reel=False, R=None):
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(desc)}">
 <meta property="og:image" content="{R}assets/portrait.jpg">
-<meta name="theme-color" content="#05070C">
+<meta name="theme-color" content="#FFFFFF">
 <link rel="preload" href="{R}assets/fonts/schibsted-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{R}assets/site.css">
 </head>
-<body>
+<body{' class=home' if reel else ''}>
 <a class="skip" href="#main">Skip to content</a>
 <header class="top">
   <div class="wrap">
@@ -289,9 +291,22 @@ def page(path, title, desc, body, current='', reel=False, R=None):
     os.makedirs(os.path.dirname(full), exist_ok=True)
     with open(full, 'w') as f: f.write(out)
 
-def row(c, R, show_kind=False):
-    return (f'<a class="row" href="{R}work/{c["slug"]}/" data-k="{c["kind"]}"><span class="thumb">{cover(c, R)}</span>'
-            f'<h3>{c["title"]}</h3><span class="c">{c["client"]}. {c["product"]}</span><span class="y">{c["year"]}</span></a>')
+def row(c, R, show_kind=False, lazy=True):
+    return (f'<a class="tile" href="{R}work/{c["slug"]}/"><span class="th">{cover(c, R, lazy)}</span>'
+            f'<span class="tm"><span>{c["client"]}</span><span>{c["year"]}</span></span>'
+            f'<h3>{c["title"].rstrip(".")}</h3><span class="ts">{c["product"]}</span></a>')
+
+def visuals(srcs, title, R):
+    full = [aotw(x, R) if x.startswith('AOTW:') else R + x for x in srcs]
+    def thumb(x, f):
+        if x.startswith('AOTW:') and os.path.exists(os.path.join(ROOT, 'assets', 'print', 'thumb', x[5:] + '.jpg')):
+            return R + 'assets/print/thumb/' + x[5:] + '.jpg'
+        return f
+    data = esc(json.dumps(full))
+    return '<div class="vis">' + ''.join(
+        f'<button data-imgs="{data}" data-start="{k}" data-cap="{esc(title)}" data-meta="{k + 1} of {len(full)}" aria-label="Open {esc(title)} visual {k + 1}">'
+        f'<img src="{thumb(x, f)}" alt="{esc(title)}, key visual {k + 1}" loading="lazy" decoding="async"></button>'
+        for k, (x, f) in enumerate(zip(srcs, full))) + '</div>'
 
 def segnav(R, cur):
     tabs = [('work/', 'Campaigns', len(CAMPAIGNS)), ('work/experiences/', 'Experiences', len(EXPERIENCES)), ('work/key-visuals/', 'Key visuals', len(PRINT))]
@@ -360,7 +375,7 @@ def home():
 </section>
 <section class="wrap band" style="padding-top:0">
   <div class="shead"><h2>Selected work</h2><a href="work/">All campaigns, experiences and key visuals</a></div>
-  <div class="list">{rows}</div>
+  <div class="tiles">{rows}</div>
 </section>
 <section class="stageband">
   <div class="wrap">
@@ -376,20 +391,20 @@ def home():
   <div class="shead"><h2>Key visuals</h2><a href="work/key-visuals/">See every poster</a></div>
   <div class="strip">{strip}</div>
 </section>
-<div class="peek" aria-hidden="true"></div>'''
+'''
     page('', 'Wolve. Anthony Eigbe, Chief Creative Officer', 'Anthony Wolve Eigbe. Chief Creative Officer, TECNO Mobile West Africa. The first Creative Director in West Africa to win a Cannes Lion.', body, reel=True)
 
 def work_index():
     R = '../'
-    rows = ''.join(row(BY[k], R) for k in CAMPAIGNS)
+    rows = ''.join(row(BY[k], R, lazy=i > 3) for i, k in enumerate(CAMPAIGNS))
     body = f'''
 <section class="wrap phead">
   <h1>Work</h1>
   <p>Launches, causes and culture. Built as systems, not spots.</p>
   {segnav(R, 'work/')}
 </section>
-<section class="wrap band" style="padding-top:0"><div class="list">{rows}</div></section>
-<div class="peek" aria-hidden="true"></div>'''
+<section class="wrap band" style="padding-top:0"><div class="tiles">{rows}</div></section>
+'''
     page('work/', 'Campaigns. Wolve', 'Campaigns by Anthony Wolve Eigbe.', body, 'work/')
     R = '../../'
     rows = ''.join(row(BY[k], R) for k in EXPERIENCES)
@@ -399,8 +414,8 @@ def work_index():
   <p>Brands people can stand inside. Sponsorships, launches and live events.</p>
   {segnav(R, 'work/experiences/')}
 </section>
-<section class="wrap band" style="padding-top:0"><div class="list">{rows}</div></section>
-<div class="peek" aria-hidden="true"></div>'''
+<section class="wrap band" style="padding-top:0"><div class="tiles">{rows}</div></section>
+'''
     page('work/experiences/', 'Experiences. Wolve', 'Experiences and events by Anthony Wolve Eigbe.', body, 'work/')
 
 def case(c, i):
@@ -427,9 +442,9 @@ def case(c, i):
         if kind == 'loops':
             inner = '<div class="loops">' + ''.join(f'<figure><video src="{R}assets/{k}.mp4" poster="{R}assets/{k}.jpg" muted loop playsinline preload="none" data-auto></video><figcaption>{t}</figcaption></figure>' for k, t in items) + '</div>'
         elif kind == 'aotw':
-            inner = '<div class="wide">' + ''.join(f'<figure>{img(aotw("AOTW:" + i, R), R, c["title"] + " key visual")}</figure>' for i in items) + '</div>'
+            inner = visuals(['AOTW:' + i for i in items], c['title'].rstrip('.'), R)
         else:
-            inner = '<div class="wide">' + ''.join(f'<figure>{img(f"assets/dulux-{k}.jpg", R, f"Dulux Spruce poster, {n}")}<figcaption>{n}</figcaption></figure>' for k, n in items) + '</div>'
+            inner = visuals([f'assets/dulux-{k}.jpg' for k, n in items], c['title'].rstrip('.'), R)
         gal = f'<section class="wrap blk"><h2>{label}</h2>{inner}</section>'
     links = ''
     if c.get('links'):

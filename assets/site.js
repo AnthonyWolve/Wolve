@@ -92,18 +92,19 @@ if (wall) {
   dbtn.forEach(b => b.addEventListener('click', () => setD(b.dataset.d)));
   let d = 'm'; try { d = localStorage.getItem('wolve-density') || 'm'; } catch (e) {}
   setD(d);
-  $$('button', wall).forEach(b => b.addEventListener('click', () => {
-    const imgs = JSON.parse(b.dataset.imgs || '[]'); let k = 0;
+}
+{
+  $$('[data-imgs]').forEach(b => b.addEventListener('click', () => {
+    const imgs = JSON.parse(b.dataset.imgs || '[]'); let k = +(b.dataset.start || 0);
     const draw = () => {
       const many = imgs.length > 1;
-      dbody.innerHTML = `<div class="lb"><img src="${imgs[k]}" alt="${b.dataset.cap}, ${k + 1} of ${imgs.length}"><div class="bar"><span><b>${b.dataset.cap}</b> ${b.dataset.meta}</span><span class="nav2">${many ? `<button class="x" data-s="-1">Previous</button><span class="q">${k + 1} of ${imgs.length}</span><button class="x" data-s="1">Next</button>` : ''}<a href="${b.dataset.link}" target="_blank" rel="noopener">Ads of the World ↗</a></span></div></div>`;
+      dbody.innerHTML = `<div class="lb"><img src="${imgs[k]}" alt="${b.dataset.cap}, ${k + 1} of ${imgs.length}"><div class="bar"><span><b>${b.dataset.cap}</b> ${b.dataset.link ? b.dataset.meta : ''}</span><span class="nav2">${many ? `<button class="x" data-s="-1">Previous</button><span class="q">${k + 1} of ${imgs.length}</span><button class="x" data-s="1">Next</button>` : ''}${b.dataset.link ? `<a href="${b.dataset.link}" target="_blank" rel="noopener">Ads of the World ↗</a>` : ''}</span></div></div>`;
       $$('[data-s]', dbody).forEach(n => n.addEventListener('click', () => { k = (k + +n.dataset.s + imgs.length) % imgs.length; draw(); }));
       imgs.forEach((u, i) => { if (Math.abs(i - k) === 1) { const p = new Image(); p.src = u; } });
     };
     dlg.onkeydown = e => { if (imgs.length > 1 && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) { k = (k + (e.key === 'ArrowRight' ? 1 : -1) + imgs.length) % imgs.length; draw(); } };
     draw(); dlg.showModal();
   }));
-  if (fine) $$('video', wall).forEach(v => { const b = v.closest('button'); b.addEventListener('mouseenter', () => play(v)); b.addEventListener('mouseleave', () => v.pause()); });
 }
 
 // autoplay loops that are meant to run, only while visible
