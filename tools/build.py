@@ -251,15 +251,13 @@ def home():
         strip += f'<a href="frames/"><div class="ph">{media}</div><span>{cap}</span></a>'
     body = f'''
 <script>if(/[?&]for=/.test(location.search))location.replace('cig/'+location.search+location.hash)</script>
-<section class="reel" aria-label="Featured work">
-  {slides}
-  <div class="reel-ui wrap">
-    <h1 class="name" aria-label="Wolve"><span>Wolve</span></h1>
-    <div class="reel-row">
-      <p>Chief Creative Officer, TECNO Mobile West Africa. The first Creative Director in West Africa to win a Cannes Lion.</p>
-      <div class="now" aria-live="polite"></div>
-      <div class="dots">{dots}</div>
-    </div>
+<section class="poster" aria-label="Wolve">
+  <img class="pbg" src="assets/hero.jpg" alt="Wolve in a brown double breasted suit, lighting a cigar in a dark doorway" width="2400" height="1600" fetchpriority="high">
+  <h1 class="pname" aria-label="Wolve"><span>Wolve</span></h1>
+  <img class="pcut" src="assets/hero-cut.webp" alt="" aria-hidden="true" width="2400" height="1600">
+  <div class="pfoot wrap">
+    <p>Chief Creative Officer, TECNO Mobile West Africa. The first Creative Director in West Africa to win a Cannes Lion.</p>
+    <a class="btn" href="work/">See the work</a>
   </div>
 </section>
 <section class="wrap intro">

@@ -18,6 +18,7 @@ if (menu) menu.addEventListener('click', () => {
 // broken remote thumbs fall back to a local frame
 $$('img[data-fb]').forEach(i => i.addEventListener('error', () => { if (i.dataset.fb && i.src.indexOf(i.dataset.fb) < 0) i.src = i.dataset.fb; }, { once: false }));
 
+requestAnimationFrame(() => requestAnimationFrame(() => document.body.classList.add('loaded')));
 // hero reel
 const reel = $('.reel');
 if (reel) {
