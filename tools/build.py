@@ -216,7 +216,7 @@ CASES = [
   links=[('Listen to the album', 'https://mad.ffm.to/the_xperiment_album', 'All platforms'), ('X3M Ideas sets record with all staff album', 'https://guardian.ng/saturday-magazine/youth-magazine/x3m-ideas-sets-record-with-all-staff-album-the-xperiment/', 'The Guardian'), ('Inside the listening party', 'https://www.thisdaylive.com/2023/04/02/x3m-ideas-exhibits-unusual-talents-at-the-xperiment-listening-party/', 'ThisDay')]),
 
  dict(slug='soot-city', kind='bside', client='The Extra Step Initiative', product='Documentary', title='Soot City.',
-  year='', role='Co-producer', market='Nigeria',
+  year='2023', role='Co-producer', market='Nigeria',
   line='The campaign ended. The soot didn’t. So we made a film.',
   cover=('img', yt('fwGqgH3jJJA'), 'assets/docs/soot-city.jpg'), hero=('yt', 'fwGqgH3jJJA', 'Watch the trailer'),
   story=[('The film', '<p class="big">Soot Life Expectancy put a number on the problem. Soot City puts faces to it.</p><p>A documentary that carries the story past the campaign and into the lives of the people breathing the soot. Wolve co-produced it.</p>'),
