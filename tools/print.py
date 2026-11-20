@@ -23,4 +23,5 @@ PRINT = [
  ('festive-trash', 'Festive Trash', 'Recycle Edge', '2023', ['45vue3juu155hm7txnpub8wjtqlu@1760x2200', 'gfhexi87bp32oat35wewi8v4ghoj@1760x2200', '28fssaa3zxze222u1hqmr21h72by@1760x2200']),
  ('vote-for-your-future', 'Vote for Your Future', 'Neusroom', '2023', ['0hjhg3ke5tjy1ss1q2wnuj87fis9@1760x2200', '6g1bq6q3s1qvad654xi5v8bzdiv8@1760x2200', '1mcz5cx3gzmw9wgyfe1mm3tw12eo@1760x2200']),
  ('the-unwanted-pet', 'The Unwanted Pet', 'Mortein', '2024', ['0peggock2a67mtei2ieusbnra83i@1920x1080', 'gl8296iwddwqmxt4jkhkfow7p9zr@1920x1080', 'ygo3iskl5pt6vzc6jgsirjzlkfj4@1920x1080']),
+ ('', 'Forgiven', 'X3M Ideas', '2020', ['x3m-forgiven-1@915x646', 'x3m-forgiven-2@394x392', 'x3m-forgiven-3@396x392', 'x3m-forgiven-4@400x392']),
 ]

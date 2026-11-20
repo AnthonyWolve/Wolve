@@ -22,10 +22,12 @@ CASES = [
   line='Nigeria’s first Cannes Lion in 70 years.',
   cover=('img', yt('YRfXQYFTWLc'), yt('YRfXQYFTWLc', 'hqdefault')), hero=('yt', 'YRfXQYFTWLc', 'Watch the case film'),
   story=[('The idea', '<p class="big">We recreated Nigeria’s life expectancy around the soot problem.</p>'),
-         ('What happened', '<p>Nigeria’s first Cannes Lion in 70 years, and the first for a Creative Director from West Africa. Grand Prix at the Pitcher Awards and the Luum Awards. A Silver at the Loeries. A shortlist at D&amp;AD.</p><p>The story continued as <em>Soot City</em>, a documentary Wolve co-produced.</p>')],
+         ('What happened', '<p>Nigeria’s first Cannes Lion in 70 years, and the first for a Creative Director from West Africa. Grand Prix at the Pitcher Awards and the Luum Awards. A Silver at the Loeries. A shortlist at D&amp;AD.</p>'),
+         ('The documentary', '<p>The campaign became a film. <em>Soot City</em> takes the story past the campaign and into the lives of the people breathing the soot. Wolve co-produced it.</p>')],
+  films=[('fwGqgH3jJJA', 'Watch the Soot City trailer', 'assets/docs/soot-city.jpg')],
   gallery=('aotw', ['yxqir26oqjerez963qobyt8hrjab', '4zcau4eoybak7mx3p1a1ojink19v', 'gxu3eet8t2wndkn1yqvzjmzp6ach', '563wi2fer5ni8ef3wirwwdab4994', 'ghd55jyuejoo464875e02pyc7x9g'], 'Key visuals'),
   nums=[('Cannes', 'Bronze Lion, 2023'), ('3', 'Grand Prix, Pitcher and Luum Awards'), ('Silver', 'Loeries, 2023'), ('D&amp;AD', 'Shortlist, 2023')],
-  links=[('The case film on YouTube', 'https://www.youtube.com/watch?v=YRfXQYFTWLc', 'YouTube'), ('D&amp;AD Awards archive', 'https://dandad.org/awards/professional/2023/236680/the-soot-life-expectancy', 'D&amp;AD'), ('Loeries 2023 winners', 'https://www.bizcommunity.com/Article/196/614/242580.html', 'Bizcommunity')]),
+  links=[('The case film on YouTube', 'https://www.youtube.com/watch?v=YRfXQYFTWLc', 'YouTube'), ('D&amp;AD Awards archive', 'https://dandad.org/awards/professional/2023/236680/the-soot-life-expectancy', 'D&amp;AD'), ('Loeries 2023 winners', 'https://www.bizcommunity.com/Article/196/614/242580.html', 'Bizcommunity'), ('The Soot City trailer', 'https://www.youtube.com/watch?v=fwGqgH3jJJA', 'YouTube')]),
 
  dict(slug='escape-2020', kind='campaign', client='X3M Ideas', product='Christmas board game', title='Escape 2020.',
   year='2020', role='Deputy Creative Director, X3M Ideas', market='Nigeria',
@@ -213,6 +215,15 @@ CASES = [
   nums=[('8', 'tracks'), ('1st', 'all staff album by a Nigerian creative agency')],
   links=[('Listen to the album', 'https://mad.ffm.to/the_xperiment_album', 'All platforms'), ('X3M Ideas sets record with all staff album', 'https://guardian.ng/saturday-magazine/youth-magazine/x3m-ideas-sets-record-with-all-staff-album-the-xperiment/', 'The Guardian'), ('Inside the listening party', 'https://www.thisdaylive.com/2023/04/02/x3m-ideas-exhibits-unusual-talents-at-the-xperiment-listening-party/', 'ThisDay')]),
 
+ dict(slug='awon-boyz', kind='bside', client='Zero Degrees', product='Netflix documentary', title='Awon Boyz.',
+  year='2019', role='Promotion', market='Nigeria',
+  line='The real lives behind the label “area boy”. Now on Netflix.',
+  cover=('img', yt('7TJ0I09K6zI'), 'assets/bsides/awon-boyz.jpg'), hero=('yt', '7TJ0I09K6zI', 'Watch the trailer'),
+  story=[('The film', '<p class="big">Lagos calls them area boys. This film asked who they are.</p><p>A 38 minute documentary by Tolu Itegboje that follows eight young men across Oshodi, Monkey Village and the New Afrika Shrine. Their dreams, their fears, their hustle.</p>'),
+         ('The run', '<p>Selected for iREP, the Slum Film Festival and Lights Camera Africa in 2019. Premiered on Netflix in April 2021, then went global. Wolve worked on the promotion.</p>')],
+  nums=[('Netflix', 'streaming globally since 2021')],
+  links=[('The trailer on YouTube', 'https://www.youtube.com/watch?v=7TJ0I09K6zI', 'YouTube'), ('Watch on Netflix', 'https://www.netflix.com/title/81412226', 'Netflix')]),
+
  dict(slug='for-the-next-ones', kind='bside', client='Wolve', product='Teaching in public', title='For the Next Ones.',
   year='Ongoing', role='Creator', market='Online',
   line='Marketing, advertising and creativity, taught in public.',
@@ -225,7 +236,7 @@ BY = {c['slug']: c for c in CASES}
 CAMPAIGNS = ['soot-life-expectancy', 'dulux-spruce', 'escape-2020', 'camon-50', 'lyrics-of-innocence', 'spark-50-pro', 'burning-billboard',
              'pepsi-naija-all-the-way', 'one-language', 'h2oh-water-is-gonna-be-jealous', 'voices-in-my-air', 'big-brother-titans', 'biggieverse', 'afcon-banter']
 EXPERIENCES = ['power-your-moment', 'coke-island', 'heineken-lfdw', 'star-mega-jamz']
-BSIDES = ['door-openers', 'the-xperiment', 'for-the-next-ones']
+BSIDES = ['door-openers', 'the-xperiment', 'awon-boyz', 'for-the-next-ones']
 CASES = [BY[k] for k in CAMPAIGNS + EXPERIENCES + BSIDES]
 
 # hero reel on the home page
@@ -490,6 +501,7 @@ def case(c, i):
     else:
         hero = '<div class="wrap hero-media"><div class="tiks">' + ''.join(f'<figure><div class="tk"><iframe src="https://www.tiktok.com/player/v1/{t}?description=0&music_info=0&rel=0" title="TikTok video, {esc(cap)}" allow="fullscreen" loading="lazy"></iframe></div><figcaption>{cap}</figcaption></figure>' for t, cap in h[1]) + '</div></div>'
     story = ''.join(f'<section><h2>{t}</h2>{b}</section>' for t, b in c['story'])
+    films = ''.join(f'<div class="wrap hero-media" style="margin-bottom:72px"><div class="film">{img(yt(v), R, "", fb, lazy=True)}<button class="play" data-inline="{v}"><span class="pb">{PLAY}</span><span class="t">{lab}</span></button></div></div>' for v, lab, fb in c.get('films', []))
     nums = ''.join(f'<div><b>{n}</b><span>{l}</span></div>' for n, l in c['nums'])
     nums = f'<aside class="nums" aria-label="Results">{nums}</aside>' if nums else ''
     gal = ''
@@ -519,7 +531,7 @@ def case(c, i):
   <div class="meta">{''.join(f'<div><span>{k}</span><b>{v}</b></div>' for k, v in (('Client', c['client']), ('Role', c['role']), ('Year', c['year']), ('Market', c['market'])) if v)}</div>
 </section>
 {hero}
-<section class="wrap body"><div class="story">{story}</div>{nums}</section>
+<section class="wrap body"><div class="story">{story}</div>{nums}</section>{films}
 {gal}
 {links}
 <a class="next" href="{R}work/{n["slug"]}/"><div class="wrap"><span>Next case</span><b>{n["title"]}</b></div></a>'''
