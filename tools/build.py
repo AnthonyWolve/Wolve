@@ -191,7 +191,7 @@ REEL = [('story', 'assets/portrait.jpg', None, '50% 16%'),
         ('camon-50', yt('MpLT0Zwru7g'), 'assets/camon-3.jpg', None),
         ('afcon-banter', yt('ji0zwCqNh9U'), yt('ji0zwCqNh9U', 'hqdefault'), None)]
 
-STAGES = [('Cannes Lions', 'Shortlist jury', '2026'), ('TEDxEnugu', 'Speaker. AI Has No Accent', '2026'),
+STAGES = [('Cannes Lions', 'Shortlist jury, Outdoor Lions', '2026'), ('TEDxEnugu', 'Speaker. AI Has No Accent', '2026'),
           ('TECNO Next Gen Lab', 'Founder and host. Marketing training for TECNO’s marketing team, with industry facilitators', '2026'),
           ('Podfest Naija', 'Panelist', ''), ('The Work Summit', 'Panelist', ''),
           ('CreditDirect', 'Creative workshop', ''),
@@ -206,6 +206,7 @@ CAREER = [('2025 to now', 'TECNO Mobile', 'Chief Creative Officer, West Africa',
           ('2011 to 2014', 'Bates Cosse', 'Copywriter, then Lead Copywriter', 'Lead copywriter for Intel West Africa.')]
 
 AWARDS = ['Cannes Lions winner, 2023. The first Creative Director from West Africa to win one',
+          'Cannes Lions 2026 jury, Outdoor Lions shortlisting',
           'Creative Director of the Year, twice',
           'Marketing Edge Creative Personality of the Year, 2023',
           'Wins at Pitcher, LAIF, Loeries, Epica and Luum',
@@ -512,6 +513,15 @@ def stage():
   {img('assets/tedx-bw2.jpg', R, 'Speaking in front of the TEDxEnugu sign')}
   {img('assets/tedx-colour.jpg', R, 'On the red stage at TEDxEnugu')}
 </div></section>
+<section class="wrap jury">
+  <div class="ph">{img('assets/cannes-jury-2026.jpg', R, 'Official Cannes Lions 2026 jury poster: Anthony Eigbe, Outdoor Lions shortlisting, TECNO Mobile Global, Nigeria')}</div>
+  <div class="story">
+    <span class="client">Cannes Lions 2026</span>
+    <h2>Outdoor Lions jury.</h2>
+    <p class="big">From winning a Lion to judging them.</p>
+    <p>Wolve sat on the 2026 shortlisting jury for Outdoor Lions at the Cannes Lions International Festival of Creativity, representing TECNO Mobile Global and Nigeria.</p>
+  </div>
+</section>
 <section class="wrap blk">
   <div class="shead"><h2>More stages</h2></div>
   <ul class="rows">{rows}</ul>

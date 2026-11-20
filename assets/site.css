@@ -375,3 +375,12 @@ dialog .x{color:#C9C5BC}dialog .x:hover{color:#fff}dialog .q{color:#9A9DA5}
 .vis button:hover img{opacity:.85}
 @media(max-width:900px){.vis{columns:2}}
 @media(max-width:600px){.segs{gap:16px}.segs a{font-size:17px}}
+
+/* cannes jury */
+.jury{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,1fr) minmax(0,6fr);align-items:center;padding-block:clamp(56px,6vw,96px);border-top:1px solid var(--rule)}
+.jury .ph{grid-column:1;aspect-ratio:4/5;overflow:hidden;background:var(--panel)}
+.jury .ph img{width:100%;height:100%;object-fit:cover}
+.jury .story{grid-column:3}
+.jury .client{display:block;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--ash)}
+.jury h2{font-size:clamp(44px,5.6vw,92px);line-height:.9;letter-spacing:-.05em;font-weight:900;margin:10px 0 24px}
+@media(max-width:860px){.jury{grid-template-columns:1fr;gap:32px}.jury .story{grid-column:1}}
