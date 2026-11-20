@@ -83,7 +83,7 @@ CASES = [
  dict(slug='dulux-spruce', kind='campaign', client='Dulux Spruce', product='Brand launch', title='Show Your True Colours.',
   year='2026', role='VP Creative and Communications, UACN', market='Nigeria',
   line='For the first time in 95 years, Dulux colour names were made in Lagos.',
-  cover=('img', 'assets/dulux-odogwu-red.jpg', None), hero=('img', 'assets/dulux-odogwu-red.jpg', 'Odogwu Red, from the Dulux Spruce campaign'),
+  cover=('img', 'assets/dulux-old-money-green.jpg', None), hero=('img', 'assets/dulux-odogwu-red.jpg', 'Odogwu Red, from the Dulux Spruce campaign'),
   story=[('The brief', '<p>A new Dulux brand, built for young Nigerians at a price within reach. But the colour names came from somewhere else. Neptune Seas. Wholemeal Honey. Lovely words. Hollow ones.</p>'),
          ('The idea', '<p class="big">For the first time in the brand’s 95 year history, colour naming left global headquarters and came home.</p><p>Colour psychologists, consultants, Gen Z voices and pop culture minds met in one room in Lagos. Ten colours. Ten names Nigeria already speaks. Each one cast as a character and shot by one of the country’s foremost fashion photographers.</p>'),
          ('The build', '<p>Made in house at UACN. Digital, outdoor and film.</p>')],
