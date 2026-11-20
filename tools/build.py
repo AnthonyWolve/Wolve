@@ -215,6 +215,15 @@ CASES = [
   nums=[('8', 'tracks'), ('1st', 'all staff album by a Nigerian creative agency')],
   links=[('Listen to the album', 'https://mad.ffm.to/the_xperiment_album', 'All platforms'), ('X3M Ideas sets record with all staff album', 'https://guardian.ng/saturday-magazine/youth-magazine/x3m-ideas-sets-record-with-all-staff-album-the-xperiment/', 'The Guardian'), ('Inside the listening party', 'https://www.thisdaylive.com/2023/04/02/x3m-ideas-exhibits-unusual-talents-at-the-xperiment-listening-party/', 'ThisDay')]),
 
+ dict(slug='soot-city', kind='bside', client='The Extra Step Initiative', product='Documentary', title='Soot City.',
+  year='', role='Co-producer', market='Nigeria',
+  line='The campaign ended. The soot didn’t. So we made a film.',
+  cover=('img', yt('fwGqgH3jJJA'), 'assets/docs/soot-city.jpg'), hero=('yt', 'fwGqgH3jJJA', 'Watch the trailer'),
+  story=[('The film', '<p class="big">Soot Life Expectancy put a number on the problem. Soot City puts faces to it.</p><p>A documentary that carries the story past the campaign and into the lives of the people breathing the soot. Wolve co-produced it.</p>'),
+         ('Where it started', '<p>It grew out of <a href="../soot-life-expectancy/">Soot Life Expectancy</a>, the campaign that won Nigeria its first Cannes Lion in 70 years.</p>')],
+  nums=[],
+  links=[('The trailer on YouTube', 'https://www.youtube.com/watch?v=fwGqgH3jJJA', 'YouTube'), ('The campaign: Soot Life Expectancy', '../soot-life-expectancy/', 'Case study')]),
+
  dict(slug='awon-boyz', kind='bside', client='Zero Degrees', product='Netflix documentary', title='Awon Boyz.',
   year='2019', role='Promotion', market='Nigeria',
   line='The real lives behind the label “area boy”. Now on Netflix.',
@@ -236,7 +245,7 @@ BY = {c['slug']: c for c in CASES}
 CAMPAIGNS = ['soot-life-expectancy', 'dulux-spruce', 'escape-2020', 'camon-50', 'lyrics-of-innocence', 'spark-50-pro', 'burning-billboard',
              'pepsi-naija-all-the-way', 'one-language', 'h2oh-water-is-gonna-be-jealous', 'voices-in-my-air', 'big-brother-titans', 'biggieverse', 'afcon-banter']
 EXPERIENCES = ['power-your-moment', 'coke-island', 'heineken-lfdw', 'star-mega-jamz']
-BSIDES = ['door-openers', 'the-xperiment', 'awon-boyz', 'for-the-next-ones']
+BSIDES = ['door-openers', 'the-xperiment', 'soot-city', 'awon-boyz', 'for-the-next-ones']
 CASES = [BY[k] for k in CAMPAIGNS + EXPERIENCES + BSIDES]
 
 # hero reel on the home page
