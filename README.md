@@ -9,7 +9,7 @@ The portfolio of Anthony Wolve Eigbe. Chief Creative Officer, Lagos.
 | Home | `/` | Hero reel, selected work, stage, frames |
 | Work | `/work/` | Every campaign and experience, plus earlier films |
 | Case studies | `/work/<name>/` | One page per campaign |
-| Frames | `/frames/` | The visual gallery, with a small, medium and large grid |
+| Print Room | `/print/` | Print, poster and outdoor ads, one card per campaign. Content lives in `tools/print.py` |
 | Stage | `/stage/` | TEDxEnugu, juries, panels and workshops |
 | Story | `/story/` | Bio, career, recognition, brands |
 | Let's talk | `/contact/` | Email and socials |

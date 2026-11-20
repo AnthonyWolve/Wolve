@@ -77,7 +77,7 @@ $$('[data-inline]').forEach(b => b.addEventListener('click', () => {
 const dlg = $('#dlg'), dbody = $('#dbody');
 const openD = html => { dbody.innerHTML = html; dlg.showModal(); $$('video', dbody).forEach(play); };
 if (dlg) {
-  dlg.addEventListener('close', () => { dbody.innerHTML = ''; });
+  dlg.addEventListener('close', () => { dbody.innerHTML = ''; dlg.onkeydown = null; });
   dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
   $('#dx').addEventListener('click', () => dlg.close());
 }
@@ -93,10 +93,15 @@ if (wall) {
   let d = 'm'; try { d = localStorage.getItem('wolve-density') || 'm'; } catch (e) {}
   setD(d);
   $$('button', wall).forEach(b => b.addEventListener('click', () => {
-    const v = $('video', b), img = $('img', b);
-    const media = v ? `<video src="${v.getAttribute('src')}" muted loop playsinline autoplay></video>` : `<img src="${img.currentSrc || img.src}" alt="${img.alt}">`;
-    const link = b.dataset.case ? `<a href="${b.dataset.case}">See the case</a>` : '';
-    openD(`<div class="lb">${media}<div class="bar"><span>${b.dataset.cap}</span>${link}</div></div>`);
+    const imgs = JSON.parse(b.dataset.imgs || '[]'); let k = 0;
+    const draw = () => {
+      const many = imgs.length > 1;
+      dbody.innerHTML = `<div class="lb"><img src="${imgs[k]}" alt="${b.dataset.cap}, ${k + 1} of ${imgs.length}"><div class="bar"><span><b>${b.dataset.cap}</b> ${b.dataset.meta}</span><span class="nav2">${many ? `<button class="x" data-s="-1">Previous</button><span class="q">${k + 1} of ${imgs.length}</span><button class="x" data-s="1">Next</button>` : ''}<a href="${b.dataset.link}" target="_blank" rel="noopener">Ads of the World ↗</a></span></div></div>`;
+      $$('[data-s]', dbody).forEach(n => n.addEventListener('click', () => { k = (k + +n.dataset.s + imgs.length) % imgs.length; draw(); }));
+      imgs.forEach((u, i) => { if (Math.abs(i - k) === 1) { const p = new Image(); p.src = u; } });
+    };
+    dlg.onkeydown = e => { if (imgs.length > 1 && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) { k = (k + (e.key === 'ArrowRight' ? 1 : -1) + imgs.length) % imgs.length; draw(); } };
+    draw(); dlg.showModal();
   }));
   if (fine) $$('video', wall).forEach(v => { const b = v.closest('button'); b.addEventListener('mouseenter', () => play(v)); b.addEventListener('mouseleave', () => v.pause()); });
 }

@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Builds the Wolve site. Edit the content below, then run:  python3 tools/build.py
 Every page is written as plain HTML, so GitHub Pages serves it as is."""
-import os, html
+import os, html, json, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from print import PRINT, AOTW, IMG
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 EMAIL = 'anthonywolve@gmail.com'
@@ -116,26 +118,6 @@ REEL = [('story', 'assets/portrait.jpg', None, '50% 16%'),
         ('camon-50', yt('MpLT0Zwru7g'), 'assets/camon-3.jpg', None),
         ('afcon-banter', yt('ji0zwCqNh9U'), yt('ji0zwCqNh9U', 'hqdefault'), None)]
 
-# frames: (kind, src, fallback, caption, case)
-FRAMES = ([('img', f'assets/dulux-{k}.jpg', None, f'{n}. Dulux Spruce', 'dulux-spruce') for k, n in BY['dulux-spruce']['gallery'][1][:5]]
-  + [('vid', 'assets/camon-3.mp4', 'assets/camon-3.jpg', 'Launch. TECNO Camon 50', 'camon-50'),
-     ('img', 'assets/tedx-crowd.jpg', None, 'TEDxEnugu, 2026', 'stage'),
-     ('img', yt('YRfXQYFTWLc'), yt('YRfXQYFTWLc', 'hqdefault'), 'Soot Life Expectancy', 'soot-life-expectancy'),
-     ('vid', 'assets/camon-5.mp4', 'assets/camon-5.jpg', 'Culture Co-Signs. TECNO Camon 50', 'camon-50'),
-     ('img', 'assets/portrait.jpg', None, 'Wolve', 'story'),
-     ('img', yt('CIgo0ahGfkg'), yt('CIgo0ahGfkg', 'hqdefault'), 'Power Your Moment. TECNO × AFCON', 'power-your-moment'),
-     ('img', 'assets/tedx-bw1.jpg', None, 'AI Has No Accent. TEDxEnugu', 'stage'),
-     ('vid', 'assets/camon-2.mp4', 'assets/camon-2.jpg', 'Blackout Protocol. TECNO Camon 50', 'camon-50'),
-     ('img', yt('ji0zwCqNh9U'), yt('ji0zwCqNh9U', 'hqdefault'), 'AFCON Banter. DStv', 'afcon-banter'),
-     ('vid', 'assets/camon-6.mp4', 'assets/camon-6.jpg', 'AI meets In-House. TECNO Camon 50', 'camon-50'),
-     ('img', 'assets/tedx-colour.jpg', None, 'TEDxEnugu, 2026', 'stage'),
-     ('img', yt('MpLT0Zwru7g'), 'assets/camon-1.jpg', 'Zoom In. Level Up. TECNO Camon 50', 'camon-50'),
-     ('vid', 'assets/camon-4.mp4', 'assets/camon-4.jpg', 'Beyond the Specs. TECNO Camon 50', 'camon-50'),
-     ('img', 'assets/tedx-walk.jpg', None, 'TEDxEnugu, 2026', 'stage'),
-     ('vid', 'assets/camon-1.mp4', 'assets/camon-1.jpg', 'Workflow. TECNO Camon 50', 'camon-50'),
-     ('img', 'assets/tedx-bw2.jpg', None, 'TEDxEnugu, 2026', 'stage')]
-  + [('img', f'assets/dulux-{k}.jpg', None, f'{n}. Dulux Spruce', 'dulux-spruce') for k, n in BY['dulux-spruce']['gallery'][1][5:]])
-
 STAGES = [('Cannes Lions', 'Shortlist jury', '2026'), ('TEDxEnugu', 'Speaker. AI Has No Accent', '2026'),
           ('TECNO Next Gen Lab', 'Founder and host. Marketing training for TECNO’s marketing team, with industry facilitators', '2026'),
           ('Podfest Naija', 'Panelist', ''), ('The Work Summit', 'Panelist', ''),
@@ -179,7 +161,7 @@ def page(path, title, desc, body, current='', reel=False, R=None):
     depth = path.count('/')
     R = '../' * depth if R is None else R
     home = R or './'
-    navs = [('work/', 'Work'), ('frames/', 'Frames'), ('stage/', 'Stage'), ('story/', 'Story')]
+    navs = [('work/', 'Work'), ('print/', 'Print'), ('stage/', 'Stage'), ('story/', 'Story')]
     nav = ''.join(f'<a href="{R}{h}"{" aria-current=page" if current == h else ""}>{t}</a>' for h, t in navs)
     soc = ''.join(f'<a href="{u}" target="_blank" rel="noopener">{n} ↗</a>' for n, u in SOCIAL)
     out = f'''<!DOCTYPE html>
@@ -233,6 +215,25 @@ def row(c, R, show_kind=False):
     return (f'<a class="row" href="{R}work/{c["slug"]}/" data-k="{c["kind"]}"><span class="thumb">{cover(c, R)}</span>'
             f'<h3>{c["title"]}</h3><span class="c">{c["client"]}. {c["product"]}</span><span class="y">{c["year"]}</span></a>')
 
+def pimg(ref, R):
+    sz = ''
+    if '@' in ref: ref, sz = ref.split('@')
+    src = R + 'assets/' + ref[6:] if ref.startswith('local:') else IMG + ref
+    w, h = (sz.split('x') + [''])[:2] if sz else ('', '')
+    return src, w, h
+
+def print_card(c, R, lazy=True):
+    slug, title, brand, year, refs = c
+    imgs = [pimg(r, R) for r in refs]
+    src, w, h = imgs[0]
+    wh = f' width="{w}" height="{h}"' if w else ''
+    data = esc(json.dumps([i[0] for i in imgs]))
+    n = len(imgs)
+    meta = f'{brand}, {year}. ' + ('1 execution' if n == 1 else f'{n} executions')
+    return (f'<button data-imgs="{data}" data-cap="{esc(title)}" data-meta="{esc(meta)}" data-link="{AOTW}{slug}" aria-label="Open {esc(title)}, {n} images">'
+            f'<img src="{src}" alt="{esc(title)} for {esc(brand)}"{wh}{" loading=lazy" if lazy else ""} decoding="async">'
+            f'<span class="cap"><b>{title}</b>{meta}</span></button>')
+
 # ---------------------------------------------------------------- pages
 def home():
     R = ''
@@ -246,9 +247,9 @@ def home():
     sel = ['soot-life-expectancy', 'camon-50', 'spark-50-pro', 'dulux-spruce', 'afcon-banter', 'power-your-moment']
     rows = ''.join(row(BY[s], R) for s in sel)
     strip = ''
-    for kind, src, fb, cap, case in FRAMES[:10]:
-        media = f'<video src="{src}" poster="{fb}" muted loop playsinline preload="none" data-auto></video>' if kind == 'vid' else img(src, R, cap, fb)
-        strip += f'<a href="frames/"><div class="ph">{media}</div><span>{cap}</span></a>'
+    for c in PRINT[:10]:
+        src, w, h = pimg(c[4][0], R)
+        strip += f'<a href="print/"><div class="ph">{img(src, R, c[1] + " for " + c[2])}</div><span>{c[1]}. {c[2]}</span></a>'
     body = f'''
 <script>if(/[?&]for=/.test(location.search))location.replace('cig/'+location.search+location.hash)</script>
 <section class="poster" aria-label="Wolve">
@@ -284,7 +285,7 @@ def home():
   </div>
 </section>
 <section class="wrap band">
-  <div class="shead"><h2>Frames</h2><a href="frames/">Open the gallery</a></div>
+  <div class="shead"><h2>Print Room</h2><a href="print/">See every poster</a></div>
   <div class="strip">{strip}</div>
 </section>
 <div class="peek" aria-hidden="true"></div>'''
@@ -349,28 +350,26 @@ def case(c, i):
 <a class="next" href="{R}work/{n["slug"]}/"><div class="wrap"><span>Next case</span><b>{n["title"]}</b></div></a>'''
     page(f'work/{c["slug"]}/', f'{c["title"]} {c["client"]}. Wolve', f'{c["line"]} {c["client"]}, {c["year"]}.', body, 'work/')
 
-def frames():
+def printroom():
     R = '../'
-    items = ''
-    for kind, src, fb, cap, case in FRAMES:
-        href = f'{R}{case}/' if case in ('stage', 'story') else f'{R}work/{case}/'
-        if kind == 'vid':
-            m = f'<video src="{R}{src}" poster="{R}{fb}" muted loop playsinline preload="none"></video>'
-        else:
-            m = img(src, R, cap, fb)
-        items += f'<button data-cap="{esc(cap)}" data-case="{href}" aria-label="Open {esc(cap)}">{m}<span class="cap">{cap}</span></button>'
+    cards = ''.join(print_card(c, R, lazy=k > 5) for k, c in enumerate(PRINT))
+    total = sum(len(c[4]) for c in PRINT)
     body = f'''
 <section class="wrap phead">
-  <h1>Frames</h1>
-  <p>Stills, posters and loops from the work. Tap any frame to see it large.</p>
+  <h1>Print Room</h1>
+  <p>Posters, press and outdoor, from 2020 to now. Open any campaign to see every execution.</p>
 </section>
 <section class="wrap">
-  <div class="shead" style="border:0;padding:0"><span class="q small">{len(FRAMES)} frames</span>
+  <div class="shead" style="border:0;padding:0"><span class="q small">{len(PRINT)} campaigns. {total} executions.</span>
     <div class="density" role="group" aria-label="Grid size"><span>Size</span><button data-d="s" aria-pressed="false" aria-label="Small">S</button><button data-d="m" aria-pressed="true" aria-label="Medium">M</button><button data-d="l" aria-pressed="false" aria-label="Large">L</button></div>
   </div>
-  <div class="wall" data-d="m">{items}</div>
+  <div class="wall" data-d="m">{cards}</div>
 </section>'''
-    page('frames/', 'Frames. Wolve', 'Stills, posters and loops from the work of Anthony Wolve Eigbe.', body, 'frames/')
+    page('print/', 'Print Room. Wolve', 'Print, poster and outdoor ads by Anthony Wolve Eigbe.', body, 'print/')
+    # old address forwards to the new one
+    os.makedirs(os.path.join(ROOT, 'frames'), exist_ok=True)
+    with open(os.path.join(ROOT, 'frames', 'index.html'), 'w') as f:
+        f.write('<!DOCTYPE html><meta charset="utf-8"><title>Print Room. Wolve</title><meta http-equiv="refresh" content="0; url=../print/"><link rel="canonical" href="../print/"><a href="../print/">Print Room</a>')
 
 def stage():
     R = '../'
@@ -447,5 +446,5 @@ def notfound():
 
 home(); work_index()
 for i, c in enumerate(CASES): case(c, i)
-frames(); stage(); story(); contact(); notfound()
+printroom(); stage(); story(); contact(); notfound()
 print('Built', 6 + len(CASES), 'pages')
