@@ -122,6 +122,14 @@ CASES = [
   nums=[],
   links=[('The film on YouTube', 'https://www.youtube.com/watch?v=oM8NiTiW7iA', 'YouTube')]),
 
+ dict(slug='glo-teacher', kind='campaign', client='Glo', product='Brand film', title='Teacher.',
+  year='', role='', market='Nigeria',
+  line='A Glo brand film.',
+  cover=('img', 'https://i.ytimg.com/vi/MEhlfaFC8RQ/maxresdefault.jpg', 'https://i.ytimg.com/vi/MEhlfaFC8RQ/hqdefault.jpg'), hero=('yt', 'MEhlfaFC8RQ', 'Watch the film'),
+  story=[],
+  nums=[],
+  links=[('The film on YouTube', 'https://www.youtube.com/watch?v=MEhlfaFC8RQ', 'YouTube')]),
+
  dict(slug='one-language', kind='campaign', client='Glo', product='Brand film', title='One Language.',
   year='2022', role='Creative Director, X3M Ideas', market='Nigeria',
   line='We don’t have to know each other. We all speak dance.',
@@ -243,7 +251,7 @@ CASES = [
 ]
 BY = {c['slug']: c for c in CASES}
 CAMPAIGNS = ['soot-life-expectancy', 'dulux-spruce', 'escape-2020', 'camon-50', 'lyrics-of-innocence', 'spark-50-pro', 'burning-billboard',
-             'pepsi-naija-all-the-way', 'one-language', 'h2oh-water-is-gonna-be-jealous', 'voices-in-my-air', 'big-brother-titans', 'biggieverse', 'afcon-banter']
+             'pepsi-naija-all-the-way', 'one-language', 'glo-teacher', 'h2oh-water-is-gonna-be-jealous', 'voices-in-my-air', 'big-brother-titans', 'biggieverse', 'afcon-banter']
 EXPERIENCES = ['power-your-moment', 'coke-island', 'heineken-lfdw', 'star-mega-jamz']
 BSIDES = ['door-openers', 'the-xperiment', 'soot-city', 'awon-boyz', 'for-the-next-ones']
 CASES = [BY[k] for k in CAMPAIGNS + EXPERIENCES + BSIDES]
