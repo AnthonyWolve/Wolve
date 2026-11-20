@@ -120,6 +120,15 @@ CASES = [
   nums=[],
   links=[('The film on YouTube', 'https://www.youtube.com/watch?v=oM8NiTiW7iA', 'YouTube')]),
 
+ dict(slug='one-language', kind='campaign', client='Glo', product='Brand film', title='One Language.',
+  year='2022', role='Creative Director, X3M Ideas', market='Nigeria',
+  line='We don’t have to know each other. We all speak dance.',
+  cover=('img', 'https://i.ytimg.com/vi/Elfe3NoNppk/maxresdefault.jpg', 'https://i.ytimg.com/vi/Elfe3NoNppk/hqdefault.jpg'), hero=('yt', 'Elfe3NoNppk', 'Watch the film'),
+  story=[('The insight', '<p class="big">To Africans, dancing is not just dancing.</p><p>It is how we speak when words run out. Strangers can talk to each other with it. In simple terms, we all speak dance.</p>'),
+         ('The idea', '<p>One Language shows dance crossing age, gender, status and place, the common thread that ties everyone together, whoever they are and wherever they find themselves.</p><p class="note">Directed by Mike Brennan. Produced by WishBones Africa.</p>')],
+  nums=[],
+  links=[('The film on YouTube', 'https://www.youtube.com/watch?v=Elfe3NoNppk', 'YouTube'), ('The case on Ads of the World', 'https://www.adsoftheworld.com/campaigns/one-language', 'Ads of the World')]),
+
  dict(slug='h2oh-water-is-gonna-be-jealous', kind='campaign', client='H2Oh!', product='Brand film', title='Water Is Gonna Be Jealous.',
   year='', role='', market='Nigeria',
   line='A brand film for H2Oh!',
@@ -157,7 +166,9 @@ CASES = [
  dict(slug='coke-island', kind='experience', client='Coca-Cola', product='Taste the Feeling, Nigeria launch', title='Coke Island.',
   year='2016', role='Concept team, EXP Momentum', market='Lagos',
   line='A global launch needed a Lagos moment. So we built an island.',
-  cover=('type', 'Coke Island', 'A floating party on the Lagos lagoon', 'bone'), hero=None,
+  cover=('img', 'assets/exp/coke-island-1.jpg', None), hero=('img', 'assets/exp/coke-island-1.jpg', 'Coke Island on the Lagos lagoon, Taste the Feeling launch'),
+  gallery=('local', ['assets/exp/coke-island-2.jpg', 'assets/exp/coke-island-3.jpg'], 'From the island'),
+  credit='Photos: BellaNaija',
   story=[('The idea', '<p class="big">A global launch needed a Lagos moment. So we built an island.</p><p>Coke Island. A floating party on the Lagos lagoon for the Nigerian launch of Taste the Feeling. 2Baba and Yemi Alade debuted their cover of the anthem live.</p>'),
          ('Role', '<p class="note">Part of the EXP Momentum team that conceived it.</p>')],
   nums=[('1', 'island, built for one night'), ('2', 'artists debuting the anthem')]),
@@ -165,7 +176,9 @@ CASES = [
  dict(slug='heineken-lfdw', kind='experience', client='Heineken', product='Lagos Fashion and Design Week', title='Live Your Music.',
   year='2016', role='Concept team, EXP Momentum', market='Lagos',
   line='T-Pain flown in to close fashion week. The crowd picked every song.',
-  cover=('type', 'T-Pain', 'flown in to close Lagos Fashion and Design Week', 'ink'), hero=None,
+  cover=('img', 'assets/exp/heineken-lfdw-1.jpg', None), hero=('img', 'assets/exp/heineken-lfdw-1.jpg', 'The Heineken Live Your Music party, Lagos Fashion and Design Week 2016'),
+  gallery=('local', ['assets/exp/heineken-lfdw-2.jpg', 'assets/exp/heineken-lfdw-3.jpg', 'assets/exp/heineken-lfdw-4.jpg', 'assets/exp/heineken-lfdw-5.jpg'], 'From the night'),
+  credit='Photos: BellaNaija',
   story=[('The idea', '<p class="big">T-Pain flown in to close Lagos Fashion and Design Week.</p><p>Heineken’s global wristband vote, brought to life in Lagos. The crowd lit red or green to pick every song that played.</p>'),
          ('Role', '<p class="note">Part of the EXP Momentum team that conceived it.</p>')],
   nums=[('1', 'international headliner'), ('1', 'crowd choosing the setlist')]),
@@ -173,14 +186,16 @@ CASES = [
  dict(slug='star-mega-jamz', kind='experience', client='Nigerian Breweries', product='Star Trek national tour', title='Star Mega Jamz.',
   year='2015 to 2017', role='Concept team, EXP Momentum', market='10 Nigerian cities',
   line='Ten cities. One stage that kept moving.',
-  cover=('type', '10', 'cities, one moving stage', 'cobalt'), hero=None,
+  cover=('img', 'assets/exp/star-trek-1.jpg', None), hero=('img', 'assets/exp/star-trek-1.jpg', 'Fans at Star Music The Trek'),
+  gallery=('local', ['assets/exp/star-trek-2.jpg', 'assets/exp/star-trek-3.jpg', 'assets/exp/star-trek-4.jpg'], 'The crowds'),
+  credit='Photos: BellaNaija',
   story=[('The idea', '<p class="big">Ten cities. One stage that kept moving.</p><p>Star Trek and Star Mega Jamz for Nigerian Breweries. A national music tour, built city by city.</p>'),
          ('Role', '<p class="note">Part of the EXP Momentum team that conceived it.</p>')],
   nums=[('10', 'cities on the tour')]),
 ]
 BY = {c['slug']: c for c in CASES}
 CAMPAIGNS = ['soot-life-expectancy', 'dulux-spruce', 'escape-2020', 'camon-50', 'lyrics-of-innocence', 'spark-50-pro', 'burning-billboard',
-             'pepsi-naija-all-the-way', 'h2oh-water-is-gonna-be-jealous', 'voices-in-my-air', 'big-brother-titans', 'biggieverse', 'afcon-banter']
+             'pepsi-naija-all-the-way', 'one-language', 'h2oh-water-is-gonna-be-jealous', 'voices-in-my-air', 'big-brother-titans', 'biggieverse', 'afcon-banter']
 EXPERIENCES = ['power-your-moment', 'coke-island', 'heineken-lfdw', 'star-mega-jamz']
 CASES = [BY[k] for k in CAMPAIGNS + EXPERIENCES]
 
@@ -230,7 +245,8 @@ def aotw(ref, R):
 def img(src, R, alt='', fb=None, lazy=True, cls=''):
     src = aotw(src, '') if src.startswith('AOTW:') else src
     full = src if src.startswith('http') else R + src
-    f = f' data-fb="{fb if fb.startswith("http") else R + fb}"' if fb else ''
+    fbu = (fb if fb.startswith('http') else R + fb) if fb else ''
+    f = f' data-fb="{fbu}" onerror="this.onerror=null;this.src=\'{fbu}\'"' if fb else ''
     return f'<img src="{full}"{f} alt="{esc(alt)}"{" loading=lazy" if lazy else ""}{f" class={cls}" if cls else ""}>'
 
 def cover(c, R, lazy=True):
@@ -333,8 +349,9 @@ def print_card(c, R, lazy=True):
     wh = f' width="{w}" height="{h}"' if w else ''
     data = esc(json.dumps([i[0] for i in imgs]))
     n = len(imgs)
-    meta = f'{brand}, {year}. ' + ('1 execution' if n == 1 else f'{n} executions')
-    return (f'<button data-imgs="{data}" data-cap="{esc(title)}" data-meta="{esc(meta)}" data-link="{AOTW}{slug}" aria-label="Open {esc(title)}, {n} images">'
+    meta = (f'{brand}, {year}. ' if year else f'{brand}. ') + ('1 execution' if n == 1 else f'{n} executions')
+    link = f' data-link="{AOTW}{slug}"' if slug else ''
+    return (f'<button data-imgs="{data}" data-cap="{esc(title)}" data-meta="{esc(meta)}"{link} aria-label="Open {esc(title)}, {n} images">'
             f'<img src="{src}" alt="{esc(title)} for {esc(brand)}"{wh}{" loading=lazy" if lazy else ""} decoding="async">'
             f'<span class="cap"><b>{title}</b>{meta}</span></button>')
 
@@ -444,9 +461,12 @@ def case(c, i):
             inner = '<div class="loops">' + ''.join(f'<figure><video src="{R}assets/{k}.mp4" poster="{R}assets/{k}.jpg" muted loop playsinline preload="none" data-auto></video><figcaption>{t}</figcaption></figure>' for k, t in items) + '</div>'
         elif kind == 'aotw':
             inner = visuals(['AOTW:' + i for i in items], c['title'].rstrip('.'), R)
+        elif kind == 'local':
+            inner = visuals(items, c['title'].rstrip('.'), R)
         else:
             inner = visuals([f'assets/dulux-{k}.jpg' for k, n in items], c['title'].rstrip('.'), R)
-        gal = f'<section class="wrap blk"><h2>{label}</h2>{inner}</section>'
+        cr = f'<p class="q small" style="margin-top:6px">{c["credit"]}</p>' if c.get('credit') else ''
+        gal = f'<section class="wrap blk"><h2>{label}</h2>{inner}{cr}</section>'
     links = ''
     if c.get('links'):
         links = '<section class="wrap blk"><h2>See more</h2><div class="links">' + ''.join(f'<a href="{u}" target="_blank" rel="noopener"><span>{t}</span><small>{s} ↗</small></a>' for t, u, s in c['links']) + '</div></section>'
