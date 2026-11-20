@@ -15,6 +15,15 @@ def yt(id, q='maxresdefault'): return f'https://i.ytimg.com/vi/{id}/{q}.jpg'
 # ---------------------------------------------------------------- the work
 # kind: campaign | experience.  cover: ('img', src, fallback) or ('type', big, small, colour)
 CASES = [
+ dict(slug='soot-life-expectancy', kind='campaign', client='The Extra Step Initiative', product='Social cause campaign', title='Soot Life Expectancy.',
+  year='2023', role='Creative Director, X3M Ideas', market='Nigeria',
+  line='Nigeria’s first Cannes Lion in 70 years.',
+  cover=('img', yt('YRfXQYFTWLc'), yt('YRfXQYFTWLc', 'hqdefault')), hero=('yt', 'YRfXQYFTWLc', 'Watch the case film'),
+  story=[('The idea', '<p class="big">We recreated Nigeria’s life expectancy around the soot problem.</p>'),
+         ('What happened', '<p>Nigeria’s first Cannes Lion in 70 years, and the first for a Creative Director from West Africa. Grand Prix at the Pitcher Awards and the Luum Awards. A Silver at the Loeries. A shortlist at D&amp;AD.</p><p>The story continued as <em>Soot City</em>, a documentary Wolve co-produced.</p>')],
+  nums=[('Cannes', 'Bronze Lion, 2023'), ('3', 'Grand Prix, Pitcher and Luum Awards'), ('Silver', 'Loeries, 2023'), ('D&amp;AD', 'Shortlist, 2023')],
+  links=[('The case film on YouTube', 'https://www.youtube.com/watch?v=YRfXQYFTWLc', 'YouTube'), ('D&amp;AD Awards archive', 'https://dandad.org/awards/professional/2023/236680/the-soot-life-expectancy', 'D&amp;AD'), ('Loeries 2023 winners', 'https://www.bizcommunity.com/Article/196/614/242580.html', 'Bizcommunity')]),
+
  dict(slug='camon-50', kind='campaign', client='TECNO', product='Camon 50 launch', title='Zoom In. Level Up.',
   year='2026', role='Chief Creative Officer', market='Nigeria',
   line='Not an ad. A system that took a phone from product to pop culture.',
@@ -58,15 +67,6 @@ CASES = [
   nums=[('10', 'colours, named in Lagos'), ('1st', 'time in 95 years the names left HQ')],
   gallery=('wide', [('ajebo-yellow', 'Àjẹbọ Yellow'), ('baddie-pink', 'Baddie Pink'), ('idan-black', 'Ìdán Black'), ('ijgb-orange', 'IJGB Orange'), ('odogwu-red', 'Odogwu Red'), ('old-money-green', 'Old Money Green'), ('sarki-brown', 'Sarki Brown'), ('shakara-purple', 'Shakara Purple'), ('soft-life-blue', 'Soft Life Blue'), ('steeze-white', 'Steeze White')], 'Ten colours. Scroll sideways.'),
   links=[('The case on Ads of the World', 'https://www.adsoftheworld.com/campaigns/show-your-true-colours-4a844af1-b475-4b77-803c-14612e36944a', 'Ads of the World')]),
-
- dict(slug='soot-life-expectancy', kind='campaign', client='The Extra Step Initiative', product='Social cause campaign', title='Soot Life Expectancy.',
-  year='2023', role='Creative Director, X3M Ideas', market='Nigeria',
-  line='Nigeria’s first Cannes Lion in 70 years.',
-  cover=('img', yt('YRfXQYFTWLc'), yt('YRfXQYFTWLc', 'hqdefault')), hero=('yt', 'YRfXQYFTWLc', 'Watch the case film'),
-  story=[('The idea', '<p class="big">We recreated Nigeria’s life expectancy around the soot problem.</p>'),
-         ('What happened', '<p>Nigeria’s first Cannes Lion in 70 years, and the first for a Creative Director from West Africa. Grand Prix at the Pitcher Awards and the Luum Awards. A Silver at the Loeries. A shortlist at D&amp;AD.</p><p>The story continued as <em>Soot City</em>, a documentary Wolve co-produced.</p>')],
-  nums=[('Cannes', 'Bronze Lion, 2023'), ('3', 'Grand Prix, Pitcher and Luum Awards'), ('Silver', 'Loeries, 2023'), ('D&amp;AD', 'Shortlist, 2023')],
-  links=[('The case film on YouTube', 'https://www.youtube.com/watch?v=YRfXQYFTWLc', 'YouTube'), ('D&amp;AD Awards archive', 'https://dandad.org/awards/professional/2023/236680/the-soot-life-expectancy', 'D&amp;AD'), ('Loeries 2023 winners', 'https://www.bizcommunity.com/Article/196/614/242580.html', 'Bizcommunity')]),
 
  dict(slug='afcon-banter', kind='campaign', client='DStv × AFCON', product='Always on social', title='AFCON Banter.',
   year='2024', role='Creative Director, X3M Ideas', market='Nigeria, Ghana and South Africa',
@@ -117,7 +117,7 @@ REEL = [('story', 'assets/portrait.jpg', None, '50% 16%'),
         ('afcon-banter', yt('ji0zwCqNh9U'), yt('ji0zwCqNh9U', 'hqdefault'), None)]
 
 # frames: (kind, src, fallback, caption, case)
-FRAMES = ([('img', f'assets/dulux-{k}.jpg', None, f'{n}. Dulux Spruce', 'dulux-spruce') for k, n in CASES[3]['gallery'][1][:5]]
+FRAMES = ([('img', f'assets/dulux-{k}.jpg', None, f'{n}. Dulux Spruce', 'dulux-spruce') for k, n in BY['dulux-spruce']['gallery'][1][:5]]
   + [('vid', 'assets/camon-3.mp4', 'assets/camon-3.jpg', 'Launch. TECNO Camon 50', 'camon-50'),
      ('img', 'assets/tedx-crowd.jpg', None, 'TEDxEnugu, 2026', 'stage'),
      ('img', yt('YRfXQYFTWLc'), yt('YRfXQYFTWLc', 'hqdefault'), 'Soot Life Expectancy', 'soot-life-expectancy'),
@@ -134,12 +134,12 @@ FRAMES = ([('img', f'assets/dulux-{k}.jpg', None, f'{n}. Dulux Spruce', 'dulux-s
      ('img', 'assets/tedx-walk.jpg', None, 'TEDxEnugu, 2026', 'stage'),
      ('vid', 'assets/camon-1.mp4', 'assets/camon-1.jpg', 'Workflow. TECNO Camon 50', 'camon-50'),
      ('img', 'assets/tedx-bw2.jpg', None, 'TEDxEnugu, 2026', 'stage')]
-  + [('img', f'assets/dulux-{k}.jpg', None, f'{n}. Dulux Spruce', 'dulux-spruce') for k, n in CASES[3]['gallery'][1][5:]])
+  + [('img', f'assets/dulux-{k}.jpg', None, f'{n}. Dulux Spruce', 'dulux-spruce') for k, n in BY['dulux-spruce']['gallery'][1][5:]])
 
 STAGES = [('Cannes Lions', 'Shortlist jury', '2026'), ('TEDxEnugu', 'Speaker. AI Has No Accent', '2026'),
           ('TECNO Next Gen Lab', 'Founder and host. Marketing training for TECNO’s marketing team, with industry facilitators', '2026'),
           ('Podfest Naija', 'Panelist', ''), ('The Work Summit', 'Panelist', ''),
-          ('AB InBev', 'Creative communications workshop', ''), ('CreditDirect', 'Creative workshop', ''),
+          ('CreditDirect', 'Creative workshop', ''),
           ('Agencies across Lagos', 'Talks on craft and creative leadership', ''),
           ('Online', 'Teaching marketing and creativity to close to 30K followers', 'Ongoing')]
 
@@ -243,7 +243,7 @@ def home():
         st = f' style="--op:{op}"' if op else ''
         slides += f'<div class="slide{" on" if k == 0 else ""}"{st} data-href="{href}" data-client="{esc(cl)}" data-title="{esc(ti)}">{img(src, R, "", fb, lazy=k > 0)}</div>'
     dots = ''.join(f'<button aria-label="Show slide {k + 1}" aria-current="{str(k == 0).lower()}">{k + 1}</button>' for k in range(len(REEL)))
-    sel = ['camon-50', 'spark-50-pro', 'soot-life-expectancy', 'dulux-spruce', 'afcon-banter', 'power-your-moment']
+    sel = ['soot-life-expectancy', 'camon-50', 'spark-50-pro', 'dulux-spruce', 'afcon-banter', 'power-your-moment']
     rows = ''.join(row(BY[s], R) for s in sel)
     strip = ''
     for kind, src, fb, cap, case in FRAMES[:10]:
