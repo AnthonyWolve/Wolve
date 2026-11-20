@@ -26,6 +26,16 @@ CASES = [
   nums=[('Cannes', 'Bronze Lion, 2023'), ('3', 'Grand Prix, Pitcher and Luum Awards'), ('Silver', 'Loeries, 2023'), ('D&amp;AD', 'Shortlist, 2023')],
   links=[('The case film on YouTube', 'https://www.youtube.com/watch?v=YRfXQYFTWLc', 'YouTube'), ('D&amp;AD Awards archive', 'https://dandad.org/awards/professional/2023/236680/the-soot-life-expectancy', 'D&amp;AD'), ('Loeries 2023 winners', 'https://www.bizcommunity.com/Article/196/614/242580.html', 'Bizcommunity')]),
 
+ dict(slug='escape-2020', kind='campaign', client='X3M Ideas', product='Christmas board game', title='Escape 2020.',
+  year='2020', role='Deputy Creative Director, X3M Ideas', market='Nigeria',
+  line='Everyone wanted out of 2020. So we made it a game.',
+  cover=('img', 'AOTW:9pkfnqz9kxhdgaqjrbv1tgwf2wca', None), hero=('vid', 'escape-2020', 'https://video.adsoftheworld.com/px54picnpg67npxmjp15p5ekgmoc', 'AOTW:h1mc91fhx0curuftorp4tpw9mbz6'),
+  story=[('The brief', '<p>Christmas 2020. COVID restrictions tightened and families were told to stay home for the holidays. Nigerians agreed on one thing: they could not wait to see the back of the year.</p>'),
+         ('The idea', '<p class="big">Instead of Christmas cards, a board game.</p><p>Escape 2020 squeezed the year into 365 blocks, one for every day. Lockdowns, looting, #EndSARS, the Beirut blast, wildfires. Every big moment of the year, local and global, waiting to be dodged with a roll of the dice.</p><p>Sent to clients and friends of the agency. Now everyone could escape 2020, at least in their heads.</p>')],
+  nums=[('365', 'blocks, one for every day of the year')],
+  gallery=('aotw', ['9pkfnqz9kxhdgaqjrbv1tgwf2wca', 'vnapxt4wzvncz6n9e39dsnlau0la', '1ly13r7y7td29z7l1f8xmi00i414', '46vrxdpqcqcbehw29nyqbjsg54dz', 'twi13gxrcfotlsas8o0v4apvoxt4'], 'The game'),
+  links=[('The case on Ads of the World', 'https://www.adsoftheworld.com/campaigns/escape-2020', 'Ads of the World')]),
+
  dict(slug='camon-50', kind='campaign', client='TECNO', product='Camon 50 launch', title='Zoom In. Level Up.',
   year='2026', role='Chief Creative Officer', market='Nigeria',
   line='Not an ad. A system that took a phone from product to pop culture.',
@@ -37,7 +47,7 @@ CASES = [
   gallery=('loops', [('camon-1', 'Workflow'), ('camon-2', 'Blackout Protocol'), ('camon-3', 'Launch'), ('camon-4', 'Beyond the Specs'), ('camon-5', 'Culture Co-Signs'), ('camon-6', 'AI meets In-House'), ('camon-7', 'Credits')], 'Behind the campaign'),
   links=[('The full breakdown on Instagram', 'https://www.instagram.com/p/DXOhsvtjLu8/', 'Instagram'), ('The launch film on YouTube', 'https://www.youtube.com/watch?v=MpLT0Zwru7g', 'YouTube')]),
 
- dict(slug='spark-50-pro', kind='campaign', client='TECNO', product='Spark 50 Pro launch', title='Power for Days.',
+ dict(slug='spark-50-pro', kind='campaign', client='TECNO', product='Spark 50 Pro launch', title='Power Without the Wait.',
   year='2026', role='Chief Creative Officer', market='Nigeria',
   line='Who should sell a phone that lasts for days? The people who live without power.',
   cover=('type', '30M+', 'views, on a social first budget', 'cobalt'),
@@ -49,7 +59,17 @@ CASES = [
   nums=[('500+', 'applications in 4 days'), ('~300K', 'organic views in 2 days, on one unsolicited post'), ('30M+', 'views across every platform')],
   links=[('Winners announced', 'https://www.tiktok.com/@tecnomobileng/photo/7677626447103577351', 'TikTok'), ('Chief Power Ambassador, episode four', 'https://www.tiktok.com/@tecnomobileng/video/7685759079029017863', 'TikTok')]),
 
- dict(slug='power-your-moment', kind='campaign', client='TECNO × AFCON', product='Pan African sponsorship', title='Power Your Moment.',
+ dict(slug='lyrics-of-innocence', kind='campaign', client='Nirvana Water', product='Children’s Day campaign', title='Lyrics of Innocence.',
+  year='2023', role='Creative Director, X3M Ideas', market='Nigeria',
+  line='Kids heard the hits. They missed the dirty bits. That was the point.',
+  cover=('img', 'AOTW:87b1y8zouqcxdt4ukfk7pnbw2e9q', None), hero=('vid', 'lyrics-of-innocence', 'https://video.adsoftheworld.com/7vulojgvvnhku64b34ke1mhfa29u.mp4', 'AOTW:87b1y8zouqcxdt4ukfk7pnbw2e9q'),
+  story=[('The insight', '<p class="big">Children and Nirvana Water share one thing. Purity.</p><p>But the songs kids hear every day are full of explicit lyrics, and that exposure can shape them long before they understand it.</p>'),
+         ('The idea', '<p>A social experiment, launched on Children’s Day. Seven kids were asked to explain the lyrics of popular songs. They missed every vulgar meaning. Their innocence made the case better than any warning could: protect it before they know.</p>')],
+  nums=[('7', 'kids, one experiment')],
+  gallery=('aotw', ['pjqn61joqr0fuge9qy72uya3m2ol', '0sc6lvnocrftiwd6morissjzgn7s', 'us43b2jm902mp9hrbn9t1gqv89uy', 'a706hpw0qnbxj1xoqss2krs0eckv'], 'Key visuals'),
+  links=[('The film on YouTube', 'https://www.youtube.com/watch?v=K_f0aGKYud8', 'YouTube'), ('The case on Ads of the World', 'https://www.adsoftheworld.com/campaigns/lyrics-of-innocence', 'Ads of the World')]),
+
+ dict(slug='power-your-moment', kind='experience', client='TECNO × AFCON', product='Pan African sponsorship', title='Power Your Moment.',
   year='2025', role='Chief Creative Officer', market='Pan Africa, led in Nigeria',
   line='Africa’s biggest football moment, powered from West Africa.',
   cover=('img', yt('CIgo0ahGfkg'), yt('CIgo0ahGfkg', 'hqdefault')), hero=('yt', 'CIgo0ahGfkg', 'Watch the continental film'),
@@ -80,6 +100,58 @@ CASES = [
   nums=[('96M', 'impressions'), ('9M', 'organic views'), ('₦0', 'paid push behind them')],
   links=[('The case on Ads of the World', 'https://www.adsoftheworld.com/campaigns/afcon-banter', 'Ads of the World'), ('The case film on YouTube', 'https://www.youtube.com/watch?v=ji0zwCqNh9U', 'YouTube')]),
 
+ dict(slug='burning-billboard', kind='campaign', client='FCCPC', product='Don’t Burn Their Future', title='Burning Billboard.',
+  year='2024', role='Creative Director, X3M Ideas', market='Nigeria',
+  line='Nigeria’s first burning billboard. A child’s dream, going up in smoke.',
+  cover=('img', 'AOTW:4ravhozpd1qoutihmzwctxdelp1d', None), hero=('vid', 'burning-billboard', 'https://video.adsoftheworld.com/2le72dx8071yrt9dq3d5rq1bwzr9.mp4', 'AOTW:4ravhozpd1qoutihmzwctxdelp1d'),
+  story=[('The brief', '<p>Tobacco kills more than 8 million people a year, by WHO’s count. In Nigeria the warnings on packs keep getting more graphic, and young people keep starting anyway. The Federal Competition and Consumer Protection Commission needed adults to stop it.</p>'),
+         ('The insight', '<p class="big">The future belongs to the young. Smoking cuts it short.</p><p>Today’s kids are tomorrow’s CEOs, founders and doctors. Start smoking early and the ambition burns with the cigarette.</p>'),
+         ('The idea', '<p>We took it to the format Nigeria loves most. A 26 episode Nollywood telenovela about the dangers of smoking, backed by TV, outdoor and social.</p><p>And Nigeria’s first burning billboard. Children’s dreams, literally going up in smoke. Fire ran through every execution, so nobody could scroll or drive past.</p>')],
+  nums=[('26', 'episode Nollywood telenovela'), ('1st', 'burning billboard in Nigeria')],
+  links=[('The case on Ads of the World', 'https://www.adsoftheworld.com/campaigns/don-t-burn-their-future', 'Ads of the World')]),
+
+ dict(slug='pepsi-naija-all-the-way', kind='campaign', client='Pepsi', product='World Cup campaign', title='Naija All the Way.',
+  year='2018', role='Group Head, Copy, Insight Communications', market='Nigeria',
+  line='A World Cup, a nation of fans and the stars to match.',
+  cover=('img', 'https://i.ytimg.com/vi/oM8NiTiW7iA/maxresdefault.jpg', 'https://i.ytimg.com/vi/oM8NiTiW7iA/hqdefault.jpg'), hero=('yt', 'oM8NiTiW7iA', 'Watch the film'),
+  story=[('The work', '<p class="big">Pepsi’s World Cup celebrity campaign for Nigeria.</p><p>Written while leading copy at Insight Communications.</p>')],
+  nums=[],
+  links=[('The film on YouTube', 'https://www.youtube.com/watch?v=oM8NiTiW7iA', 'YouTube')]),
+
+ dict(slug='h2oh-water-is-gonna-be-jealous', kind='campaign', client='H2Oh!', product='Brand film', title='Water Is Gonna Be Jealous.',
+  year='', role='', market='Nigeria',
+  line='A brand film for H2Oh!',
+  cover=('img', 'https://i.ytimg.com/vi/cEkqxABjOYw/maxresdefault.jpg', 'https://i.ytimg.com/vi/cEkqxABjOYw/hqdefault.jpg'), hero=('yt', 'cEkqxABjOYw', 'Watch the film'),
+  story=[('The work', '<p class="big">A film for H2Oh!</p>')],
+  nums=[],
+  links=[('The film on YouTube', 'https://www.youtube.com/watch?v=cEkqxABjOYw', 'YouTube')]),
+
+ dict(slug='voices-in-my-air', kind='campaign', client='Love, Peace and Mental Health Foundation', product='Mental health awareness', title='Voices In My Air.',
+  year='2023', role='Creative Director, X3M Ideas', market='Nigeria',
+  line='An audio led experience on mental health.',
+  cover=('img', 'AOTW:4asmo1cu45evifff640ocsd06vmp', None), hero=('vid', 'voices-in-my-air', 'https://video.adsoftheworld.com/97sqj33d5g48ha1zica5vsuzn9g3.mp4', 'AOTW:4asmo1cu45evifff640ocsd06vmp'),
+  story=[('The work', '<p class="big">Audio, digital and experiential, for the Love, Peace and Mental Health Foundation.</p>')],
+  nums=[],
+  links=[('The case on Ads of the World', 'https://www.adsoftheworld.com/campaigns/voices-in-my-air-fd58de94-dc9e-4dab-8477-8ed117e640c8', 'Ads of the World')]),
+
+ dict(slug='big-brother-titans', kind='campaign', client='DStv and Showmax', product='Big Brother Titans launch', title='The Giants Are Coming.',
+  year='2023', role='Creative Director, X3M Ideas', market='22 African countries',
+  line='Nigeria and South Africa in one Big Brother house. One launch across 22 countries.',
+  cover=('img', 'https://i.ytimg.com/vi/VSkAIOJSVws/maxresdefault.jpg', 'https://i.ytimg.com/vi/VSkAIOJSVws/hqdefault.jpg'), hero=('yt', 'VSkAIOJSVws', 'Watch the launch film'),
+  story=[('The work', '<p class="big">Big Brother Titans. The launch film for a show that crossed borders.</p><p>One launch, rolled out across 22 African countries.</p>')],
+  nums=[('22', 'countries, one launch')],
+  links=[('The film on YouTube', 'https://www.youtube.com/watch?v=VSkAIOJSVws', 'YouTube')]),
+
+ dict(slug='biggieverse', kind='campaign', client='DStv', product='Big Brother Naija All Stars', title='Biggieverse.',
+  year='2023', role='Creative Director, X3M Ideas', market='Nigeria',
+  line='Past housemates. One multiverse. The fight for GOAT.',
+  cover=('img', 'AOTW:efsx5txofyvdqpt1yrj9ul0457y7', None), hero=('vid', 'biggieverse', 'https://video.adsoftheworld.com/kvnaq244fobl002flf3hbsirbemq.mp4', 'AOTW:efsx5txofyvdqpt1yrj9ul0457y7'),
+  story=[('The brief', '<p>Big Brother Naija’s eighth season brought back past stars to fight for the title of greatest housemate. It had to be the biggest season yet, and feel like it before a single episode aired.</p>'),
+         ('The idea', '<p class="big">Biggie’s World. A multiverse where past housemates meet again.</p><p>It teased the twists to come and told fans this season would be dramatic. The look came straight from the Big Brother eye, and it ran through every design.</p>'),
+         ('The build', '<p>Nigerians love to talk about the show, so the campaign leaned on that: organic fan buzz, paid creators and digital challenges that rewarded loyal fans. Creativity, AI and sharp media placement, working together.</p>')],
+  nums=[],
+  links=[('The case on Ads of the World', 'https://www.adsoftheworld.com/campaigns/biggieverse', 'Ads of the World')]),
+
  dict(slug='coke-island', kind='experience', client='Coca-Cola', product='Taste the Feeling, Nigeria launch', title='Coke Island.',
   year='2016', role='Concept team, EXP Momentum', market='Lagos',
   line='A global launch needed a Lagos moment. So we built an island.',
@@ -105,11 +177,10 @@ CASES = [
   nums=[('10', 'cities on the tour')]),
 ]
 BY = {c['slug']: c for c in CASES}
-
-ARCHIVE = [('VSkAIOJSVws', 'DStv', 'Big Brother Titans: The Giants Are Coming'), ('1o7phALkIJ0', 'Showmax', 'No One Tells a Story Like We Do'),
-           ('oM8NiTiW7iA', 'Pepsi', 'Naija All The Way'), ('Elfe3NoNppk', 'Glo', 'One Language'), ('MEhlfaFC8RQ', 'Glo', 'Teacher'),
-           ('skHApabsrbI', 'Glo', 'To Dance With Love'), ('336PrfKdBxY', 'Glo', 'Biker'), ('cEkqxABjOYw', 'H2oh!', 'Water Is Gonna Be Jealous'),
-           ('K_f0aGKYud8', 'Nirvana Water', 'Lyrics of Innocence')]
+CAMPAIGNS = ['soot-life-expectancy', 'dulux-spruce', 'escape-2020', 'camon-50', 'lyrics-of-innocence', 'spark-50-pro', 'burning-billboard',
+             'pepsi-naija-all-the-way', 'h2oh-water-is-gonna-be-jealous', 'voices-in-my-air', 'big-brother-titans', 'biggieverse', 'afcon-banter']
+EXPERIENCES = ['power-your-moment', 'coke-island', 'heineken-lfdw', 'star-mega-jamz']
+CASES = [BY[k] for k in CAMPAIGNS + EXPERIENCES]
 
 # hero reel on the home page
 REEL = [('story', 'assets/portrait.jpg', None, '50% 16%'),
@@ -147,7 +218,14 @@ EDU = ['Higher National Diploma, Mass Communication, with Distinction. Nigerian 
 # ---------------------------------------------------------------- helpers
 def esc(s): return html.escape(s, quote=True)
 
+def aotw(ref, R):
+    if ref and ref.startswith('AOTW:'):
+        i = ref[5:]
+        return R + 'assets/print/' + i + '.jpg' if os.path.exists(os.path.join(ROOT, 'assets', 'print', i + '.jpg')) else IMG + i
+    return ref
+
 def img(src, R, alt='', fb=None, lazy=True, cls=''):
+    src = aotw(src, '') if src.startswith('AOTW:') else src
     full = src if src.startswith('http') else R + src
     f = f' data-fb="{fb if fb.startswith("http") else R + fb}"' if fb else ''
     return f'<img src="{full}"{f} alt="{esc(alt)}"{" loading=lazy" if lazy else ""}{f" class={cls}" if cls else ""}>'
@@ -161,7 +239,7 @@ def page(path, title, desc, body, current='', reel=False, R=None):
     depth = path.count('/')
     R = '../' * depth if R is None else R
     home = R or './'
-    navs = [('work/', 'Work'), ('print/', 'Print'), ('stage/', 'Stage'), ('story/', 'Story')]
+    navs = [('work/', 'Work'), ('stage/', 'Stage'), ('story/', 'Story')]
     nav = ''.join(f'<a href="{R}{h}"{" aria-current=page" if current == h else ""}>{t}</a>' for h, t in navs)
     soc = ''.join(f'<a href="{u}" target="_blank" rel="noopener">{n} ↗</a>' for n, u in SOCIAL)
     out = f'''<!DOCTYPE html>
@@ -215,10 +293,17 @@ def row(c, R, show_kind=False):
     return (f'<a class="row" href="{R}work/{c["slug"]}/" data-k="{c["kind"]}"><span class="thumb">{cover(c, R)}</span>'
             f'<h3>{c["title"]}</h3><span class="c">{c["client"]}. {c["product"]}</span><span class="y">{c["year"]}</span></a>')
 
+def segnav(R, cur):
+    tabs = [('work/', 'Campaigns', len(CAMPAIGNS)), ('work/experiences/', 'Experiences', len(EXPERIENCES)), ('work/key-visuals/', 'Key visuals', len(PRINT))]
+    return '<nav class="segs" aria-label="Work sections">' + ''.join(f'<a href="{R}{h}"{" aria-current=page" if h == cur else ""}>{t}<sup>{n}</sup></a>' for h, t, n in tabs) + '</nav>'
+
+
 def pimg(ref, R):
     sz = ''
     if '@' in ref: ref, sz = ref.split('@')
-    src = R + 'assets/' + ref[6:] if ref.startswith('local:') else IMG + ref
+    if ref.startswith('local:'): src = R + 'assets/' + ref[6:]
+    elif os.path.exists(os.path.join(ROOT, 'assets', 'print', ref + '.jpg')): src = R + 'assets/print/' + ref + '.jpg'
+    else: src = IMG + ref
     w, h = (sz.split('x') + [''])[:2] if sz else ('', '')
     return src, w, h
 
@@ -226,6 +311,9 @@ def print_card(c, R, lazy=True):
     slug, title, brand, year, refs = c
     imgs = [pimg(r, R) for r in refs]
     src, w, h = imgs[0]
+    ref0 = refs[0].split('@')[0]
+    if os.path.exists(os.path.join(ROOT, 'assets', 'print', 'thumb', ref0 + '.jpg')): src = R + 'assets/print/thumb/' + ref0 + '.jpg'
+    elif ref0.startswith('local:'): pass
     wh = f' width="{w}" height="{h}"' if w else ''
     data = esc(json.dumps([i[0] for i in imgs]))
     n = len(imgs)
@@ -244,12 +332,12 @@ def home():
         st = f' style="--op:{op}"' if op else ''
         slides += f'<div class="slide{" on" if k == 0 else ""}"{st} data-href="{href}" data-client="{esc(cl)}" data-title="{esc(ti)}">{img(src, R, "", fb, lazy=k > 0)}</div>'
     dots = ''.join(f'<button aria-label="Show slide {k + 1}" aria-current="{str(k == 0).lower()}">{k + 1}</button>' for k in range(len(REEL)))
-    sel = ['soot-life-expectancy', 'camon-50', 'spark-50-pro', 'dulux-spruce', 'afcon-banter', 'power-your-moment']
+    sel = CAMPAIGNS[:6]
     rows = ''.join(row(BY[s], R) for s in sel)
     strip = ''
     for c in PRINT[:10]:
         src, w, h = pimg(c[4][0], R)
-        strip += f'<a href="print/"><div class="ph">{img(src, R, c[1] + " for " + c[2])}</div><span>{c[1]}. {c[2]}</span></a>'
+        strip += f'<a href="work/key-visuals/"><div class="ph">{img(src, R, c[1] + " for " + c[2])}</div><span>{c[1]}. {c[2]}</span></a>'
     body = f'''
 <script>if(/[?&]for=/.test(location.search))location.replace('cig/'+location.search+location.hash)</script>
 <section class="poster" aria-label="Wolve">
@@ -271,7 +359,7 @@ def home():
   </div>
 </section>
 <section class="wrap band" style="padding-top:0">
-  <div class="shead"><h2>Selected work</h2><a href="work/">All work and films</a></div>
+  <div class="shead"><h2>Selected work</h2><a href="work/">All campaigns, experiences and key visuals</a></div>
   <div class="list">{rows}</div>
 </section>
 <section class="stageband">
@@ -285,7 +373,7 @@ def home():
   </div>
 </section>
 <section class="wrap band">
-  <div class="shead"><h2>Print Room</h2><a href="print/">See every poster</a></div>
+  <div class="shead"><h2>Key visuals</h2><a href="work/key-visuals/">See every poster</a></div>
   <div class="strip">{strip}</div>
 </section>
 <div class="peek" aria-hidden="true"></div>'''
@@ -293,23 +381,27 @@ def home():
 
 def work_index():
     R = '../'
-    rows = ''.join(row(c, R) for c in CASES)
-    films = ''.join(f'<button data-yt="{i}" data-title="{esc(t)}"><div class="film">{img(yt(i), R, "", yt(i, "hqdefault"))}<span class="play" style="background:none"><span class="pb">{PLAY}</span></span></div><h3>{t}</h3><p>{b}</p></button>' for i, b, t in ARCHIVE)
+    rows = ''.join(row(BY[k], R) for k in CAMPAIGNS)
     body = f'''
 <section class="wrap phead">
   <h1>Work</h1>
-  <p>Launches, sponsorships and causes. Built as systems, not spots.</p>
-  <div class="filter" role="group" aria-label="Show">
-    <button data-k="all" aria-pressed="true">All</button><button data-k="campaign" aria-pressed="false">Campaigns</button><button data-k="experience" aria-pressed="false">Experiences</button>
-  </div>
+  <p>Launches, causes and culture. Built as systems, not spots.</p>
+  {segnav(R, 'work/')}
 </section>
 <section class="wrap band" style="padding-top:0"><div class="list">{rows}</div></section>
-<section class="wrap band" style="padding-top:0">
-  <div class="shead"><h2>Earlier films</h2><span class="q small">2011 to 2024. Pay TV, telecoms, drinks and water</span></div>
-  <div class="films">{films}</div>
-</section>
 <div class="peek" aria-hidden="true"></div>'''
-    page('work/', 'Work. Wolve', 'Campaigns and experiences by Anthony Wolve Eigbe.', body, 'work/')
+    page('work/', 'Campaigns. Wolve', 'Campaigns by Anthony Wolve Eigbe.', body, 'work/')
+    R = '../../'
+    rows = ''.join(row(BY[k], R) for k in EXPERIENCES)
+    body = f'''
+<section class="wrap phead">
+  <h1>Work</h1>
+  <p>Brands people can stand inside. Sponsorships, launches and live events.</p>
+  {segnav(R, 'work/experiences/')}
+</section>
+<section class="wrap band" style="padding-top:0"><div class="list">{rows}</div></section>
+<div class="peek" aria-hidden="true"></div>'''
+    page('work/experiences/', 'Experiences. Wolve', 'Experiences and events by Anthony Wolve Eigbe.', body, 'work/')
 
 def case(c, i):
     R = '../../'
@@ -317,47 +409,57 @@ def case(c, i):
     if not h: hero = ''
     elif h[0] == 'yt':
         hero = f'<div class="wrap hero-media"><div class="film">{img(yt(h[1]), R, "", yt(h[1], "hqdefault"), lazy=False)}<button class="play" data-inline="{h[1]}"><span class="pb">{PLAY}</span><span class="t">{h[2]}</span></button></div></div>'
+    elif h[0] == 'vid':
+        local = os.path.join(ROOT, 'assets', 'films', h[1] + '.mp4')
+        vsrc = R + f'assets/films/{h[1]}.mp4' if os.path.exists(local) else h[2]
+        poster = aotw(h[3], R)
+        hero = f'<div class="wrap hero-media"><div class="film"><video src="{vsrc}" poster="{poster}" controls playsinline preload="none"></video></div></div>'
     elif h[0] == 'img':
         hero = f'<div class="wrap hero-media"><div class="film">{img(h[1], R, h[2], lazy=False)}</div></div>'
     else:
         hero = '<div class="wrap hero-media"><div class="tiks">' + ''.join(f'<figure><div class="tk"><iframe src="https://www.tiktok.com/player/v1/{t}?description=0&music_info=0&rel=0" title="TikTok video, {esc(cap)}" allow="fullscreen" loading="lazy"></iframe></div><figcaption>{cap}</figcaption></figure>' for t, cap in h[1]) + '</div></div>'
     story = ''.join(f'<section><h2>{t}</h2>{b}</section>' for t, b in c['story'])
     nums = ''.join(f'<div><b>{n}</b><span>{l}</span></div>' for n, l in c['nums'])
+    nums = f'<aside class="nums" aria-label="Results">{nums}</aside>' if nums else ''
     gal = ''
     if c.get('gallery'):
         kind, items, label = c['gallery']
         if kind == 'loops':
             inner = '<div class="loops">' + ''.join(f'<figure><video src="{R}assets/{k}.mp4" poster="{R}assets/{k}.jpg" muted loop playsinline preload="none" data-auto></video><figcaption>{t}</figcaption></figure>' for k, t in items) + '</div>'
+        elif kind == 'aotw':
+            inner = '<div class="wide">' + ''.join(f'<figure>{img(aotw("AOTW:" + i, R), R, c["title"] + " key visual")}</figure>' for i in items) + '</div>'
         else:
             inner = '<div class="wide">' + ''.join(f'<figure>{img(f"assets/dulux-{k}.jpg", R, f"Dulux Spruce poster, {n}")}<figcaption>{n}</figcaption></figure>' for k, n in items) + '</div>'
         gal = f'<section class="wrap blk"><h2>{label}</h2>{inner}</section>'
     links = ''
     if c.get('links'):
         links = '<section class="wrap blk"><h2>See more</h2><div class="links">' + ''.join(f'<a href="{u}" target="_blank" rel="noopener"><span>{t}</span><small>{s} ↗</small></a>' for t, u, s in c['links']) + '</div></section>'
-    n = CASES[(i + 1) % len(CASES)]
+    seg = CAMPAIGNS if c['kind'] == 'campaign' else EXPERIENCES
+    n = BY[seg[(seg.index(c['slug']) + 1) % len(seg)]]
     body = f'''
 <section class="wrap chead">
-  <a class="crumb" href="{R}work/">All work</a>
+  <a class="crumb" href="{R}work/{'' if c['kind'] == 'campaign' else 'experiences/'}">{'Campaigns' if c['kind'] == 'campaign' else 'Experiences'}</a>
   <span class="client">{c["client"]}. {c["product"]}</span>
   <h1>{c["title"]}</h1>
   <p class="line">{c["line"]}</p>
-  <div class="meta"><div><span>Client</span><b>{c["client"]}</b></div><div><span>Role</span><b>{c["role"]}</b></div><div><span>Year</span><b>{c["year"]}</b></div><div><span>Market</span><b>{c["market"]}</b></div></div>
+  <div class="meta">{''.join(f'<div><span>{k}</span><b>{v}</b></div>' for k, v in (('Client', c['client']), ('Role', c['role']), ('Year', c['year']), ('Market', c['market'])) if v)}</div>
 </section>
 {hero}
-<section class="wrap body"><div class="story">{story}</div><aside class="nums" aria-label="Results">{nums}</aside></section>
+<section class="wrap body"><div class="story">{story}</div>{nums}</section>
 {gal}
 {links}
 <a class="next" href="{R}work/{n["slug"]}/"><div class="wrap"><span>Next case</span><b>{n["title"]}</b></div></a>'''
     page(f'work/{c["slug"]}/', f'{c["title"]} {c["client"]}. Wolve', f'{c["line"]} {c["client"]}, {c["year"]}.', body, 'work/')
 
 def printroom():
-    R = '../'
+    R = '../../'
     cards = ''.join(print_card(c, R, lazy=k > 5) for k, c in enumerate(PRINT))
     total = sum(len(c[4]) for c in PRINT)
     body = f'''
 <section class="wrap phead">
-  <h1>Print Room</h1>
+  <h1>Work</h1>
   <p>Posters, press and outdoor, from 2020 to now. Open any campaign to see every execution.</p>
+  {segnav(R, 'work/key-visuals/')}
 </section>
 <section class="wrap">
   <div class="shead" style="border:0;padding:0"><span class="q small">{len(PRINT)} campaigns. {total} executions.</span>
@@ -365,11 +467,12 @@ def printroom():
   </div>
   <div class="wall" data-d="m">{cards}</div>
 </section>'''
-    page('print/', 'Print Room. Wolve', 'Print, poster and outdoor ads by Anthony Wolve Eigbe.', body, 'print/')
-    # old address forwards to the new one
-    os.makedirs(os.path.join(ROOT, 'frames'), exist_ok=True)
-    with open(os.path.join(ROOT, 'frames', 'index.html'), 'w') as f:
-        f.write('<!DOCTYPE html><meta charset="utf-8"><title>Print Room. Wolve</title><meta http-equiv="refresh" content="0; url=../print/"><link rel="canonical" href="../print/"><a href="../print/">Print Room</a>')
+    page('work/key-visuals/', 'Key visuals. Wolve', 'Print, poster and outdoor ads by Anthony Wolve Eigbe.', body, 'work/')
+    # old addresses forward to the new one
+    for old in ('frames', 'print'):
+        os.makedirs(os.path.join(ROOT, old), exist_ok=True)
+        with open(os.path.join(ROOT, old, 'index.html'), 'w') as f:
+            f.write('<!DOCTYPE html><meta charset="utf-8"><title>Key visuals. Wolve</title><meta http-equiv="refresh" content="0; url=../work/key-visuals/"><link rel="canonical" href="../work/key-visuals/"><a href="../work/key-visuals/">Key visuals</a>')
 
 def stage():
     R = '../'
