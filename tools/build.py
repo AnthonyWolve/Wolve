@@ -435,7 +435,7 @@ def home():
   <h1 class="pname" aria-label="Wolve"><span>Wolve</span></h1>
   <img class="pcut" src="assets/hero-cut.webp" alt="" aria-hidden="true" width="2400" height="1600">
   <div class="pfoot wrap">
-    <p>Chief Creative Officer, TECNO Mobile West Africa. The first Creative Director in West Africa to win a Cannes Lion.</p>
+    <p>Chief Creative Officer. The first Creative Director in West Africa to win a Cannes Lion.</p>
     <a class="btn" href="work/">See the work</a>
   </div>
 </section>
@@ -467,7 +467,7 @@ def home():
   <div class="strip">{strip}</div>
 </section>
 '''
-    page('', 'Wolve. Anthony Eigbe, Chief Creative Officer', 'Anthony Wolve Eigbe. Chief Creative Officer, TECNO Mobile West Africa. The first Creative Director in West Africa to win a Cannes Lion.', body, reel=True)
+    page('', 'Wolve. Anthony Eigbe, Chief Creative Officer', 'Anthony Wolve Eigbe. Chief Creative Officer. The first Creative Director in West Africa to win a Cannes Lion.', body, reel=True)
 
 def work_index():
     R = '../'
@@ -623,7 +623,7 @@ def story():
     ed = ''.join(f'<li>{e}</li>' for e in EDU)
     br = ', '.join(f'<span>{b}</span>' for b in BRANDS) + ' and 80+ more.'
     body = f'''
-<section class="wrap phead"><h1>Story</h1></section>
+<section class="wrap phead"><h1>Story</h1><a class="btn" href="../cv/">View CV</a></section>
 <section class="wrap about">
   <div class="ph">{img('assets/portrait.jpg', R, 'Anthony Wolve Eigbe in a navy suit', lazy=False)}</div>
   <div class="story">
@@ -641,6 +641,53 @@ def story():
 </div></section>
 <section class="wrap blk"><div class="shead"><h2>Brands</h2></div><p class="brands" style="margin-top:28px">{br}</p></section>'''
     page('story/', 'Story. Wolve', 'The story of Anthony Wolve Eigbe, Chief Creative Officer, TECNO Mobile West Africa.', body, 'story/')
+
+CV_ROLES = [
+ ('Chief Creative Officer, West Africa', 'TECNO Mobile', 'July 2025 to present. Team of 12.',
+  ['Leading creative direction across West African markets for a global parent brand.',
+   'Camon 50, Zoom In. Level Up. Built Nigeria’s first branded social show. 800 phones a day from week one, 30,000 sold in 90 days.',
+   'Spark 50 Pro, Power for Days. A research-led launch that hired people without reliable power as Chief Power Ambassadors. 500+ applicants in 4 days, 30M+ views on a mid-range budget.',
+   'AFCON, Power Your Moment. Co-built the continental idea with the global team and led Nigeria: TV, stadium branding, a gala, creators from across Africa and three mini stadiums.']),
+ ('VP, Creative and Communications', 'UACN Plc', 'August 2024 to June 2025. Team of 6.',
+  ['One creative engine for the group’s operating companies: Dulux, Sandtex, Gala, Debonairs, Mr Bigg’s, UPDC and more.',
+   'Built an in-house content and production studio, cut agency dependence and brought AI and CGI into production.',
+   'Dulux Spruce, Show Your True Colours. For the first time in the brand’s 95-year history, colour names were created outside global headquarters, in Lagos.']),
+ ('Creative Director', 'X3M Ideas', 'January 2022 to July 2024. Deputy Creative Director, October 2019 to December 2021. Department of about 50.',
+  ['Soot Life Expectancy. Recreated Nigeria’s life expectancy around the soot problem. Nigeria’s first Cannes Lion in 70 years, two Pitcher Grand Prix, a Luum Grand Prix, a Loeries Silver and a D&amp;AD shortlist.',
+   'DStv AFCON Banter. Rights landed one day before kickoff. 96M impressions and 9M organic views across Nigeria, Ghana and South Africa.',
+   'Part of the leadership behind Pitcher Agency of the Year 2023, Luum Independent Agency of the Year 2023 and LAIF Agency of the Year.',
+   'Brought TECNO and Infinix to the agency without a pitch. Set up the agency internship programme.']),
+ ('Group Head, Copy', 'Insight Communications', '2017 to 2019.', ['Pepsi, Naija All The Way, the World Cup celebrity campaign.']),
+ ('Senior Creative Executive', 'EXP Momentum', '2015 to 2017.', ['Part of the team behind Coca-Cola’s Coke Island launch, Heineken at Lagos Fashion and Design Week with T-Pain, and Star Mega Jamz across 10 cities.']),
+ ('Copywriter, then Lead Copywriter', 'Bates Cosse', '2011 to 2014.', ['Lead copywriter for Intel West Africa.'])]
+CV_HIGHLIGHTS = [('1st', 'Creative Director in West Africa to win a Cannes Lion'), ('96M', 'impressions, DStv AFCON Banter'), ('30M+', 'views, TECNO Spark 50 Pro'), ('30,000', 'Camon 50 phones sold in 90 days'), ('1,500', 'in the room, TEDxEnugu 2026')]
+
+def cv():
+    R = '../'
+    hl = ''.join(f'<div><b>{n}</b><span>{t}</span></div>' for n, t in CV_HIGHLIGHTS)
+    roles = ''.join('<li><h3>{}<span>{}</span></h3><time>{}</time><ul>{}</ul></li>'.format(t, co, d, ''.join(f'<li>{b}</li>' for b in bs)) for t, co, d, bs in CV_ROLES)
+    aw = ''.join(f'<li>{a}</li>' for a in AWARDS).replace('he has led', 'I have led')
+    ed = ''.join(f'<li>{e}</li>' for e in EDU)
+    brands = ', '.join(BRANDS)
+    body = f'''
+<section class="wrap cvpage">
+ <article class="sheet" aria-label="Curriculum vitae">
+  <header class="cvh"><h1>Anthony “Wolve” Eigbe</h1><p>Chief Creative Officer. Lagos, Nigeria.</p>
+   <p class="cvc"><a href="mailto:{EMAIL}">{EMAIL}</a><a href="{R}">anthonywolve.github.io/Wolve</a><a href="{SOCIAL[2][1]}" target="_blank" rel="noopener">LinkedIn</a></p></header>
+  <section><h2>Profile</h2><p class="lede">Creative leader with 15+ years building African brands across advertising, experiential, digital and brand development. The first Creative Director in Nigeria and West Africa to win a Cannes Lion, and twice named Creative Director of the Year. I lead teams, agencies and in-house studios to work that is seen, experienced and remembered, and that moves product.</p></section>
+  <section><h2>Highlights</h2><div class="cvhl">{hl}</div></section>
+  <section><h2>Experience</h2><ol class="cvroles">{roles}</ol></section>
+  <section class="cvgrid">
+   <div><h2>Speaking and workshops</h2><ul><li>TEDxEnugu 2026: AI Has No Accent. How Africa can adapt to AI without losing itself.</li><li>Cannes Lions 2026: shortlist jury, Outdoor Lions.</li><li>Creative workshops for corporate clients, including CreditDirect. Panelist at Podfest Naija and The Work Summit. Talks at agencies.</li></ul></div>
+   <div><h2>Awards and recognition</h2><ul>{aw}</ul></div>
+   <div><h2>Capabilities</h2><p>Creative and brand strategy. Integrated campaigns. TV commercials and brand film. Experiential and launches. Social and content. Team and agency leadership. AI in creative production.</p></div>
+   <div><h2>Beyond</h2><p>Co-producer, <em>Soot City</em>, a documentary. One album, <em>The Xperiment</em>, as part of a group. Teaching marketing and creativity to almost 30K followers.</p></div>
+   <div><h2>Brands</h2><p>{brands} and 80+ more.</p></div>
+   <div><h2>Education</h2><ul>{ed}</ul></div>
+  </section>
+ </article>
+</section>'''
+    page('cv/', 'CV. Wolve', 'The CV of Anthony Wolve Eigbe, Chief Creative Officer.', body, 'story/')
 
 def contact():
     R = '../'
@@ -661,5 +708,5 @@ def notfound():
 
 home(); work_index()
 for i, c in enumerate(CASES): case(c, i)
-printroom(); stage(); story(); contact(); notfound()
+printroom(); stage(); story(); cv(); contact(); notfound()
 print('Built', 6 + len(CASES), 'pages')
