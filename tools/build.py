@@ -32,7 +32,7 @@ CASES = [
  dict(slug='escape-2020', kind='campaign', client='X3M Ideas', product='Christmas board game', title='Escape 2020.',
   year='2020', role='Deputy Creative Director, X3M Ideas', market='Nigeria',
   line='Everyone wanted out of 2020. So we made it a game.',
-  cover=('img', 'AOTW:twi13gxrcfotlsas8o0v4apvoxt4', None), hero=('vid', 'escape-2020', 'https://video.adsoftheworld.com/px54picnpg67npxmjp15p5ekgmoc', 'AOTW:h1mc91fhx0curuftorp4tpw9mbz6'),
+  cover=('img', 'AOTW:46vrxdpqcqcbehw29nyqbjsg54dz', None), hero=('vid', 'escape-2020', 'https://video.adsoftheworld.com/px54picnpg67npxmjp15p5ekgmoc', 'AOTW:h1mc91fhx0curuftorp4tpw9mbz6'),
   story=[('The brief', '<p>Christmas 2020. COVID restrictions tightened and families were told to stay home for the holidays. Nigerians agreed on one thing: they could not wait to see the back of the year.</p>'),
          ('The idea', '<p class="big">Instead of Christmas cards, a board game.</p><p>Escape 2020 squeezed the year into 365 blocks, one for every day. Lockdowns, looting, #EndSARS, the Beirut blast, wildfires. Every big moment of the year, local and global, waiting to be dodged with a roll of the dice.</p><p>Sent to clients and friends of the agency. Now everyone could escape 2020, at least in their heads.</p>')],
   nums=[('365', 'blocks, one for every day of the year')],
@@ -85,12 +85,12 @@ CASES = [
  dict(slug='dulux-spruce', kind='campaign', client='Dulux Spruce', product='Brand launch', title='Show Your True Colours.',
   year='2026', role='VP Creative and Communications, UACN', market='Nigeria',
   line='For the first time in 95 years, Dulux colour names were made in Lagos.',
-  cover=('img', 'assets/dulux-old-money-green.jpg', None), hero=('img', 'assets/dulux-odogwu-red.jpg', 'Odogwu Red, from the Dulux Spruce campaign'),
+  cover=('img', 'assets/dulux-old-money-green.jpg', None), hero=('img', 'assets/dulux-old-money-green.jpg', 'Old Money Green, from the Dulux Spruce campaign'),
   story=[('The brief', '<p>A new Dulux brand, built for young Nigerians at a price within reach. But the colour names came from somewhere else. Neptune Seas. Wholemeal Honey. Lovely words. Hollow ones.</p>'),
          ('The idea', '<p class="big">For the first time in the brand’s 95 year history, colour naming left global headquarters and came home.</p><p>Colour psychologists, consultants, Gen Z voices and pop culture minds met in one room in Lagos. Ten colours. Ten names Nigeria already speaks. Each one cast as a character and shot by one of the country’s foremost fashion photographers.</p>'),
-         ('The build', '<p>Made in house at UACN. Digital, outdoor and film.</p>')],
+         ('The build', '<p>Made in-house at UACN. Digital, outdoor and film.</p>')],
   nums=[('10', 'colours, named in Lagos'), ('1st', 'time in 95 years the names left HQ')],
-  gallery=('wide', [('ajebo-yellow', 'Àjẹbọ Yellow'), ('baddie-pink', 'Baddie Pink'), ('idan-black', 'Ìdán Black'), ('ijgb-orange', 'IJGB Orange'), ('odogwu-red', 'Odogwu Red'), ('old-money-green', 'Old Money Green'), ('sarki-brown', 'Sarki Brown'), ('shakara-purple', 'Shakara Purple'), ('soft-life-blue', 'Soft Life Blue'), ('steeze-white', 'Steeze White')], 'Key visuals. Ten colours, ten names'),
+  gallery=('wide', [('ajebo-yellow', 'Àjẹbọ Yellow'), ('baddie-pink', 'Baddie Pink'), ('idan-black', 'Ìdán Black'), ('ijgb-orange', 'IJGB Orange'), ('old-money-green', 'Old Money Green'), ('sarki-brown', 'Sarki Brown'), ('shakara-purple', 'Shakara Purple'), ('soft-life-blue', 'Soft Life Blue'), ('steeze-white', 'Steeze White'), ('odogwu-red', 'Odogwu Red')], 'Key visuals. Ten colours, ten names'),
   links=[('The case on Ads of the World', 'https://www.adsoftheworld.com/campaigns/show-your-true-colours-4a844af1-b475-4b77-803c-14612e36944a', 'Ads of the World')]),
 
  dict(slug='afcon-banter', kind='campaign', client='DStv × AFCON', product='Always on social', title='AFCON Banter.',
@@ -440,7 +440,7 @@ def home():
   </div>
 </section>
 <section class="wrap intro">
-  <p>Fifteen years making African brands people talk about. In agencies, on stages, in house, and now across West Africa.</p>
+  <p>Fifteen years making African brands people talk about. In agencies, on stages, in-house, and now across West Africa.</p>
   <div class="facts">
     <div><b>15+</b><span>years building brands</span></div>
     <div><b>80+</b><span>brands, local and global</span></div>

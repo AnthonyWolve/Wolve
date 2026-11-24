@@ -5,7 +5,7 @@ AOTW = 'https://www.adsoftheworld.com/campaigns/'
 IMG = 'https://image.adsoftheworld.com/'
 
 PRINT = [
- ('', 'Talk Go Taya You', 'Glo', '', ['glo-taya-1@1132x1600', 'glo-taya-2@1132x1600']),
+ ('', 'Talk Go Taya You', 'Glo', '2023', ['glo-taya-1@1132x1600', 'glo-taya-2@1132x1600']),
  ('welcome-to-my-kitchen', 'Welcome to My Kitchen', 'Flour Mills Nigeria', '2022', ['do7owd2xc97mwexpiwql2m34sdxu@2200x1467', '047e39vyufeef6qd7l0ly1veouva@2200x1467', 'i02if8t1akqiww7yqgfx09vritd6@2200x1467', 'lx7sqfu1ig3l2ag47ss5mw20iz3k']),
  ('get-relief', 'Get Relief', 'Algafen', '2021', ['vuard0vj92cm0e88mpfjgq9ksr2b', 'vs4zyfjsyutyw2hzef2nc8xjqx32', 'jpayxiuxcvhtcdrzvaxxosjdtj6o']),
  ('fast-relief', 'Fast Relief', 'Algafen', '2021', ['xucgpabawtlkl416i1wggghqx51u', 'mlal8bakufkvqjapqje7rgx5e12p', 'c0egi82n8vtgceb819qstm2ht9zs']),
