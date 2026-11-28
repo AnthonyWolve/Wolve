@@ -389,7 +389,7 @@ var WORKS={
   line:'Not an ad. A system, from product to pop culture.',stats:[['800','phones a day, week one'],['30,000','sold in 90 days']],
   story:'<p class="lead">Not an ad. A system, from product to pop culture.</p><ol><li><span><b>Blackout Protocol.</b> Nigeria’s first branded social show. Six episodes of action thriller, built to drive pre-orders.</span></li><li><span><b>Launch.</b> Four short films that turned the specs into a spectacle.</span></li><li><span><b>Beyond the Specs.</b> A two minute Nollywood short. Story first, specs second.</span></li><li><span><b>Culture Co-Signs.</b> Creators telling it their way.</span></li><li><span><b>AI meets In-House.</b> AI made content to test new formats, read and answered in real time by the in-house team.</span></li></ol><p>Every sales target hit.</p>',
   nums:[['800','phones a day from week one'],['30,000','sold in 90 days'],['6','episodes of Nigeria’s first branded social show']],
-  blocks:function(){var c=['Workflow','Blackout Protocol','Launch','Beyond the Specs','Culture Co-Signs','AI meets In-House','Credits'];return blk('Behind the campaign','<div class="gv">'+c.map(function(t,i){return '<figure><video src="'+A+'camon-'+(i+1)+'.mp4" poster="'+A+'camon-'+(i+1)+'.jpg" muted loop playsinline autoplay preload="metadata"></video><figcaption>'+pad(i+1)+'  '+t+'</figcaption></figure>'}).join('')+'</div>')},
+  blocks:function(){var c=['Workflow','Blackout Protocol','Launch','Beyond the Specs','Culture Co-Signs','AI meets In-House','Credits'];return blk('Behind the campaign','<div class="gv">'+c.map(function(t,i){return '<figure><video src="'+A+'camon-'+(i+1)+'.mp4" poster="'+A+'camon-'+(i+1)+'.jpg" muted loop playsinline preload="none" data-lazy></video><figcaption>'+pad(i+1)+'  '+t+'</figcaption></figure>'}).join('')+'</div>')},
   links:[['The full carousel on Instagram','https://www.instagram.com/p/DXOhsvtjLu8/','Instagram']]},
  'spark-50-pro':{path:'seen',client:'TECNO',title:'Power for Days.',sub:'Spark 50 Pro launch',year:'2026',role:'Chief Creative Officer',market:'Nigeria',
   card:{panel:'red',big:'30M+',cap:'views, on a mid range budget'},media:{tiks:[['7678298314147728662','The unsolicited one. Posted by @1xrantguy, not by us'],['7686088980344950034','Chief Power Ambassador'],['7686469712254995730','Chief Power Ambassador'],['7685422338329808136','Chief Power Ambassador']]},
@@ -525,7 +525,7 @@ function route(){
   if(PATHS[h]){renderPath(h);show('path')}else if(WORKS[h]){renderWork(h);show('work')}else if(h==='cig'){renderCig();show('work')}else{show('home')}
   window.scrollTo(0,0);bind();autoplay();
 }
-function autoplay(){document.querySelectorAll('video[autoplay]').forEach(function(v){v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){})})}
+function autoplay(){document.querySelectorAll('video[autoplay]').forEach(function(v){v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){})});var lz=document.querySelectorAll('video[data-lazy]');function pl(v){v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){})}if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)pl(e.target);else e.target.pause()})},{rootMargin:'200px'});lz.forEach(function(v){io.observe(v)})}else lz.forEach(pl)}
 var cur=document.getElementById('cur'),fine=matchMedia('(pointer:fine)').matches;
 function bind(){
   document.querySelectorAll('[data-hov]').forEach(function(el){
